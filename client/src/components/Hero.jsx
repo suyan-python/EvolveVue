@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from "react";
 import { NavLink } from "react-router-dom";
-import Logo from "../assets/logo/white.png";
+import Logo from "../assets/logo/evolve.png";
 
 function Hero()
 {
@@ -24,7 +24,7 @@ function Hero()
   return (
     <section
       ref={heroRef}
-      className={`relative flex justify-center items-center py-48 px-6 sm:px-12 text-white transition-all duration-1000 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
+      className={`relative flex justify-center items-center py-32 px-6 sm:px-12 text-white transition-all duration-1000 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
         }`}
     >
       <div className="flex flex-col items-center justify-center text-center max-w-6xl mx-auto space-y-10 ">
@@ -44,7 +44,7 @@ function Hero()
         </h1>
 
         {/* Description */}
-        <p className="subheader text-base sm:text-lg lg:text-2xl text-[#666667] leading-relaxed max-w-4xl ">
+        <p className="subheader text-base sm:text-lg lg:text-2xl text-slate-300 leading-relaxed max-w-4xl ">
           <span className="text-[#d4af37]"> Evolve Vue Private </span>Limited is a trusted and emerging name in the
           Business Process Outsourcing (BPO) industry, established in February
           2025. We are dedicated to delivering accurate, timely, and high-quality
@@ -53,10 +53,10 @@ function Hero()
         </p>
 
         {/* Buttons */}
-        <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center">
+        <div className="header flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center">
           <NavLink
             to="/about"
-            className="flex items-center justify-center gap-2 px-8 py-4 text-base sm:text-lg font-semibold text-black bg-[#9cee69] rounded-xl  transition-all duration-300 transform hover:-translate-y-1 shadow-lg hover:shadow-yellow-400/40"
+            className="flex items-center justify-center gap-2 px-8 py-4 text-base sm:text-lg font-semibold text-black bg-[#9cee69] rounded-xl  transition-all duration-300 transform hover:-translate-y-1"
           >
             Explore More
             <svg
@@ -75,7 +75,7 @@ function Hero()
 
           <NavLink
             to="/team"
-            className="flex items-center justify-center gap-2 px-8 py-4 text-base sm:text-lg font-semibold text-[#191919] bg-[#feefae] rounded-xl hover:from-yellow-500 hover:to-blue-800 transition-all duration-300 transform hover:-translate-y-1 shadow-lg hover:shadow-yellow-300/40"
+            className="flex items-center justify-center gap-2 px-8 py-4 text-base sm:text-lg font-semibold text-[#191919] bg-[#feefae] rounded-xl hover:from-yellow-500 hover:to-blue-800 transition-all duration-300 transform hover:-translate-y-1 "
           >
             Meet Our Team
             <svg

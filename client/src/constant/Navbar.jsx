@@ -46,7 +46,7 @@ function Navbar()
         <div
           className={`mx-auto w-full max-w-full py-3 font-medium transition-all duration-500
       ${isScrolled
-              ? "px-36 bg-transparent backdrop-blur-[20px] shadow-[#133a41] shadow-md"
+              ? "px-36 bg-transparent backdrop-blur-[20px] border-b-2 border-[#9cee69] shadow-md"
               : "px-7 bg-[#191919] shadow-md"
             }`}
         >
@@ -87,7 +87,7 @@ function Navbar()
                   end={!link.isButton}
                 >
                   {link.isButton ? (
-                    <button className="text-black font-semibold px-4 py-2 rounded-full  transition duration-300 shadow-lg bg-[#9cee69] hover:bg-yellow-700 cursor-pointer">
+                    <button className="text-black font-semibold px-4 py-2 rounded-full  transition duration-300 shadow-lg bg-[#9cee69] hover:bg-yellow-500 cursor-pointer">
                       {link.label}
                     </button>
                   ) : (
