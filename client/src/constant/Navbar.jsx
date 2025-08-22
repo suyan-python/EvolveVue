@@ -35,19 +35,19 @@ function Navbar()
   const getActiveClass = ({ isActive }) =>
   {
     return isActive
-      ? "text-[#d4af37] text-xs font-bold p-1.5 rounded-xl "
-      : "text-white hover:text-yellow-700 text-xs";
+      ? "text-[#d4af37] text-xs font-extrabold p-1.5 rounded-xl "
+      : "text-white hover:text-[#d4af37] text-xs";
   };
 
   return (
     <>
       {/* Navbar */}
-      <nav className="subheader fixed top-0 w-full z-50 transition-all duration-500">
+      <nav className="header fixed top-0 w-full z-50 transition-all duration-500">
         <div
           className={`mx-auto w-full max-w-full py-3 font-medium transition-all duration-500
       ${isScrolled
               ? "px-36 bg-transparent backdrop-blur-[20px] border-b-2 border-[#9cee69] shadow-md"
-              : "px-7 bg-[#191919] shadow-md"
+              : "px-7  shadow-md"
             }`}
         >
 
@@ -130,7 +130,7 @@ function Navbar()
       </div>
 
       {/* Prevent content from overlapping with Navbar */}
-      <div className="pt-20"></div>
+
     </>
   );
 }

@@ -33,7 +33,6 @@
   background-size: 400% 400%;
   animation: gradientAnimation 15s ease infinite;
   /* Subtle shadow for depth and a refined glow */
-  box-shadow: 0 0 20px rgba(52, 73, 94, 0.4);
 }
 
 @keyframes gradientAnimation {

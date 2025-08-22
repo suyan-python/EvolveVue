@@ -12,7 +12,7 @@ function MeetFounder()
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 0.8 }}
             >
-                <h3 className="header text-5xl font-semibold text-slate-300 mb-12 text-center">
+                <h3 className="header text-5xl font-medium text-slate-300 mb-12 text-center">
                     Meet Our Founder
                 </h3>
 

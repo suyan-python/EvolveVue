@@ -20,55 +20,55 @@ function Services()
       title: "Medical Report Writing",
       description:
         "Comprehensive and accurate medical reports tailored for clinical, insurance, and legal requirements.",
-      icon: <FaFileMedical className="text-[#0d1b2a] text-5xl mx-auto mb-4" />,
+      icon: <FaFileMedical className=" text-5xl mx-auto mb-4" />,
     },
     {
       title: "Medical Listing",
       description:
         "Systematic listing and categorization of medical services, products, and procedures as per global healthcare standards.",
-      icon: <FaClipboardList className="text-[#0d1b2a] text-5xl mx-auto mb-4" />,
+      icon: <FaClipboardList className=" text-5xl mx-auto mb-4" />,
     },
     {
       title: "Medical Data Entry",
       description:
         "Secure and accurate entry of patient records, clinical data, and medical histories into healthcare systems.",
-      icon: <FaKeyboard className="text-[#0d1b2a] text-5xl mx-auto mb-4" />,
+      icon: <FaKeyboard className=" text-5xl mx-auto mb-4" />,
     },
     {
       title: "Medical Documentation",
       description:
         "Detailed and structured documentation of clinical encounters, diagnoses, and treatment plans for improved patient care.",
-      icon: <FaFileMedical className="text-[#0d1b2a] text-5xl mx-auto mb-4" />,
+      icon: <FaFileMedical className=" text-5xl mx-auto mb-4" />,
     },
     {
       title: "Data Processing",
       description:
         "Streamlined management, cleansing, and transformation of healthcare data for better decision-making.",
-      icon: <FaDatabase className="text-[#0d1b2a] text-5xl mx-auto mb-4" />,
+      icon: <FaDatabase className=" text-5xl mx-auto mb-4" />,
     },
     {
       title: "Healthcare Analytics",
       description:
         "Advanced analytics and data visualization to derive actionable insights and optimize healthcare outcomes.",
-      icon: <FaChartBar className="text-[#0d1b2a] text-5xl mx-auto mb-4" />,
+      icon: <FaChartBar className=" text-5xl mx-auto mb-4" />,
     },
     {
       title: "Compliance Audits",
       description:
         "Thorough audits to ensure healthcare operations meet regulatory standards, improve quality, and minimize risk.",
-      icon: <FaClipboardCheck className="text-[#0d1b2a] text-5xl mx-auto mb-4" />,
+      icon: <FaClipboardCheck className=" text-5xl mx-auto mb-4" />,
     },
     {
       title: "Data Security & Privacy",
       description:
         "Robust protection of sensitive health data through secure systems and privacy-compliant processes.",
-      icon: <FaShieldAlt className="text-[#0d1b2a] text-5xl mx-auto mb-4" />,
+      icon: <FaShieldAlt className=" text-5xl mx-auto mb-4" />,
     },
     {
       title: "Clinical Support Services",
       description:
         "Assisting healthcare professionals with accurate documentation, record updates, and administrative efficiency.",
-      icon: <FaUserMd className="text-[#0d1b2a] text-5xl mx-auto mb-4" />,
+      icon: <FaUserMd className=" text-5xl mx-auto mb-4" />,
     },
   ];
 
@@ -77,7 +77,7 @@ function Services()
       <div className="max-w-7xl mx-auto px-6 md:px-12">
         {/* Section Title with Animation */}
         <motion.h2
-          className="header text-3xl sm:text-4xl md:text-5xl font-semibold text-center mb-12 text-slate-300"
+          className="header text-3xl sm:text-4xl md:text-5xl font-medium text-center mb-12 text-[#9cee69]"
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
@@ -90,16 +90,16 @@ function Services()
           {services.map((service, index) => (
             <motion.div
               key={index}
-              className="bg-white p-8 rounded-3xl shadow-lg text-center transition transform hover:scale-105 hover:shadow-xl duration-300 flex flex-col justify-between min-h-[270px]"
+              className="bg-gradient-to-b from-green-500/20 via-slate-700/40 to-transparent border-[#9cee69] border-t-2 text-white p-8 rounded-3xl shadow-lg text-center transition transform hover:scale-105 hover:shadow-xl duration-300 flex flex-col justify-between min-h-[270px]"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: index * 0.15 }}
             >
               {service.icon}
-              <h3 className="text-xl sm:text-2xl font-semibold text-[#0d1b2a] mb-3">
+              <h3 className="text-xl sm:text-2xl font-semibold  mb-3">
                 {service.title}
               </h3>
-              <p className="text-gray-700 text-base sm:text-lg">
+              <p className=" text-base sm:text-lg">
                 {service.description}
               </p>
               {/* <NavLink to={"/services"}>

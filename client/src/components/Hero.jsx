@@ -24,9 +24,15 @@ function Hero()
   return (
     <section
       ref={heroRef}
-      className={`relative flex justify-center items-center py-32 px-6 sm:px-12 text-white transition-all duration-1000 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
+      className={`relative flex justify-center items-center py-32 px-6 sm:px-12 bg-slate-800 text-white transition-all duration-1000 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
         }`}
     >
+      {/* Left yellow Glow */}
+      <div className="absolute top-20 -left-20 w-[400px] h-[400px] bg-yellow-500/20 rounded-full blur-[190px]"></div>
+
+      {/* Right Green Glow */}
+      <div className="absolute bottom-20 right-0 w-[400px] h-[400px] bg-green-500/20 rounded-full blur-[190px]"></div>
+
       <div className="flex flex-col items-center justify-center text-center max-w-6xl mx-auto space-y-10 ">
         {/* Logo */}
         <div className="relative">
@@ -45,7 +51,7 @@ function Hero()
 
         {/* Description */}
         <p className="subheader text-base sm:text-lg lg:text-2xl text-slate-300 leading-relaxed max-w-4xl ">
-          <span className="text-[#d4af37]"> Evolve Vue Private </span>Limited is a trusted and emerging name in the
+          <span className="text-[#d4af37] font-semibold "> Evolve Vue Private </span>Limited is a trusted and emerging name in the
           Business Process Outsourcing (BPO) industry, established in February
           2025. We are dedicated to delivering accurate, timely, and high-quality
           medical documentation services to healthcare organizations across the
