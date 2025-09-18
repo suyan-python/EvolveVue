@@ -43,7 +43,7 @@ Knowledge of medical terminologies.
     try
     {
       const emailCheckResponse = await fetch(
-        `${API_URL}/check-email?email=${formData.email}`
+        `${API_URL}/api/applications/check-email?email=${formData.email}`
       );
       const emailCheckData = await emailCheckResponse.json();
 
@@ -60,7 +60,7 @@ Knowledge of medical terminologies.
       formDataToSend.append("resume", formData.resume);
       formDataToSend.append("coverLetter", formData.coverLetter);
 
-      const response = await fetch(`${API_URL}/apply`, {
+      const response = await fetch(`${API_URL}/api/applications/apply`, {
         method: "POST",
         body: formDataToSend,
       });
