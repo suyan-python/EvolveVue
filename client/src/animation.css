@@ -1,0 +1,115 @@
+/* CSS for animated background with professional dark tones */
+.bg-animate {
+  background: linear-gradient(260deg, #1f2937, #34495e, #1f2937, #000000);
+  background-size: 400% 400%;
+  animation: gradientAnimation 15s ease infinite;
+  /* Subtle shadow for depth and a refined glow */
+  box-shadow: 0 0 20px rgba(52, 73, 94, 0.4);
+}
+
+.bg-animate2 {
+  background: linear-gradient(260deg, #1f2937, #094c8e, #1f2937, #004ede);
+  background-size: 400% 400%;
+  animation: gradientAnimation 15s ease infinite;
+  /* Subtle shadow for depth and a refined glow */
+  box-shadow: 0 0 20px rgba(52, 73, 94, 0.4);
+}
+.bg-animate3 {
+  background: linear-gradient(260deg, #1f2937, #8e0909, #371f1f, #de0000);
+  background-size: 400% 400%;
+  animation: gradientAnimation 15s ease infinite;
+  /* Subtle shadow for depth and a refined glow */
+  box-shadow: 0 0 20px rgba(52, 73, 94, 0.4);
+}
+.bg-animate4 {
+  background: linear-gradient(260deg, #1f2937, #133a41, #0b2226, #21646f);
+  background-size: 400% 400%;
+  animation: gradientAnimation 15s ease infinite;
+  /* Subtle shadow for depth and a refined glow */
+  box-shadow: 0 0 20px rgba(52, 73, 94, 0.4);
+}
+.bg-animate5 {
+  background: linear-gradient(260deg, #0d1b2a, #133a41, #0b2226, #0d1b2a);
+  background-size: 400% 400%;
+  animation: gradientAnimation 15s ease infinite;
+  /* Subtle shadow for depth and a refined glow */
+}
+
+@keyframes gradientAnimation {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.animated-gradient-text {
+  background: linear-gradient(90deg, #3b82f6, #ffffff, #1e7faf, #ffffff);
+  background-size: 300%;
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  animation: gradientAnimation 5s ease-in-out infinite;
+}
+
+@keyframes gradientAnimation {
+  0% {
+    background-position: 0%;
+  }
+  50% {
+    background-position: 100%;
+  }
+  100% {
+    background-position: 0%;
+  }
+}
+
+.neon-border {
+  position: relative;
+  z-index: 0;
+  overflow: hidden;
+}
+
+/* Animated gradient border */
+.neon-border::before {
+  content: "";
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  background: linear-gradient(60deg, #0040ff, #1f2937, #007bff, #1f2937);
+  background-size: 300%;
+  border-radius: inherit;
+  z-index: -2;
+  animation: neonBorderAnimation 3s linear infinite;
+}
+
+/* Inner cover to mask the gradient so only the border shows */
+.neon-border::after {
+  content: "";
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  right: 2px;
+  bottom: 2px;
+  background: #3b404a; /* Matches your button's bg-blue-600 */
+  border-radius: inherit;
+  z-index: -1;
+}
+
+@keyframes neonBorderAnimation {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}

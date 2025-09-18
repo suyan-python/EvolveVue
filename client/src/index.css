@@ -1,0 +1,52 @@
+@import "tailwindcss";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* body {
+
+  background-color: #121212;
+  color: #f3f3f3;
+} */
+
+:root {
+  --themeColor: #0d1b2a;
+  --darkThemeColor: #0a141f;
+  --lightThemeColor: #1b3755;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  overflow-x: hidden;
+
+  /* Gradient + Image overlay */
+
+  /* background: linear-gradient(
+    135deg,
+    rgba(51, 51, 51, 0.6),
+    rgba(25, 25, 25, 0.6),
+    rgba(51, 51, 51, 0.6)
+  ); */
+  /* url("../src/assets/background/back.jpeg");  */
+
+  background-color: #191818;
+
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed; /* gives a parallax feel */
+}
+
+.header {
+  /* font-family: "Poppins", sans-serif; */
+  font-family: "Bricolage Grotesque", sans-serif;
+}
+.subheader {
+  /* font-family: "Roboto", sans-serif; */
+  font-family: "Inter", sans-serif;
+}
+
+themeColor {
+  background-color: #133a41;
+}
