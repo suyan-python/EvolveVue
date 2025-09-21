@@ -24,7 +24,9 @@ function Hero()
   return (
     <section
       ref={heroRef}
-      className={`relative flex justify-center items-center py-32 px-6 sm:px-12 bg-gradient-to-br from-gray-900 via-slate-800 to-gray-950 text-white transition-all duration-1000 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
+      className={`relative flex items-center justify-center min-h-screen px-6 sm:px-12  py-32
+      bg-gradient-to-br from-gray-900 via-slate-800 to-gray-950 text-white 
+      transition-all duration-1000 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
         }`}
     >
       {/* Premium Glow Effects */}
@@ -32,37 +34,37 @@ function Hero()
       <div className="absolute bottom-10 right-10 w-[400px] h-[400px] bg-green-500/30 rounded-full blur-[200px] animate-pulse"></div>
       <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-black/30 pointer-events-none"></div>
 
-      <div className="relative z-10 flex flex-col items-center text-center max-w-6xl mx-auto space-y-12">
+      {/* Content */}
+      <div className="relative z-10 flex flex-col items-center text-center max-w-5xl mx-auto space-y-8 lg:space-y-12 px-4">
         {/* Logo */}
-        <div className="relative">
-          <img
-            src={Logo}
-            alt="Evolve Vue Pvt. Ltd. Logo"
-            className="w-56 sm:w-64 lg:w-72 drop-shadow-[0_0_25px_rgba(255,215,0,0.6)] transition-transform duration-500 hover:scale-105"
-          />
-        </div>
+        <img
+          src={Logo}
+          alt="Evolve Vue Pvt. Ltd. Logo"
+          className="w-52 sm:w-64 lg:w-72 drop-shadow-[0_0_25px_rgba(255,215,0,0.6)] transition-transform duration-500 hover:scale-105"
+        />
 
         {/* Headline */}
-        <h1 className="header text-3xl sm:text-4xl lg:text-5xl font-semibold bg-clip-text text-transparent bg-gradient-to-r from-yellow-400 via-indigo-400 to-green-400 drop-shadow-lg">
+        <h1 className="header text-3xl sm:text-4xl lg:text-6xl font-semibold bg-clip-text text-transparent bg-gradient-to-r from-yellow-400 via-indigo-400 to-green-400 drop-shadow-lg leading-snug">
           Empowering Healthcare Through Innovation
         </h1>
 
         {/* Description */}
-        <p className="text-base sm:text-lg lg:text-xl text-gray-300 leading-relaxed max-w-3xl">
+        <p className="subheader text-base sm:text-lg lg:text-xl text-gray-300 leading-relaxed max-w-3xl">
           <span className="text-[#d4af37] font-semibold">Evolve Vue Private</span> Limited
           is a trusted and emerging name in the Business Process Outsourcing (BPO) industry,
-          established in February 2025. We deliver <span className="text-indigo-400 font-medium">accurate</span>,
+          established in February 2025. We deliver{" "}
+          <span className="text-indigo-400 font-medium">accurate</span>,
           <span className="text-green-400 font-medium"> timely</span>, and
-          <span className="text-yellow-400 font-medium"> high-quality</span> medical documentation services
-          to healthcare organizations across the globe.
+          <span className="text-yellow-400 font-medium"> high-quality</span> medical documentation
+          services to healthcare organizations across the globe.
         </p>
 
         {/* Buttons */}
-        <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center text-white">
+        <div className="subheader flex flex-col sm:flex-row gap-6 justify-center text-white mt-4">
           {/* Explore More */}
           <NavLink
             to="/about"
-            className="relative flex items-center justify-center gap-2 px-10 py-4 text-lg font-semibold  rounded-xl
+            className="relative flex items-center justify-center gap-2 px-10 py-4 text-lg font-semibold rounded-xl
                border-2 border-transparent shadow-lg transition-transform duration-300 hover:scale-105"
             style={{
               borderImageSlice: 1,
@@ -89,7 +91,7 @@ function Hero()
           {/* Meet Our Team */}
           <NavLink
             to="/team"
-            className="relative flex items-center justify-center gap-2 px-10 py-4 text-lg font-semibold  rounded-xl
+            className="relative flex items-center justify-center gap-2 px-10 py-4 text-lg font-semibold rounded-xl
                border-2 border-transparent shadow-lg transition-transform duration-300 hover:scale-105"
             style={{
               borderImageSlice: 1,
@@ -109,7 +111,6 @@ function Hero()
             </svg>
           </NavLink>
         </div>
-
       </div>
     </section>
   );

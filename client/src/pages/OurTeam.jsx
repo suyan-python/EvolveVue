@@ -34,32 +34,35 @@ const clericalLeads = [
 const ProfileCard = ({ person }) => (
   <div
     className="relative bg-gradient-to-br from-gray-950 via-gray-900 to-black 
-                p-8 rounded-3xl shadow-2xl 
-                w-80 md:w-96 h-[480px] flex flex-col items-center 
-                border border-gray-800 hover:border-indigo-400/50 transition"
+                p-4 rounded-3xl shadow-2xl 
+                w-80 md:w-96 h-[500px] flex flex-col items-center 
+                border border-gray-800 hover:border-indigo-400/50 transition overflow-hidden"
   >
     {/* Profile Image */}
-    <div className="relative">
+    <div className="relative w-full h-full">
       <img
         src={person.image}
         alt={person.name}
-        className="w-40 h-40 md:w-48 md:h-48 object-cover rounded-2xl 
-                   border-4 border-transparent 
-                   bg-gradient-to-r from-indigo-400 via-purple-500 to-green-400 
-                   p-[3px] shadow-lg"
+        className="w-full h-full object-cover rounded-2xl"
       />
-      <div className="absolute inset-0 rounded-2xl shadow-[0_0_30px_rgba(99,102,241,0.6)]"></div>
-    </div>
 
-    {/* Text */}
-    <h3 className="text-2xl md:text-3xl font-bold text-white mt-6 text-center">
-      {person.name}
-    </h3>
-    <p className="text-lg text-gray-400 mt-2 text-center italic tracking-wide">
-      {person.role}
-    </p>
+      {/* Text Overlay */}
+      <div
+        className="absolute bottom-0 left-0 w-full 
+                   bg-black/40 backdrop-blur-sm 
+                   rounded-b-2xl p-4 flex flex-col items-center"
+      >
+        <h3 className="text-2xl md:text-3xl font-bold text-white text-center">
+          {person.name}
+        </h3>
+        <p className="text-lg text-gray-300 mt-1 text-center italic tracking-wide">
+          {person.role}
+        </p>
+      </div>
+    </div>
   </div>
 );
+
 
 
 // ✅ 3D Stacked Slider
@@ -146,10 +149,10 @@ export default function TeamHierarchy()
       <div className="relative z-10">
         {/* Header */}
         <div className="text-center max-w-2xl mx-auto my-8">
-          <h2 className="text-5xl font-extrabold bg-gradient-to-r from-indigo-400 via-purple-500 to-green-400 bg-clip-text text-transparent mb-4">
+          <h2 className="header text-5xl font-semibold bg-gradient-to-r from-indigo-400 via-purple-500 to-green-400 bg-clip-text text-transparent mb-4">
             Our Team
           </h2>
-          <p className="text-gray-400 leading-relaxed">
+          <p className="subheader text-gray-200 leading-relaxed">
             Dedicated professionals working together to ensure excellence in both clinical and clerical operations.
           </p>
         </div>

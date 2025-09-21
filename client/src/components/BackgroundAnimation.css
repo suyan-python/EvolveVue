@@ -25,6 +25,7 @@
     ),
     radial-gradient(circle at 80% 50%, rgba(255, 217, 0, 0.21), transparent 50%);
   filter: blur(70px);
+  animation: moveBlob 25s ease-in-out infinite;
   z-index: -1;
 }
 

@@ -1,7 +1,6 @@
 import React from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
-import bandana from "../assets/leads/bandana.JPG";
 
 const doctorData = {
   nikita: {
@@ -61,7 +60,7 @@ const doctorData = {
     name: "Bandana Manandhar",
     designation: "Backend Operations Lead",
     joiningDate: "April, 2018",
-    image: bandana,
+    image: 'bandana',
     bio: "Bandana is responsible for backend operations, ensuring seamless healthcare support systems. She has played a key role in integrating new technologies into medical report listing systems.",
     mail: "bandana@reportprep.com",
     teamMembers: [
