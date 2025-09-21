@@ -1,115 +1,168 @@
-import React from "react";
+// src/pages/TeamHierarchy.jsx
+import React, { useState } from "react";
+import { motion } from "framer-motion";
+import { ChevronLeft, ChevronRight } from "lucide-react";
 
 import geyata from "../assets/leads/geyata.webp";
 import birat from "../assets/leads/birat.webp";
+import shashank from "../assets/leads/shashank.webp"
 import swormin from "../assets/leads/2.webp";
 import prakriti from "../assets/leads/4.webp";
 import dilasha from "../assets/leads/dilasha.webp";
 import nita from "../assets/leads/nita.webp";
 
 const teamLead = {
-  name: "PT Geyata Shrestha",
+  name: "Dr. Geyata Shrestha [PT]",
   role: "Chief Team Lead",
   image: geyata,
 };
 
 const clinicalLeads = [
   { name: "Dr. Birat Khanal", role: "Clinical Lead", image: birat },
-  { name: "Dr. Shashank Singh Shahi", role: "Clinical Lead", image: "/images/james.jpg" },
+  { name: "Dr. Shashank Singh Shahi", role: "Clinical Lead", image: shashank },
   { name: "Dr. Prakriti Shah", role: "Clinical Lead", image: prakriti },
 ];
 
 const clericalLeads = [
-  { name: "PT Dilasha Bhandari", role: "Clerical Lead", image: dilasha },
+  { name: "Dr. Dilasha Bhandari [PT]", role: "Clerical Lead", image: dilasha },
   { name: "Mr. Swornim Rajbhandari", role: "Clerical Lead", image: swormin },
   { name: "PT Nita Bohara", role: "Clerical Lead", image: nita },
 ];
 
-const ProfileCard = ({ person, isChief }) => (
-  <div className="flex justify-center">
-    <div className="bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 overflow-hidden flex flex-col items-center w-64 md:w-72 mx-auto backdrop-blur-sm h-full">
 
-      {/* Image Section */}
-      <div className="w-full aspect-[4/3] overflow-hidden">
-        <img
-          src={person.image}
-          alt={person.name}
-          loading="lazy"
-          className={`w-full h-full object-contain transition-transform duration-500 hover:scale-105 ${isChief ? "border-b-4 border-yellow-500" : ""
-            }`}
-        />
+// ✅ Premium Profile Card
+const ProfileCard = ({ person }) => (
+  <div
+    className="relative bg-gradient-to-br from-gray-950 via-gray-900 to-black 
+                p-8 rounded-3xl shadow-2xl 
+                w-80 md:w-96 h-[480px] flex flex-col items-center 
+                border border-gray-800 hover:border-indigo-400/50 transition"
+  >
+    {/* Profile Image */}
+    <div className="relative">
+      <img
+        src={person.image}
+        alt={person.name}
+        className="w-40 h-40 md:w-48 md:h-48 object-cover rounded-2xl 
+                   border-4 border-transparent 
+                   bg-gradient-to-r from-indigo-400 via-purple-500 to-green-400 
+                   p-[3px] shadow-lg"
+      />
+      <div className="absolute inset-0 rounded-2xl shadow-[0_0_30px_rgba(99,102,241,0.6)]"></div>
+    </div>
+
+    {/* Text */}
+    <h3 className="text-2xl md:text-3xl font-bold text-white mt-6 text-center">
+      {person.name}
+    </h3>
+    <p className="text-lg text-gray-400 mt-2 text-center italic tracking-wide">
+      {person.role}
+    </p>
+  </div>
+);
+
+
+// ✅ 3D Stacked Slider
+const StackedSlider = ({ title, people, color }) =>
+{
+  const [currentIndex, setCurrentIndex] = useState(0);
+
+  const nextCard = () => setCurrentIndex((prev) => (prev + 1) % people.length);
+  const prevCard = () => setCurrentIndex((prev) => (prev === 0 ? people.length - 1 : prev - 1));
+
+  return (
+    <div className="relative flex flex-col items-center bg-black/50 backdrop-blur-xl p-8 rounded-2xl border border-gray-700">
+      <h2 className={`text-2xl font-bold mb-6 ${color}`}>{title}</h2>
+
+      {/* Card Stack */}
+      <div
+        className="relative w-[320px] h-[500px] md:w-[380px] md:h-[520px]"
+        style={{ perspective: "1400px" }}
+      >
+        {people.map((person, index) =>
+        {
+          let offset = (index - currentIndex + people.length) % people.length;
+          let isActive = offset === 0;
+
+          return (
+            <motion.div
+              key={person.name}
+              className="absolute w-full h-full flex items-center justify-center"
+              style={{
+                transformStyle: "preserve-3d",
+                zIndex: people.length - offset,
+              }}
+              initial={false}
+              animate={{
+                scale: isActive ? 1 : 0.9,
+                rotateY: offset === 1 ? -20 : offset === people.length - 1 ? 20 : 0,
+                x:
+                  offset === 0
+                    ? 0
+                    : offset === 1
+                      ? 60
+                      : offset === people.length - 1
+                        ? -60
+                        : 0,
+                opacity: offset > 2 ? 0 : 1,
+              }}
+              transition={{ duration: 0.6, ease: "easeInOut" }}
+            >
+              <ProfileCard person={person} />
+            </motion.div>
+          );
+        })}
       </div>
 
-      {/* Text Section */}
-      <div className="flex flex-col justify-between flex-1 p-6 text-center">
-        <h3 className="header font-semibold text-xl text-gray-800 min-h-[2.5rem] flex items-center justify-center">
-          {person.name}
-        </h3>
-        <p className="subheader text-gray-500 text-sm mt-2 min-h-[1.5rem]">
-          {person.role}
-        </p>
+
+      {/* Controls */}
+      <div className="flex gap-6 mt-6">
+        <button
+          onClick={prevCard}
+          className="p-2 rounded-full bg-white/10 hover:bg-white/20 transition"
+        >
+          <ChevronLeft className="text-white w-6 h-6" />
+        </button>
+        <button
+          onClick={nextCard}
+          className="p-2 rounded-full bg-white/10 hover:bg-white/20 transition"
+        >
+          <ChevronRight className="text-white w-6 h-6" />
+        </button>
       </div>
     </div>
-  </div>
-
-);
+  );
+};
 
 export default function TeamHierarchy()
 {
   return (
-    <section className="relative px-6 py-20 overflow-hidden">
-      {/* Background Gradient Base */}
-      <div className="absolute inset-0 bg-gradient-to-br from-yellow-400/10 via-slate-900 to-green-400/10"></div>
-
-      {/* Left Yellow Glow */}
-      <div className="absolute -top-20 -left-20 w-[400px] h-[400px] bg-yellow-500/30 rounded-full blur-[180px]"></div>
-
-      {/* Right Green Glow */}
-      <div className="absolute bottom-0 right-0 w-[400px] h-[400px] bg-green-400/30 rounded-full blur-[180px]"></div>
+    <section className="relative px-6 py-20 overflow-hidden bg-gradient-to-br from-slate-900 via-black to-gray-900">
+      {/* Glow Effects */}
+      <div className="absolute -top-20 -left-20 w-[400px] h-[400px] bg-purple-600/30 rounded-full blur-[200px]"></div>
+      <div className="absolute bottom-0 right-0 w-[400px] h-[400px] bg-green-500/20 rounded-full blur-[200px]"></div>
 
       {/* Content */}
       <div className="relative z-10">
         {/* Header */}
         <div className="text-center max-w-2xl mx-auto my-8">
-          <h2 className="header text-5xl font-medium text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 to-green-400 mb-4">
+          <h2 className="text-5xl font-extrabold bg-gradient-to-r from-indigo-400 via-purple-500 to-green-400 bg-clip-text text-transparent mb-4">
             Our Team
           </h2>
-          <p className="subheader text-gray-300 leading-relaxed">
-            Dedicated professionals working together to ensure excellence in
-            both clinical and clerical operations.
+          <p className="text-gray-400 leading-relaxed">
+            Dedicated professionals working together to ensure excellence in both clinical and clerical operations.
           </p>
         </div>
 
         {/* Chief Lead */}
-        <div className="flex justify-center mb-16">
-          <ProfileCard person={teamLead} isChief={true} />
+        <div className="flex justify-center mb-20">
+          <ProfileCard person={teamLead} />
         </div>
 
-        {/* Sections */}
-        <div className="flex flex-col lg:flex-row justify-center gap-12">
-          {/* Clinical Section */}
-          <div className="flex-1 rounded-2xl p-8 border-b-4 border-amber-400 bg-black/50 backdrop-blur-md">
-            <h2 className="header text-center font-semibold text-yellow-400 text-2xl mb-8">
-              Clinical Section
-            </h2>
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-              {clinicalLeads.map((lead, index) => (
-                <ProfileCard key={index} person={lead} />
-              ))}
-            </div>
-          </div>
-
-          {/* Clerical Section */}
-          <div className="flex-1 rounded-2xl p-8 border-b-4 border-[#9cee69] bg-black/50 backdrop-blur-md">
-            <h2 className="header text-center font-semibold text-[#9cee69] text-2xl mb-8">
-              Clerical Section
-            </h2>
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-              {clericalLeads.map((lead, index) => (
-                <ProfileCard key={index} person={lead} />
-              ))}
-            </div>
-          </div>
+        {/* Stacked Sliders */}
+        <div className="flex flex-col lg:flex-row gap-12 justify-center">
+          <StackedSlider title="Clinical Section" people={clinicalLeads} color="text-indigo-400" />
+          <StackedSlider title="Clerical Section" people={clericalLeads} color="text-green-400" />
         </div>
       </div>
     </section>

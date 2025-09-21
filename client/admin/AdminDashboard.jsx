@@ -71,7 +71,7 @@ export default function AdminDashboard()
         );
 
     return (
-        <div className="min-h-screen bg-gray-100 p-6 py-32">
+        <div className="min-h-screen bg-gray-100 p-6 py-32 px-44 ">
             {/* Header */}
             <div className="flex flex-col md:flex-row justify-between items-center mb-6">
                 <h1 className="header text-4xl font-bold text-gray-800 mb-4 md:mb-0">
