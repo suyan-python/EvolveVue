@@ -1,11 +1,43 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 
 const FooterBT = () =>
 {
   const location = useLocation();
+  const [isVisible, setIsVisible] = useState(true);
+  const [lastScrollY, setLastScrollY] = useState(0);
 
-  // Determine background color based on the current path
+  // Scroll logic
+  useEffect(() =>
+  {
+    const handleScroll = () =>
+    {
+      const currentScrollY = window.scrollY;
+
+      if (window.innerWidth <= 768)
+      { // ✅ Only mobile
+        if (currentScrollY > lastScrollY)
+        {
+          // scrolling down
+          setIsVisible(false);
+        } else
+        {
+          // scrolling up
+          setIsVisible(true);
+        }
+      } else
+      {
+        setIsVisible(true); // always visible on desktop
+      }
+
+      setLastScrollY(currentScrollY);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, [lastScrollY]);
+
+  // Background color logic
   const getFooterBackgroundColor = () =>
   {
     switch (location.pathname)
@@ -31,7 +63,11 @@ const FooterBT = () =>
 
   return (
     <footer
-      className={`${getFooterBackgroundColor()} text-white py-2 w-full fixed bottom-0 left-0 z-50`}
+      className={`
+        ${getFooterBackgroundColor()} text-white py-2 w-full fixed bottom-0 left-0 z-50
+        transform transition-transform duration-300 ease-in-out
+        ${isVisible ? "translate-y-0" : "translate-y-full"}
+      `}
     >
       <div className="container mx-auto flex flex-col md:flex-row items-center justify-between px-6">
         {/* Company Branding */}
@@ -42,21 +78,18 @@ const FooterBT = () =>
           Evolve Pvt. Ltd.
         </Link>
 
-        {/* Information section */}
+        {/* Info Section */}
         <div className="flex flex-wrap items-center justify-center gap-2 md:gap-4 text-xs md:text-sm">
-          {/* Business Type */}
-          <div className=" flex flex-col items-center animate-pulse">
+          <div className="flex flex-col items-center animate-pulse">
             <span className="font-semibold">Industry: </span>
             <span className="text-green-400">Outsourcing Services</span>
           </div>
 
-          {/* Location */}
           <div className="flex flex-col items-center animate-pulse">
             <span className="font-semibold">Location:</span>
             <span className="text-green-400">Balkumari, Lalitpur, Nepal</span>
           </div>
 
-          {/* Contact Number */}
           <div className="flex flex-col items-center animate-pulse">
             <span className="font-semibold">Contact:</span>
             <a href="tel:+9779851174646" className="text-green-400">
@@ -64,11 +97,10 @@ const FooterBT = () =>
             </a>
           </div>
 
-          {/* Email */}
           <div className="flex flex-col items-center animate-pulse">
             <span className="font-semibold">Email:</span>
             <a
-              href="mailto:vudeviservices@gmail.com"
+              href="mailto:info@vudeviservices.com"
               className="text-green-400"
             >
               info@vudeviservices.com
