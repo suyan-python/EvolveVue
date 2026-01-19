@@ -34,40 +34,45 @@ const clericalLeads = [
 // ✅ Optimized Profile Card
 const ProfileCard = React.memo(({ person }) => (
   <div
-    className="relative rounded-3xl shadow-md overflow-hidden
-               w-72 md:w-80 h-[400px] flex flex-col items-center
-               border border-gray-700 hover:border-indigo-400/40 
-               transition duration-300"
+    className="relative group rounded-2xl overflow-hidden
+               w-72 md:w-80 h-[420px] flex flex-col items-center
+               bg-[#111] border border-white/10 hover:border-yellow-500/50 
+               transition-all duration-500 shadow-2xl"
   >
+    {/* Image with subtle zoom on hover */}
     <img
       src={person.image}
       alt={person.name}
       loading="lazy"
-      decoding="async"
-      className="w-full h-full object-cover bg-white"
+      className="w-full h-full object-cover grayscale-[30%] group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700"
     />
 
-    {/* Overlay */}
-    <div className="absolute bottom-0 inset-x-0 bg-black/50 p-3 backdrop-blur-sm">
-      <h3 className="text-lg font-semibold text-white text-center truncate">
+    {/* Elegant Content Overlay */}
+    <div className="absolute bottom-0 inset-x-0 bg-gradient-to-t from-black via-black/80 to-transparent p-6 translate-y-2 group-hover:translate-y-0 transition-transform duration-500">
+      <div className="w-12 h-1 bg-yellow-500 mb-3 rounded-full"></div> {/* Accent Line */}
+      <h3 className="text-xl font-bold text-white tracking-wide">
         {person.name}
       </h3>
-      <p className="text-sm text-gray-300 text-center italic">
+      <p className="text-[#9cee69] text-sm font-semibold uppercase tracking-widest mt-1">
         {person.role}
       </p>
+
+      {/* Optional: Add a small bio or LinkedIn icon for authenticity */}
+      <div className="mt-4 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+        <span className="text-gray-400 text-xs italic">Verified Medical Expert</span>
+      </div>
     </div>
   </div>
 ));
 
 
 // ✅ Smooth Slider (only animates 3 cards at a time)
-const StackedSlider = ({ title, people, color }) =>
+const StackedSlider = ({ title, people }) =>
 {
   const [currentIndex, setCurrentIndex] = useState(0);
 
   const nextCard = () => setCurrentIndex((prev) => (prev + 1) % people.length);
-  const prevCard = () =>
-    setCurrentIndex((prev) => (prev - 1 + people.length) % people.length);
+  const prevCard = () => setCurrentIndex((prev) => (prev - 1 + people.length) % people.length);
 
   const cards = useMemo(() =>
   {
@@ -77,37 +82,30 @@ const StackedSlider = ({ title, people, color }) =>
       const isNext = index === (currentIndex + 1) % people.length;
       const isPrev = index === (currentIndex - 1 + people.length) % people.length;
 
+      // Professional focus-based positioning
       let x = 0;
-      let scale = 0.9;
-      let opacity = 0.5;
+      let scale = 0.8;
+      let opacity = 0;
       let zIndex = 0;
+      let rotate = 0;
 
       if (isActive)
       {
-        x = 0;
-        scale = 1;
-        opacity = 1;
-        zIndex = 3;
+        x = 0; scale = 1; opacity = 1; zIndex = 10;
       } else if (isNext)
       {
-        x = 80;
-        scale = 0.9;
-        opacity = 0.7;
-        zIndex = 2;
+        x = 160; scale = 0.85; opacity = 0.4; zIndex = 5; rotate = 5;
       } else if (isPrev)
       {
-        x = -80;
-        scale = 0.9;
-        opacity = 0.7;
-        zIndex = 2;
+        x = -160; scale = 0.85; opacity = 0.4; zIndex = 5; rotate = -5;
       }
 
       return (
         <motion.div
           key={person.name}
-          className="absolute w-full h-full flex items-center justify-center will-change-transform"
-          animate={{ x, scale, opacity, zIndex }}
-          transition={{ duration: 0.45, ease: "easeOut" }}
+          className="absolute w-full h-full flex items-center justify-center"
+          animate={{ x, scale, opacity, zIndex, rotate }}
+          transition={{ duration: 0.6, ease: [0.23, 1, 0.32, 1] }}
         >
           <ProfileCard person={person} />
         </motion.div>
@@ -116,27 +114,36 @@ const StackedSlider = ({ title, people, color }) =>
   }, [currentIndex, people]);
 
   return (
-    <div className="relative flex flex-col items-center bg-black/30 backdrop-blur-md p-6 rounded-2xl border border-gray-700">
-      <h2 className={`text-xl font-bold mb-4 ${color}`}>{title}</h2>
-
-      {/* Card Stack */}
-      <div className="relative w-[280px] h-[400px] md:w-[320px] md:h-[420px]">
+    <div className="relative flex flex-col items-center py-12 px-4">
+      {/* Card Stack Area */}
+      <div className="relative w-full max-w-[320px] h-[450px] md:max-w-[400px]">
         {cards}
       </div>
 
-      {/* Controls */}
-      <div className="flex gap-6 mt-6">
+      {/* Modern Navigation Controls */}
+      <div className="flex items-center gap-10 mt-12">
         <button
           onClick={prevCard}
-          className="p-2 rounded-full bg-white/10 hover:bg-white/20 transition"
+          className="group p-4 rounded-full border border-yellow-500/30 hover:border-yellow-500 transition-all"
         >
-          <ChevronLeft className="text-white w-5 h-5" />
+          <ChevronLeft className="text-yellow-500 group-hover:-translate-x-1 transition-transform" />
         </button>
+
+        {/* Pagination Dots */}
+        <div className="flex gap-2">
+          {people.map((_, i) => (
+            <div
+              key={i}
+              className={`h-2 rounded-full transition-all duration-300 ${i === currentIndex ? "w-8 bg-[#9cee69]" : "w-2 bg-gray-700"}`}
+            />
+          ))}
+        </div>
+
         <button
           onClick={nextCard}
-          className="p-2 rounded-full bg-white/10 hover:bg-white/20 transition"
+          className="group p-4 rounded-full border border-yellow-500/30 hover:border-yellow-500 transition-all"
         >
-          <ChevronRight className="text-white w-5 h-5" />
+          <ChevronRight className="text-yellow-500 group-hover:translate-x-1 transition-transform" />
         </button>
       </div>
     </div>
@@ -148,31 +155,76 @@ const StackedSlider = ({ title, people, color }) =>
 export default function TeamHierarchy()
 {
   return (
-    <section className="relative px-6 py-20 bg-gradient-to-br from-slate-900 via-black to-gray-900 overflow-hidden">
-      {/* Glow Effects (lighter blur for perf) */}
-      <div className="absolute -top-20 -left-20 w-[220px] h-[220px] bg-purple-600/20 rounded-full blur-[60px]"></div>
-      <div className="absolute bottom-0 right-0 w-[220px] h-[220px] bg-green-500/15 rounded-full blur-[60px]"></div>
+    <section className="relative px-6 py-32 bg-[#0a0a0a] overflow-hidden">
+      {/* --- Strategic Branding Accents --- */}
+      {/* Primary Brand Glow (Yellow) */}
+      {/* <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-[800px] h-[300px] bg-yellow-600/10 rounded-full blur-[120px] pointer-events-none"></div> */}
 
-      <div className="relative z-10">
-        {/* Header */}
-        <div className="text-center max-w-2xl mx-auto my-8">
-          <h2 className="text-4xl md:text-5xl font-semibold bg-gradient-to-r from-indigo-400 via-purple-500 to-green-400 bg-clip-text text-transparent mb-4">
-            Our Team
+      {/* Secondary Brand Glow (Lime Green) */}
+      {/* <div className="absolute bottom-0 right-0 w-[400px] h-[400px] bg-[#9cee69]/5 rounded-full blur-[100px] pointer-events-none"></div> */}
+
+      {/* Subtle Data Grid Pattern */}
+      <div className="absolute inset-0 opacity-[0.03] pointer-events-none"
+        style={{ backgroundImage: `url("data:image/svg+xml,%3Csvg width='30' height='30' viewBox='0 0 30 30' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M30 0H0V30' stroke='white' stroke-width='0.5'/%3E%3C/svg%3E")` }}>
+      </div>
+
+      <div className="relative z-10 max-w-7xl mx-auto">
+
+        {/* --- Section Header --- */}
+        <div className="text-center max-w-3xl mx-auto mb-24">
+          <h2 className="text-4xl md:text-6xl font-bold text-white mb-6">
+            Leadership <span className="text-yellow-500">&</span> Expertise
           </h2>
-          <p className="text-gray-300 leading-relaxed">
-            Dedicated professionals working together to ensure excellence in both clinical and clerical operations.
+          <div className="w-24 h-1.5 bg-[#9cee69] mx-auto mb-8 rounded-full"></div> {/* Secondary color accent */}
+          <p className="text-gray-400 text-lg md:text-xl leading-relaxed">
+            At Evolve Vue, our strength lies in our structured approach. We combine
+            clinical precision with clerical efficiency to deliver world-class BPO solutions.
           </p>
         </div>
 
-        {/* Chief Lead */}
-        <div className="flex justify-center mb-16">
-          <ProfileCard person={teamLead} />
+        {/* --- Top Level: Chief Lead --- */}
+        <div className="flex flex-col items-center mb-32">
+          <span className="text-yellow-500 font-bold tracking-[0.3em] uppercase text-sm mb-8">
+            Executive Leadership
+          </span>
+          <div className="p-2 border-2 border-yellow-500/20 rounded-[2.5rem] hover:border-yellow-500/50 transition-colors duration-500">
+            <ProfileCard person={teamLead} />
+          </div>
         </div>
 
-        {/* Sliders */}
-        <div className="flex flex-col lg:flex-row gap-10 justify-center">
-          <StackedSlider title="Clinical Section" people={clinicalLeads} color="text-indigo-400" />
-          <StackedSlider title="Clerical Section" people={clericalLeads} color="text-green-400" />
+        {/* --- Department Sliders: Large Gaps for Clarity --- */}
+        {/* Title with Brand Accent */}
+        <div className="text-center mb-12">
+          <h2 className="text-3xl md:text-5xl font-bold text-white">
+            Our <span className="text-yellow-500">Experts</span>
+          </h2>
+          <p className="text-gray-400 mt-2">The pillars of Evolve Vue excellence</p>
+        </div>
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 xl:gap-32 items-start">
+          {/* Clinical Section - Yellow Focus */}
+          <div className="flex flex-col items-center">
+            <div className="mb-4 px-6 py-2 bg-yellow-500/10 border border-yellow-500/20 rounded-full">
+              <span className="text-yellow-500 font-bold text-sm tracking-widest uppercase">Clinical Division</span>
+            </div>
+            <StackedSlider
+              title="Medical Records Experts"
+              people={clinicalLeads}
+              color="text-white"
+            />
+          </div>
+
+          {/* Clerical Section - Lime Focus */}
+          <div className="flex flex-col items-center">
+            <div className="mb-4 px-6 py-2 bg-[#9cee69]/10 border border-[#9cee69]/20 rounded-full">
+              <span className="text-[#9cee69] font-bold text-sm tracking-widest uppercase">Clerical Operations</span>
+            </div>
+            <StackedSlider
+              title="Operational Managers"
+              people={clericalLeads}
+              color="text-white"
+            />
+          </div>
+
         </div>
       </div>
     </section>

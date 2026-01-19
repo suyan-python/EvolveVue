@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
+import { MapPin, Phone, Mail, Activity } from "lucide-react"; // Professional icons
+import Logo from "../assets/logo/hori.png"
 
 const FooterBT = () =>
 {
@@ -7,29 +9,19 @@ const FooterBT = () =>
   const [isVisible, setIsVisible] = useState(true);
   const [lastScrollY, setLastScrollY] = useState(0);
 
-  // Scroll logic
   useEffect(() =>
   {
     const handleScroll = () =>
     {
       const currentScrollY = window.scrollY;
-
-      if (window.innerWidth <= 768)
-      { // ✅ Only mobile
-        if (currentScrollY > lastScrollY)
-        {
-          // scrolling down
-          setIsVisible(false);
-        } else
-        {
-          // scrolling up
-          setIsVisible(true);
-        }
+      // Professional behavior: Hide on scroll down, show on scroll up
+      if (currentScrollY > lastScrollY && currentScrollY > 100)
+      {
+        setIsVisible(false);
       } else
       {
-        setIsVisible(true); // always visible on desktop
+        setIsVisible(true);
       }
-
       setLastScrollY(currentScrollY);
     };
 
@@ -37,75 +29,73 @@ const FooterBT = () =>
     return () => window.removeEventListener("scroll", handleScroll);
   }, [lastScrollY]);
 
-  // Background color logic
-  const getFooterBackgroundColor = () =>
+  // Unified Background Logic for Corporate Consistency
+  const getFooterStyles = () =>
   {
-    switch (location.pathname)
-    {
-      case "/":
-        return "bg-animate5";
-      case "/process":
-        return "bg-black";
-      case "/farming":
-        return "bg-prim";
-      case "/sustainability":
-        return "bg-pink-700";
-      case "/contact":
-        return "bg-gray-800";
-      case "/order":
-        return "bg-orange-700";
-      case "/inaya":
-        return "bg-amber-900";
-      default:
-        return "bg-gray-800";
-    }
+    return "bg-[#0a0a0b]/90 backdrop-blur-md border-t border-white/10";
   };
 
   return (
     <footer
       className={`
-        ${getFooterBackgroundColor()} text-white py-2 w-full fixed bottom-0 left-0 z-50
-        transform transition-transform duration-300 ease-in-out
-        ${isVisible ? "translate-y-0" : "translate-y-full"}
+        ${getFooterStyles()} hidden md:block text-white py-3 w-full fixed bottom-0 left-0 z-50
+        transform transition-all duration-500 ease-in-out
+        ${isVisible ? "translate-y-0 opacity-100" : "translate-y-full opacity-0"}
       `}
     >
-      <div className="container mx-auto flex flex-col md:flex-row items-center justify-between px-6">
-        {/* Company Branding */}
-        <Link
-          to="/"
-          className="header text-sm md:text-lg font-bold hover:text-yellow-600 transition duration-300"
-        >
-          Evolve Pvt. Ltd.
-        </Link>
+      <div className="max-w-7xl mx-auto flex items-center justify-between px-8">
 
-        {/* Info Section */}
-        <div className="flex flex-wrap items-center justify-center gap-2 md:gap-4 text-xs md:text-sm">
-          <div className="flex flex-col items-center animate-pulse">
-            <span className="font-semibold">Industry: </span>
-            <span className="text-green-400">Outsourcing Services</span>
+        {/* Brand Side */}
+        <div className="flex items-center gap-6">
+          <Link
+            to="/"
+            className="text-sm font-black tracking-[0.2em] uppercase hover:text-yellow-500 transition-colors duration-300"
+          >
+            <img src={Logo} alt="Evolve Vue" className="inline-block w-32 " />
+          </Link>
+
+          <div className="h-4 w-[1px] bg-white/20"></div> {/* Separator */}
+
+
+        </div>
+
+        {/* Professional Contact Grid */}
+        <div className="flex items-center gap-8">
+
+          {/* Location */}
+          <div className="flex items-center gap-3 group">
+            <MapPin size={16} className="text-yellow-500 group-hover:scale-110 transition-transform" />
+            <div className="flex flex-col">
+              <span className="text-[9px] text-gray-500 font-bold uppercase tracking-tighter">Office</span>
+              <span className="text-[11px] font-medium text-gray-200">Lalitpur, Nepal</span>
+            </div>
           </div>
 
-          <div className="flex flex-col items-center animate-pulse">
-            <span className="font-semibold">Location:</span>
-            <span className="text-green-400">Balkumari, Lalitpur, Nepal</span>
+          {/* Phone */}
+          <a href="tel:+9779851174646" className="flex items-center gap-3 group">
+            <Phone size={16} className="text-yellow-500 group-hover:scale-110 transition-transform" />
+            <div className="flex flex-col">
+              <span className="text-[9px] text-gray-500 font-bold uppercase tracking-tighter">Direct</span>
+              <span className="text-[11px] font-medium text-gray-200">+977 9851174646</span>
+            </div>
+          </a>
+
+          {/* Email */}
+          <a href="mailto:evolvevue25@gmail.com" className="flex items-center gap-3 group">
+            <Mail size={16} className="text-yellow-500 group-hover:scale-110 transition-transform" />
+            <div className="flex flex-col">
+              <span className="text-[9px] text-gray-500 font-bold uppercase tracking-tighter">Support</span>
+              <span className="text-[11px] font-medium text-gray-200">evolvevue25@gmail.com</span>
+            </div>
+          </a>
+
+          {/* Secondary Action: Timezone / Availability */}
+          <div className="ml-4 px-4 py-1.5 bg-[#9cee69]/10 border border-[#9cee69]/20 rounded-lg">
+            <span className="text-[#9cee69] text-[10px] font-black uppercase tracking-widest">
+              24/7 Global Support
+            </span>
           </div>
 
-          <div className="flex flex-col items-center animate-pulse">
-            <span className="font-semibold">Contact:</span>
-            <a href="tel:+9779851174646" className="text-green-400">
-              +977 9851174646
-            </a>
-          </div>
-
-          <div className="flex flex-col items-center animate-pulse">
-            <span className="font-semibold">Email:</span>
-            <a
-              href="mailto:info@vudeviservices.com"
-              className="text-green-400"
-            >
-              info@vudeviservices.com
-            </a>
-          </div>
         </div>
       </div>
     </footer>

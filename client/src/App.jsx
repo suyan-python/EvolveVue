@@ -1,13 +1,11 @@
 import React from "react";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route, useLocation } from "react-router-dom";
+
 import Home from "./pages/Home";
 import AboutUs from "./pages/AboutUs";
 import Navbar from "./constant/Navbar";
 import JobApplicationForm from "./pages/JobApplicationForm";
 import ScrollToTop from "./ScrollToTop";
-
-import "./animation.css";
-import "./index.css"
 import Contact from "./pages/Contact";
 import FooterBT from "./constant/FooterBt";
 import Services from "./pages/Services";
@@ -16,22 +14,43 @@ import WholeTeam from "./pages/WholeTeam";
 import DocInfo from "./bio/DocInfo";
 import TeamFun from "./pages/TeamFun";
 import BackgroundAnimation from "./components/BackgroundAnimation";
+
 import AdminDashboard from "../admin/AdminDashboard";
 import AdminLogin from "../admin/AdminLogin";
 
+import "./animation.css";
+import "./index.css";
+import MobileNav from "./constant/Mobilenav";
+
+function LayoutWrapper({ children })
+{
+  const location = useLocation();
+
+  const isAdminRoute =
+    location.pathname === "/admin" ||
+    location.pathname === "/admin/login";
+
+  return (
+    <>
+      {!isAdminRoute && <Navbar />}
+      {children}
+      {!isAdminRoute && <FooterBT />}
+      {!isAdminRoute && <Footer />}
+      {!isAdminRoute && <MobileNav />}
+    </>
+  );
+}
 
 function App()
 {
   return (
-    <div>
-      <BackgroundAnimation />
-      <Router>
-        <ScrollToTop />
-        <Navbar />
+    <Router>
+      <ScrollToTop />
+      {/* <BackgroundAnimation /> */}
+
+      <LayoutWrapper>
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/admin" element={<AdminDashboard />} />
-          <Route path="/admin/login" element={<AdminLogin />} />
           <Route path="/about" element={<AboutUs />} />
           <Route path="/services" element={<Services />} />
           <Route path="/contact" element={<Contact />} />
@@ -39,11 +58,13 @@ function App()
           <Route path="/team" element={<WholeTeam />} />
           <Route path="/team/:doctorId" element={<DocInfo />} />
           <Route path="/teamfun" element={<TeamFun />} />
+
+          {/* ADMIN ROUTES */}
+          <Route path="/admin/login" element={<AdminLogin />} />
+          <Route path="/admin" element={<AdminDashboard />} />
         </Routes>
-        <FooterBT />
-        <Footer />
-      </Router>
-    </div>
+      </LayoutWrapper>
+    </Router>
   );
 }
 
