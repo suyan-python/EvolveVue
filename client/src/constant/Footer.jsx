@@ -23,13 +23,13 @@ function Footer()
               Precision-driven medical documentation and BPO solutions.
               Bridging the gap between clinical excellence and operational efficiency since 2025.
             </p>
-            <div className="flex gap-4">
+            {/* <div className="flex gap-4">
               {[FaFacebookF, FaLinkedinIn, FaTwitter].map((Icon, i) => (
                 <a key={i} href="#" className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center text-yellow-500 hover:bg-yellow-500 hover:text-black transition-all duration-300">
                   <Icon size={16} />
                 </a>
               ))}
-            </div>
+            </div> */}
           </div>
 
           {/* Column 2: Quick Navigation */}

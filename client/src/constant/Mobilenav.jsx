@@ -1,6 +1,6 @@
 import React from "react";
 import { Link, useLocation } from "react-router-dom";
-import { Home, Briefcase, Users, Phone, LayoutDashboard } from "lucide-react";
+import { Home, Briefcase, Users, Phone, LayoutDashboard, Info } from "lucide-react";
 
 const MobileNav = () =>
 {
@@ -10,7 +10,7 @@ const MobileNav = () =>
         { label: "Home", path: "/", icon: <Home size={22} /> },
         { label: "Services", path: "/services", icon: <Briefcase size={22} /> },
         { label: "Careers", path: "/application", icon: <Users size={22} /> },
-        { label: "About", path: "/about", icon: <Phone size={22} /> },
+        { label: "About", path: "/about", icon: <Info size={22} /> },
         { label: "Contact", path: "/contact", icon: <Phone size={22} /> },
 
     ];
