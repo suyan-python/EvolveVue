@@ -1,6 +1,7 @@
 // src/pages/TeamHierarchy.jsx
 import React, { useState, useMemo } from "react";
-import { motion } from "framer-motion";
+import { motion, useReducedMotion } from "framer-motion";
+
 import { ChevronLeft, ChevronRight } from "lucide-react";
 
 // Optimized webp assets (make sure they’re under ~200kb each)
@@ -44,8 +45,16 @@ const ProfileCard = React.memo(({ person }) => (
       src={person.image}
       alt={person.name}
       loading="lazy"
-      className="w-full h-full object-cover grayscale-[30%] group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700"
+      decoding="async"
+      width="320"
+      height="420"
+      className="w-full h-full object-cover
+             grayscale-[30%]
+             group-hover:grayscale-0
+             group-hover:scale-105
+             transition-all duration-700"
     />
+
 
     {/* Elegant Content Overlay */}
     <div className="absolute bottom-0 inset-x-0 bg-gradient-to-t from-black via-black/80 to-transparent p-6 translate-y-2 group-hover:translate-y-0 transition-transform duration-500">
@@ -69,7 +78,9 @@ const ProfileCard = React.memo(({ person }) => (
 // ✅ Smooth Slider (only animates 3 cards at a time)
 const StackedSlider = ({ title, people }) =>
 {
+
   const [currentIndex, setCurrentIndex] = useState(0);
+  const reduceMotion = useReducedMotion();
 
   const nextCard = () => setCurrentIndex((prev) => (prev + 1) % people.length);
   const prevCard = () => setCurrentIndex((prev) => (prev - 1 + people.length) % people.length);
@@ -104,9 +115,15 @@ const StackedSlider = ({ title, people }) =>
         <motion.div
           key={person.name}
           className="absolute w-full h-full flex items-center justify-center"
+          initial={false}
           animate={{ x, scale, opacity, zIndex, rotate }}
-          transition={{ duration: 0.6, ease: [0.23, 1, 0.32, 1] }}
+          transition={{
+            duration: reduceMotion ? 0 : 0.6,
+            ease: [0.23, 1, 0.32, 1],
+          }}
+
         >
+
           <ProfileCard person={person} />
         </motion.div>
       );
@@ -156,13 +173,6 @@ export default function TeamHierarchy()
 {
   return (
     <section className="relative px-6 py-32 bg-[#0a0a0a] overflow-hidden">
-      {/* --- Strategic Branding Accents --- */}
-      {/* Primary Brand Glow (Yellow) */}
-      {/* <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-[800px] h-[300px] bg-yellow-600/10 rounded-full blur-[120px] pointer-events-none"></div> */}
-
-      {/* Secondary Brand Glow (Lime Green) */}
-      {/* <div className="absolute bottom-0 right-0 w-[400px] h-[400px] bg-[#9cee69]/5 rounded-full blur-[100px] pointer-events-none"></div> */}
-
       {/* Subtle Data Grid Pattern */}
       <div className="absolute inset-0 opacity-[0.03] pointer-events-none"
         style={{ backgroundImage: `url("data:image/svg+xml,%3Csvg width='30' height='30' viewBox='0 0 30 30' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M30 0H0V30' stroke='white' stroke-width='0.5'/%3E%3C/svg%3E")` }}>
