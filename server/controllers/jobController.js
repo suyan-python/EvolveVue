@@ -43,3 +43,26 @@ export const getApplications = async (req, res) => {
     res.status(500).json({ error: "Failed to fetch applications" });
   }
 };
+
+export const deleteApplication = async (req, res) => {
+  try {
+    const app = await JobApplication.findById(req.params.id);
+
+    if (!app) {
+      return res.status(404).json({ error: "Application not found" });
+    }
+
+    // Optional: delete resume from Cloudinary
+    if (app.resumePublicId) {
+      await cloudinary.uploader.destroy(app.resumePublicId, {
+        resource_type: "raw",
+      });
+    }
+
+    await app.deleteOne();
+    res.json({ success: true });
+  } catch (err) {
+    console.error(err);
+    res.status(500).json({ error: "Failed to delete application" });
+  }
+};
