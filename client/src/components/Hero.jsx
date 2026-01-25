@@ -25,7 +25,7 @@ function Hero()
     <section
       ref={heroRef}
       className={`relative flex items-center justify-center min-h-screen px-6 py-32 overflow-hidden
-      bg-[#0a0a0a] text-white transition-all duration-1000 
+ text-white transition-all duration-1000 
       ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"}`}
     >
       {/* --- Strategic Color Accents --- */}

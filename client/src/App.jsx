@@ -21,6 +21,7 @@ import AdminLogin from "../admin/AdminLogin";
 import "./animation.css";
 import "./index.css";
 import MobileNav from "./constant/Mobilenav";
+import Job from "./pages/Job";
 
 function LayoutWrapper({ children })
 {
@@ -54,7 +55,10 @@ function App()
           <Route path="/about" element={<AboutUs />} />
           <Route path="/services" element={<Services />} />
           <Route path="/contact" element={<Contact />} />
-          <Route path="/application" element={<JobApplicationForm />} />
+
+          <Route path="/application" element={<Job />} />
+          <Route path="/application/apply/:jobId" element={<JobApplicationForm />} />
+
           <Route path="/team" element={<WholeTeam />} />
           <Route path="/team/:doctorId" element={<DocInfo />} />
           <Route path="/teamfun" element={<TeamFun />} />

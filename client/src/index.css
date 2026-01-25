@@ -31,7 +31,7 @@ body {
   ); */
   /* url("../src/assets/background/back.jpeg");  */
 
-  background-color: #191818;
+  background-color: #0b0e14;
 
   background-size: cover;
   background-position: center;
@@ -47,6 +47,10 @@ body {
   font-family: "Inter", sans-serif;
 }
 
-themeColor {
-  background-color: #133a41;
+.yellowText {
+  color: #d6b25e;
+}
+
+.yellow {
+  background-color: #d6b25e;
 }
