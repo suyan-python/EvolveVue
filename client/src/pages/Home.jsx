@@ -11,7 +11,6 @@ export default function Home()
       <Hero />
       <TeamHierarchy />
       <Services />
-      <MeetFounder />
       <NewsUpdates />
     </div>
   );

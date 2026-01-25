@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useRef } from "react";
 import { NavLink } from "react-router-dom";
+import { motion } from "framer-motion";
 import Logo from "../assets/logo/evolve.png";
 
 function Hero()
@@ -24,87 +25,115 @@ function Hero()
   return (
     <section
       ref={heroRef}
-      className={`relative flex items-center justify-center min-h-screen px-6 py-32 overflow-hidden
- text-white transition-all duration-1000 
-      ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"}`}
+      className="relative min-h-screen w-full flex items-center justify-center ] px-6 py-20 overflow-hidden"
     >
-      {/* --- Strategic Color Accents --- */}
-      {/* Primary Brand Glow (Yellow) */}
-      <div className="absolute top-[-10%] left-[-5%] w-[500px] h-[500px] bg-yellow-600/10 rounded-full blur-[120px] pointer-events-none"></div>
+      {/* --- BACKGROUND ARCHITECTURE --- */}
 
-      {/* Secondary Success Glow (Lime Green) */}
-      <div className="absolute bottom-[-10%] right-[-5%] w-[500px] h-[500px] bg-[#9cee69]/5 rounded-full blur-[120px] pointer-events-none"></div>
+      {/* 1. Main Brand Spotlight */}
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full bg-[radial-gradient(circle_at_center,_rgba(214,178,94,0.08)_0%,_transparent_70%)] pointer-events-none"></div>
 
-      {/* Subtle Data-Grid (The "BPO" Texture) */}
-      <div className="absolute inset-0 opacity-[0.03] pointer-events-none"
-        style={{ backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M54 48L54 60L52 60L52 48L40 48L40 46L52 46L52 34L54 34L54 46L66 46L66 48L54 48Z' fill='%23ffffff' fill-opacity='1'/%3E%3C/svg%3E")` }}>
-      </div>
+      {/* 2. Professional Grid Texture */}
+      <div
+        className="absolute inset-0 opacity-[0.03] pointer-events-none"
+        style={{ backgroundImage: `url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 0h40v40H0z' fill='none'/%3E%3Cpath d='M0 0h1v40H0zM0 0h40v1H0z' fill='%23ffffff'/%3E%3C/svg%3E")` }}
+      ></div>
 
-      {/* --- Main Content Layout --- */}
-      <div className="relative z-10 flex flex-col items-center text-center max-w-6xl mx-auto">
-        {/* Animated Badge: Established 2025 */}
-        {/* <div className="mb-8 px-4 py-1.5 rounded-full border border-white/10 bg-white/5 backdrop-blur-md flex items-center gap-2">
-          <span className="relative flex h-2 w-2">
-            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#9cee69] opacity-75"></span>
-            <span className="relative inline-flex rounded-full h-2 w-2 bg-[#9cee69]"></span>
+      {/* --- CONTENT LAYER --- */}
+      <div className="relative z-10 max-w-6xl mx-auto flex flex-col items-center text-center">
+
+        {/* Trusted Badge */}
+        <motion.div
+          initial={{ opacity: 0, y: -20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+          className="mb-8 flex items-center gap-3 px-5 py-2 rounded-full border border-white/5 bg-white/[0.02] "
+        >
+          <span className="w-1.5 h-1.5 rounded-full bg-[#d6b25e] shadow-[0_0_10px_#d6b25e]"></span>
+          <span className="text-[10px] font-bold tracking-[0.4em] uppercase text-gray-400">
+            Global Medical Standards <span className="text-[#d6b25e] mx-2">|</span> ISO & HIPAA Certified
           </span>
-          <span className="text-xs font-bold tracking-widest uppercase text-gray-400">
-            Trusted Medical BPO <span className="text-yellow-500 text-sm ml-1">•</span> Est. 2025
-          </span>
-        </div> */}
+        </motion.div>
 
-        {/* Logo Section */}
-        <div className="mb-10 transition-transform duration-700 hover:scale-105">
+        {/* Logo - Elegant & Grounded */}
+        <motion.div
+          initial={{ opacity: 0, scale: 0.95 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 1 }}
+          className="mb-12"
+        >
           <img
             src={Logo}
-            alt="Evolve Vue Pvt. Ltd. Logo"
-            className="w-48 sm:w-60 lg:w-72 drop-shadow-[0_0_25px_rgba(234,179,8,0.25)]"
+            alt="Evolve Vue Logo"
+            className="w-56 md:w-72 drop-shadow-[0_20px_50px_rgba(214,178,94,0.15)]"
           />
-        </div>
+        </motion.div>
 
-        {/* Professional Dual-Color Headline */}
-        <h1 className="text-4xl sm:text-6xl lg:text-8xl font-extrabold tracking-tighter leading-[1.1]">
-          Precise <span className="text-yellow-500">Documentation.</span><br />
-          Seamless <span className="text-[#9cee69]">Outsourcing.</span>
-        </h1>
+        {/* Headline - Bold & Authoritative */}
+        <motion.h1
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.2 }}
+          className="text-5xl md:text-8xl font-bold tracking-tighter leading-[0.95] text-white"
+        >
+          Precision <span className="text-[#d6b25e]">Data.</span> <br />
+          Absolute <span className="text-gray-500">Integrity.</span>
+        </motion.h1>
 
-        {/* Professional Sub-description */}
-        <p className="mt-8 text-gray-400 text-lg sm:text-2xl max-w-3xl leading-relaxed">
-          <span className="text-white font-medium">Evolve Vue</span> simplifies healthcare operations with
-          high-fidelity medical records management and
-          <span className="text-[#9cee69] font-semibold"> global compliance standards</span>.
-        </p>
+        {/* Description - Refined Body Text */}
+        <motion.p
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 1, delay: 0.4 }}
+          className="mt-10 text-gray-400 text-lg md:text-xl max-w-2xl leading-relaxed font-medium"
+        >
+          Evolve Vue optimizes healthcare ecosystems through <span className="text-white">secure clinical documentation</span> and
+          unmatched administrative accuracy.
+        </motion.p>
 
-        {/* Professional Call-to-Action (CTA) */}
-        <div className="flex flex-col sm:flex-row gap-6 mt-12 w-full sm:w-auto">
-          {/* Primary: The Big Action (Yellow) */}
+        {/* Call to Actions - High Contrast */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.6 }}
+          className="flex flex-col sm:flex-row gap-5 mt-16 w-full sm:w-auto"
+        >
           <NavLink
-            to="/about"
-            className="px-12 py-5 bg-yellow-500 hover:bg-yellow-600 text-black font-black rounded-xl 
-                       transition-all duration-300 shadow-xl shadow-yellow-500/10 flex items-center justify-center gap-3 group"
+            to="/services"
+            className="px-14 py-5 bg-[#d6b25e] text-black font-black text-xs tracking-[0.2em] rounded-full 
+                       hover:bg-white transition-all duration-500 shadow-[0_15px_30px_rgba(214,178,94,0.2)]"
           >
-            OUR SERVICES
-            <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 group-hover:translate-x-1 transition-transform" viewBox="0 0 20 20" fill="currentColor">
-              <path fillRule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clipRule="evenodd" />
-            </svg>
+            VIEW SOLUTIONS
           </NavLink>
 
-          {/* Secondary: Team/Expertise (Lime Border) */}
           <NavLink
             to="/team"
-            className="px-12 py-5 bg-transparent border-2 border-[#9cee69]/40 hover:border-[#9cee69] text-[#9cee69] 
-                       hover:bg-[#9cee69]/5 font-black rounded-xl transition-all duration-300 flex items-center justify-center"
+            className="px-14 py-5 bg-transparent border border-white/10 text-white font-black text-xs tracking-[0.2em] rounded-full 
+                       hover:bg-white hover:text-black transition-all duration-500"
           >
-            MEET THE EXPERTS
+            OUR EXPERTISE
           </NavLink>
-        </div>
+        </motion.div>
 
-        {/* Bottom Trust Indicators (Optional but highly professional) */}
-        <div className="mt-20 pt-10 border-t border-white/5 w-full flex flex-wrap justify-center gap-10 md:gap-20 opacity-50 grayscale hover:grayscale-0 transition-all duration-500">
-          <div className="flex items-center gap-2"><div className="w-2 h-2 rounded-full bg-yellow-500"></div> <span className="font-bold tracking-widest text-sm">ACCURACY</span></div>
-          <div className="flex items-center gap-2"><div className="w-2 h-2 rounded-full bg-[#9cee69]"></div> <span className="font-bold tracking-widest text-sm">HIPAA COMPLIANT</span></div>
-          <div className="flex items-center gap-2"><div className="w-2 h-2 rounded-full bg-yellow-500"></div> <span className="font-bold tracking-widest text-sm">24/7 SUPPORT</span></div>
-        </div>
+        {/* Trust Bar - Styled like a footer of a contract */}
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 0.5 }}
+          transition={{ duration: 1, delay: 1 }}
+          className="mt-24 pt-12 border-t border-white/5 w-full flex flex-wrap justify-center gap-12 md:gap-24"
+        >
+          <div className="group flex flex-col items-center gap-2">
+            <span className="text-[10px] font-black text-[#d6b25e] tracking-widest uppercase">99.9%</span>
+            <span className="text-[9px] font-bold text-gray-500 tracking-[0.2em]">Accuracy Rate</span>
+          </div>
+          <div className="group flex flex-col items-center gap-2">
+            <span className="text-[10px] font-black text-[#d6b25e] tracking-widest uppercase">Secure</span>
+            <span className="text-[9px] font-bold text-gray-500 tracking-[0.2em]">End-to-End Encryption</span>
+          </div>
+          <div className="group flex flex-col items-center gap-2">
+            <span className="text-[10px] font-black text-[#d6b25e] tracking-widest uppercase">Global</span>
+            <span className="text-[9px] font-bold text-gray-500 tracking-[0.2em]">Compliance Standards</span>
+          </div>
+        </motion.div>
       </div>
     </section>
   );

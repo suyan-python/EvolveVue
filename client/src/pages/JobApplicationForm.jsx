@@ -155,10 +155,6 @@ export default function JobApplicationForm()
   return (
     <div className=" min-h-screen flex items-center justify-center px-4 sm:px-6 lg:px-8 py-24 relative overflow-hidden">
 
-      {/* --- Background Branding --- */}
-      <div className="absolute top-0 left-0 w-[400px] h-[400px] bg-yellow-600/5 rounded-full blur-[120px] pointer-events-none"></div>
-      <div className="absolute bottom-0 right-0 w-[400px] h-[400px] bg-[#9cee69]/5 rounded-full blur-[120px] pointer-events-none"></div>
-
       {/* Success Modal - Refined for Corporate Look */}
       {showSuccess && (
         <div className="fixed inset-0 flex items-center justify-center bg-black/80 backdrop-blur-sm z-[100] px-4">
@@ -210,7 +206,7 @@ export default function JobApplicationForm()
           </div>
 
           <div className="mt-20">
-            <div className="p-6 rounded-2xl bg-white/5 border border-white/10 backdrop-blur-sm">
+            <div className="p-6 rounded-md bg-white/5 border border-white/10 ">
               <h4 className="text-[#d6b25e] font-semibold mb-2">Security & Privacy</h4>
               <p className="text-xs text-gray-500 leading-normal">
                 Your data is encrypted and handled according to healthcare compliance standards. We never share your personal information.
@@ -277,7 +273,7 @@ export default function JobApplicationForm()
                     if (file) { setFormData((prev) => ({ ...prev, resume: file })); setResumeName(file.name); }
                   }}
                 />
-                <label htmlFor="resume-upload" className="flex items-center justify-between w-full p-6 border-2 border-dashed border-white/10 rounded-2xl bg-white/5 cursor-pointer hover:border-[#d6b25e]/40 hover:bg-white/10 transition-all group">
+                <label htmlFor="resume-upload" className="flex items-center justify-between w-full p-6 border-2 border-dashed border-white/10 rounded-md bg-white/5 cursor-pointer hover:border-[#d6b25e]/40 hover:bg-white/10 transition-all group">
                   <div className="flex flex-col">
                     <span className="text-gray-300 font-medium">{resumeName ? resumeName : "Click to upload PDF"}</span>
                     <span className="text-xs text-gray-500 mt-1">Maximum file size: 5MB</span>
@@ -295,7 +291,7 @@ export default function JobApplicationForm()
                 <textarea
                   rows="4" value={formData.coverLetter}
                   placeholder="Tell us why you're a great fit..."
-                  className="w-full bg-white/5 border border-white/10 rounded-2xl p-4 text-white focus:border-[#d6b25e] outline-none resize-none transition-all"
+                  className="w-full bg-white/5 border border-white/10 rounded-md p-4 text-white focus:border-[#d6b25e] outline-none resize-none transition-all"
                   onChange={(e) => setFormData((prev) => ({ ...prev, coverLetter: e.target.value }))}
                 ></textarea>
               </div>
@@ -303,7 +299,7 @@ export default function JobApplicationForm()
               {/* Final Action */}
               <button
                 type="submit" disabled={loading}
-                className={`w-full py-5 rounded-2xl text-sm font-bold uppercase tracking-[0.2em] transition-all
+                className={`w-full py-5 rounded-md text-sm font-bold uppercase tracking-[0.2em] transition-all
                 ${loading
                     ? "bg-gray-700 text-gray-400 cursor-not-allowed"
                     : "bg-[#d6b25e] text-black hover:bg-[#c9a84f] shadow-[0_10px_30px_rgba(214,178,94,0.2)] hover:shadow-none hover:translate-y-[2px]"
@@ -329,7 +325,7 @@ export default function JobApplicationForm()
             className="fixed inset-0 z-[150] bg-[#0b0e14] flex flex-col overflow-hidden"
           >
             {/* --- TOP NAVIGATION BAR --- */}
-            <div className="w-full h-16 md:h-20 border-b border-white/5 flex items-center justify-between px-6 md:px-12 bg-[#0b0e14]/80 backdrop-blur-xl sticky top-0 z-[160]">
+            <div className="w-full h-16 md:h-20 border-b border-white/5 flex items-center justify-between px-6 md:px-12 bg-[#0b0e14]/80  sticky top-0 z-[160]">
               <div className="flex items-center gap-3">
                 <div className="w-2 h-2 bg-[#9cee69] rounded-full animate-pulse shadow-[0_0_8px_#9cee69]"></div>
                 <span className="text-[9px] md:text-[10px] font-black text-white uppercase tracking-[0.3em] whitespace-nowrap">

@@ -48,7 +48,7 @@ function Navbar()
 
   const getActiveClass = ({ isActive }) =>
     isActive
-      ? "text-yellow-500 font-bold border-b-2 border-yellow-500 pb-1 transition-all"
+      ? "yellowText font-bold border-b-2 border-yellow-500 pb-1 transition-all"
       : "text-gray-300 hover:text-yellow-500 transition-all duration-300 font-medium";
 
   return (
@@ -75,7 +75,7 @@ function Navbar()
                 to={link.to}
                 className={link.isButton ? "" : ({ isActive }) =>
                   `text-[11px] font-black uppercase tracking-[0.25em] transition-all duration-300 relative group
-              ${isActive ? "text-yellow-500" : "text-gray-400 hover:text-white"}`
+              ${isActive ? "yellowText" : "text-gray-400 hover:text-white"}`
                 }
                 end={!link.isButton}
               >
@@ -127,55 +127,60 @@ function Navbar()
 
       {/* Mobile Menu Overlay - Full Screen Dark Tech Vibe */}
       <div
-        className={`fixed inset-0 z-40 bg-[#0a0a0b] flex flex-col items-center justify-center transition-all duration-700 ease-in-out ${isMenuOpen ? "opacity-100 visible" : "opacity-0 invisible pointer-events-none"
+        className={`fixed inset-0 z-30 bg-[#0b0e14] transition-all duration-700 ease-in-out ${isMenuOpen ? "translate-x-0 opacity-100" : "translate-x-full opacity-0"
           } md:hidden`}
       >
-        {/* Background Glows for Mobile Menu */}
-        <div className="absolute top-[-10%] left-[-10%] w-64 h-64 bg-yellow-500/10 rounded-full blur-[80px]"></div>
-        <div className="absolute bottom-[-10%] right-[-10%] w-64 h-64 bg-[#9cee69]/5 rounded-full blur-[80px]"></div>
+        {/* Reusable Grid Pattern from index.css */}
+        <div className="bg-grid-pattern opacity-[0.03]"></div>
 
-        <div className="flex flex-col items-center gap-12 relative z-10">
-          <p className="text-[10px] font-black text-gray-500 uppercase tracking-[0.5em] mb-4">Directory</p>
+        {/* --- MAIN DIRECTORY --- */}
+        <div className="flex flex-col justify-center h-full px-10 relative z-10">
+          <div className="flex flex-col gap-12">
+            {navLinks.map((link, index) => (
+              <NavLink
+                key={index}
+                to={link.to}
+                onClick={() => toggleMenu(false)}
+                className="group flex items-center gap-6"
+                end={!link.isButton}
+              >
+                {({ isActive }) => (
+                  <>
+                    {/* Indexing */}
+                    <span className={`text-[10px] font-bold ${isActive ? "text-[#d6b25e]" : "text-white/20"}`}>
+                      0{index + 1}
+                    </span>
 
-          {navLinks.map((link, index) => (
-            <NavLink
-              key={index}
-              to={link.to}
-              onClick={() => toggleMenu()}
-              className={({ isActive }) =>
-                `transition-all duration-300 ${isActive
-                  ? "text-yellow-500 text-4xl font-black tracking-tighter"
-                  : "text-gray-400 text-3xl font-bold hover:text-white"
-                }`
-              }
-              end={!link.isButton}
-            >
-              {link.isButton ? (
-                <button className="
-              px-12 py-5
-              rounded-2xl
-              bg-yellow-500
-              text-black
-              font-black text-lg
-              uppercase
-              tracking-widest
-              shadow-xl shadow-yellow-500/20
-              active:scale-95
-            ">
-                  {link.label}
-                </button>
-              ) : (
-                link.label
-              )}
-            </NavLink>
-          ))}
+                    {link.isButton ? (
+                      <button className="w-full py-5 bg-[#d6b25e] text-black font-bold text-sm uppercase tracking-[0.2em] active:scale-95 transition-all">
+                        {link.label}
+                      </button>
+                    ) : (
+                      <div className="flex flex-col">
+                        <span className={`text-4xl tracking-tighter transition-all ${isActive
+                          ? "text-white font-semibold"
+                          : "text-white/40 font-medium group-hover:text-white"
+                          }`}>
+                          {link.label}
+                        </span>
+                        {/* Active Indicator Line */}
+                        <div className={`h-[1px] transition-all duration-700 mt-1 ${isActive ? "w-full bg-[#d6b25e]" : "w-0 bg-white/10 group-hover:w-12"
+                          }`} />
+                      </div>
+                    )}
+                  </>
+                )}
+              </NavLink>
+            ))}
+          </div>
         </div>
 
-        {/* Footer Detail for Mobile Menu */}
-        <div className="absolute bottom-12 flex flex-col items-center gap-2">
-          <div className="flex items-center gap-2">
-            <div className="w-1.5 h-1.5 bg-[#9cee69] rounded-full animate-pulse"></div>
-            <span className="text-[9px] font-black text-gray-500 uppercase tracking-widest">Secure HIPAA Access</span>
+        {/* --- FOOTER: Branding Only --- */}
+        <div className="absolute bottom-12 w-full px-10">
+          <div className="pt-8 border-t border-white/5">
+            <p className="text-[10px] font-black text-gray-700 uppercase tracking-[0.5em]">
+              Evolve Vue Pvt. Ltd.
+            </p>
           </div>
         </div>
       </div>

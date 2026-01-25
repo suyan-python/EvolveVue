@@ -1,10 +1,10 @@
 import React from "react";
 import { motion } from "framer-motion";
 import
-  {
-    FaFileMedical, FaClipboardList, FaKeyboard, FaDatabase,
-    FaChartBar, FaClipboardCheck, FaShieldAlt, FaUserMd
-  } from "react-icons/fa";
+{
+  FaFileMedical, FaClipboardList, FaKeyboard, FaDatabase,
+  FaChartBar, FaClipboardCheck, FaShieldAlt, FaUserMd
+} from "react-icons/fa";
 
 const Services = () =>
 {
@@ -83,7 +83,7 @@ const Services = () =>
             className="text-4xl md:text-6xl font-bold text-white mb-8 tracking-tighter leading-tight"
           >
             Precision-Driven <br />
-            <span className="text-gray-500 italic font-medium font-serif">Healthcare Solutions.</span>
+            <span className="text-gray-500  font-medium ">Healthcare Solutions.</span>
           </motion.h2>
 
           <p className="text-gray-400 text-lg leading-relaxed border-l border-white/10 pl-8">

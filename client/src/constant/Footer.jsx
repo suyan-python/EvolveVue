@@ -1,48 +1,51 @@
-import React from "react";
+import React from 'react';
 import { Link } from "react-router-dom";
-import { FaFacebookF, FaLinkedinIn, FaTwitter, FaArrowUp } from "react-icons/fa";
-import Logo from "../assets/logo/hori.png"
+import { FaArrowUp, FaLinkedinIn, FaEnvelope, FaMapMarkerAlt } from "react-icons/fa";
+import Logo from "../assets/logo/hori.png";
 
 function Footer()
 {
-  // Scroll to top function for better UX
   const scrollToTop = () => window.scrollTo({ top: 0, behavior: "smooth" });
 
   return (
-    <footer className="bg-[#0a0a0b] text-white pt-24 pb-32 w-full relative overflow-hidden border-t border-white/5">
-      {/* Subtle Branding Glows */}
-      <div className="absolute top-0 left-1/4 w-96 h-96 bg-yellow-600/5 rounded-full blur-[120px] pointer-events-none"></div>
+    <footer className="bg-[#0b0e14] text-white pt-24 pb-12 w-full relative overflow-hidden border-t border-white/10">
+      {/* Structural Background Pattern */}
+      <div className="absolute inset-0 opacity-[0.02] pointer-events-none"
+        style={{ backgroundImage: `url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 0h40v40H0z' fill='none'/%3E%3Cpath d='M0 0h1v40H0zM0 0h40v1H0z' fill='%23ffffff'/%3E%3C/svg%3E")` }}>
+      </div>
 
-      <div className="max-w-7xl mx-auto px-6 sm:px-12 relative z-10">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-20">
+      <div className="max-w-7xl mx-auto px-6 relative z-10">
 
-          {/* Column 1: Brand & Vision */}
-          <div className="lg:col-span-1">
-            <img src={Logo} alt="Evolve Vue" className="w-40 mb-8" />
-            <p className="text-gray-400 text-sm leading-relaxed mb-6">
-              Precision-driven medical documentation and BPO solutions.
-              Bridging the gap between clinical excellence and operational efficiency since 2025.
+        {/* --- MAIN GRID --- */}
+        <div className="grid grid-cols-1 md:grid-cols-12 gap-12 lg:gap-16 mb-20">
+
+          {/* Column 1: Institutional Identity (4 Cols) */}
+          <div className="md:col-span-4 lg:col-span-5">
+            <img src={Logo} alt="Evolve Vue" className="w-48 mb-8 opacity-90" />
+            <p className="text-gray-500 text-sm leading-relaxed max-w-sm font-medium">
+              Evolve Vue Private Limited is a specialized BPO institution providing high-fidelity clinical documentation and global administrative support.
             </p>
-            {/* <div className="flex gap-4">
-              {[FaFacebookF, FaLinkedinIn, FaTwitter].map((Icon, i) => (
-                <a key={i} href="#" className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center text-yellow-500 hover:bg-yellow-500 hover:text-black transition-all duration-300">
-                  <Icon size={16} />
-                </a>
-              ))}
-            </div> */}
+            <div className="mt-8 flex gap-4">
+              <a href="#" className="w-10 h-10 border border-white/10 flex items-center justify-center text-gray-500 hover:text-[#d6b25e] hover:border-[#d6b25e] transition-all duration-500">
+                <FaLinkedinIn size={14} />
+              </a>
+              <a href="mailto:evolvevue25@gmail.com" className="w-10 h-10 border border-white/10 flex items-center justify-center text-gray-500 hover:text-[#d6b25e] hover:border-[#d6b25e] transition-all duration-500">
+                <FaEnvelope size={14} />
+              </a>
+            </div>
           </div>
 
-          {/* Column 2: Quick Navigation */}
-          <div>
-            <h4 className="text-sm font-black uppercase tracking-[0.2em] text-yellow-500 mb-8">Navigation</h4>
+          {/* Column 2: Navigation (2 Cols) */}
+          <div className="md:col-span-2 lg:col-span-2">
+            <h4 className="text-[10px] font-black uppercase tracking-[0.4em] text-[#d6b25e] mb-8">Sitemap</h4>
             <ul className="space-y-4">
-              {['Home', 'Services', 'About Us', 'Contact'].map((item) => (
+              {['Home', 'Services', 'About', 'Team', 'Careers'].map((item) => (
                 <li key={item}>
                   <Link
-                    to={`/${item.toLowerCase().replace(' ', '')}`}
-                    className="text-gray-400 hover:text-[#9cee69] text-sm transition-colors flex items-center gap-2 group"
+                    to={`/${item.toLowerCase()}`}
+                    className="text-gray-500 hover:text-white text-xs font-bold uppercase tracking-widest transition-colors flex items-center gap-2 group"
                   >
-                    <span className="w-0 h-[1px] bg-[#9cee69] group-hover:w-4 transition-all"></span>
+                    <div className="w-0 h-[1px] bg-[#d6b25e] group-hover:w-3 transition-all"></div>
                     {item}
                   </Link>
                 </li>
@@ -50,49 +53,59 @@ function Footer()
             </ul>
           </div>
 
-          {/* Column 3: Contact Details */}
-          <div>
-            <h4 className="text-sm font-black uppercase tracking-[0.2em] text-yellow-500 mb-8">Global Support</h4>
-            <ul className="space-y-4 text-sm text-gray-400">
-              <li className="flex flex-col">
-                <span className="text-[10px] uppercase text-gray-600 font-bold tracking-tighter">Email</span>
-                <a href="mailto:evolvevue25@gmail.com" className="hover:text-white transition-colors">evolvevue25@gmail.com</a>
-              </li>
-              <li className="flex flex-col">
-                <span className="text-[10px] uppercase text-gray-600 font-bold tracking-tighter">Contact</span>
-                <a href="tel:+9779851174646" className="hover:text-white transition-colors">+977 9851174646</a>
-              </li>
-              <li className="flex flex-col">
-                <span className="text-[10px] uppercase text-gray-600 font-bold tracking-tighter">Headquarters</span>
-                <span>Balkumari-Gwarko, Lalitpur, Nepal</span>
-              </li>
-            </ul>
+          {/* Column 3: Global Support (3 Cols) */}
+          <div className="md:col-span-3 lg:col-span-2">
+            <h4 className="text-[10px] font-black uppercase tracking-[0.4em] text-[#d6b25e] mb-8">Contact Protocol</h4>
+            <div className="space-y-6">
+              <div className="group cursor-default">
+                <p className="text-[9px] font-black text-gray-600 uppercase tracking-widest mb-1">Direct Line</p>
+                <p className="text-sm text-gray-400 group-hover:text-white transition-colors">+977 9851174646</p>
+              </div>
+              <div className="group cursor-default">
+                <p className="text-[9px] font-black text-gray-600 uppercase tracking-widest mb-1">HQ Location</p>
+                <p className="text-sm text-gray-400 group-hover:text-white transition-colors leading-snug">
+                  Balkumari-Gwarko,<br />Lalitpur, Nepal
+                </p>
+              </div>
+            </div>
           </div>
 
-          {/* Column 4: Newsletter / Trust */}
-          <div className="bg-white/5 p-6 rounded-2xl border border-white/5">
-            <h4 className="text-xs font-black uppercase tracking-widest text-[#9cee69] mb-4">Operations Status</h4>
-            <p className="text-[11px] text-gray-500 mb-4 leading-normal">
-              Our clinical and clerical divisions operate 24/7 to ensure zero-lag documentation delivery.
-            </p>
-            <button
-              onClick={scrollToTop}
-              className="w-full py-3 bg-yellow-500/10 border border-yellow-500/20 text-yellow-500 rounded-xl text-xs font-bold hover:bg-yellow-500 hover:text-black transition-all flex items-center justify-center gap-2"
-            >
-              Back to Top <FaArrowUp size={10} />
-            </button>
+          {/* Column 4: Operational Status (3 Cols) */}
+          <div className="md:col-span-3 lg:col-span-3">
+            <div className="p-8 bg-[#121212] border border-white/5 border-l-2 border-l-[#d6b25e] rounded-sm">
+              <div className="flex items-center gap-2 mb-4">
+                <span className="w-1.5 h-1.5 rounded-full bg-[#d6b25e] animate-pulse"></span>
+                <h4 className="text-[10px] font-black uppercase tracking-widest text-white">System Status</h4>
+              </div>
+              <p className="text-[11px] text-gray-500 mb-6 leading-relaxed">
+                24/7 Clinical & Clerical operations are active. Global data pipelines are secure.
+              </p>
+              <button
+                onClick={scrollToTop}
+                className="group flex items-center gap-3 text-[10px] font-black text-[#d6b25e] uppercase tracking-[0.2em] hover:text-white transition-colors"
+              >
+                Back to <span className="typcn typcn-lock-open-outline"></span> <FaArrowUp size={10} className="group-hover:-translate-y-1 transition-transform" />
+              </button>
+            </div>
           </div>
         </div>
 
-        {/* Bottom Legal Bar */}
-        <div className="pt-8 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-6">
-          <p className="text-gray-600 text-[11px] font-medium tracking-wide">
-            &copy; {new Date().getFullYear()} EVOLVE VUE PRIVATE LIMITED. ALL RIGHTS RESERVED.
-          </p>
-          <div className="flex gap-8 text-[11px] font-bold text-gray-600 tracking-widest uppercase">
-            <span className="hover:text-[#9cee69] cursor-pointer transition-colors">Privacy Policy</span>
-            <span className="hover:text-[#9cee69] cursor-pointer transition-colors">Terms of Service</span>
-            <span className="hover:text-[#9cee69] cursor-pointer transition-colors">HIPAA Compliance</span>
+        {/* --- BOTTOM LEGAL BAR --- */}
+        <div className="pt-12 border-t border-white/5 flex flex-col lg:flex-row justify-between items-center gap-8">
+          <div className="flex flex-col md:flex-row items-center gap-4 md:gap-8">
+            <p className="text-gray-600 text-[10px] font-bold tracking-widest uppercase">
+              © {new Date().getFullYear()} EVOLVE VUE PVT. LTD.
+            </p>
+            <div className="hidden md:block w-[1px] h-3 bg-white/10"></div>
+            <p className="text-gray-700 text-[9px] font-bold tracking-widest uppercase">
+              Clinical Documentation & BPO Specialist
+            </p>
+          </div>
+
+          <div className="flex flex-wrap justify-center gap-8 text-[10px] font-black text-gray-600 tracking-[0.2em] uppercase">
+            <span className="hover:text-[#d6b25e] cursor-pointer transition-colors">Privacy</span>
+            <span className="hover:text-[#d6b25e] cursor-pointer transition-colors">Terms</span>
+            <span className="hover:text-[#d6b25e] cursor-pointer transition-colors">HIPAA Compliance</span>
           </div>
         </div>
       </div>
