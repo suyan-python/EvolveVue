@@ -150,8 +150,6 @@ export default function JobApplicationForm()
   };
 
 
-
-
   return (
     <div className=" min-h-screen flex items-center justify-center px-4 sm:px-6 lg:px-8 py-24 relative overflow-hidden">
 
@@ -180,7 +178,7 @@ export default function JobApplicationForm()
       <div className="min-h-screen w-full bg-[#0B0E14] text-white flex flex-col lg:flex-row overflow-x-hidden">
 
         {/* LEFT SIDE: Branding & Trust (40% Width) */}
-        <div className="w-full lg:w-[40%] bg-gradient-to-b from-[#0B0E14] to-[#050505] p-10 md:p-20 flex flex-col justify-between border-r border-white/5">
+        <div className="w-full lg:w-[40%] p-10 md:p-20 flex flex-col justify-between border-r border-white/5">
           <div>
             <img src={Logo} alt="Logo" className="w-40 mb-12" />
 
@@ -205,15 +203,6 @@ export default function JobApplicationForm()
             </div>
           </div>
 
-          <div className="mt-20">
-            <div className="p-6 rounded-md bg-white/5 border border-white/10 ">
-              <h4 className="text-[#d6b25e] font-semibold mb-2">Security & Privacy</h4>
-              <p className="text-xs text-gray-500 leading-normal">
-                Your data is encrypted and handled according to healthcare compliance standards. We never share your personal information.
-              </p>
-            </div>
-
-          </div>
         </div>
 
         {/* RIGHT SIDE: The Form (60% Width) */}
@@ -468,6 +457,17 @@ export default function JobApplicationForm()
         )}
       </AnimatePresence>
 
+      {/* <div className="mt-20">
+        <div className="p-6 rounded-md bg-white/5 border border-white/10 ">
+          <h4 className="text-[#d6b25e] font-semibold mb-2">Security & Privacy</h4>
+          <p className="text-xs text-gray-500 leading-normal">
+            Your data is encrypted and handled according to healthcare compliance standards. We never share your personal information.
+          </p>
+        </div>
+
+      </div> */}
+
     </div>
+
   );
 }
