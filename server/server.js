@@ -1,13 +1,17 @@
-import express from "express";
-import cors from "cors";
 import dotenv from "dotenv";
+dotenv.config();
+
+import express from "express";
+import { initCloudinary } from "./utils/cloudinary.js";
+import cors from "cors";
 import path from "path";
 import connectDB from "./config/db.js";
 import jobRoutes from "./routes/jobRoutes.js";
 import adminRoutes from "./routes/adminRoutes.js";
+import applicationRoutes from "./routes/applicationRoutes.js";
 
-dotenv.config();
 const app = express();
+initCloudinary();
 
 // ---------- Middlewares ----------
 app.use(cors({ origin: "*" }));
@@ -17,6 +21,7 @@ app.use(express.json());
 connectDB();
 
 // ---------- Routes ----------
+app.use("/api", applicationRoutes);
 app.use("/api/applications", jobRoutes);
 app.use("/api/admin", adminRoutes);
 

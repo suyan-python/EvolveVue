@@ -1,4 +1,6 @@
 import JobApplication from "../models/JobApplication.js";
+import { uploadOnCloudinary } from "../utils/cloudinary.js";
+import { v2 as cloudinary } from "cloudinary";
 
 // ✅ Check Email
 export const checkEmail = async (req, res) => {
@@ -19,15 +21,33 @@ export const applyJob = async (req, res) => {
     const exists = await JobApplication.findOne({ email });
     if (exists) return res.status(400).json({ error: "Email already used" });
 
+    if (!req.file)
+      return res.status(400).json({ error: "Resume file is required" });
+
+    const cloudinaryResponse = await uploadOnCloudinary(req.file.path);
+
+    if (!cloudinaryResponse)
+      return res.status(500).json({ error: "Resume upload failed" });
+
+    // ✅ DOWNLOADABLE URL
+    // const resumeUrl = cloudinary.url(cloudinaryResponse.public_id, {
+    //   resource_type: "raw",
+    //   flags: "attachment",
+    // });
+
+    const resumeUrl = cloudinaryResponse.url;
+
     const application = new JobApplication({
       name,
       email,
       coverLetter,
-      resumePath: req.file ? req.file.path : null,
+      resumeUrl,
+      resumePublicId: cloudinaryResponse.public_id,
     });
 
     await application.save();
-    res.json({ success: true, message: "Application submitted!" });
+
+    res.status(200).json({ success: true });
   } catch (err) {
     console.error(err);
     res.status(500).json({ error: "Submission failed" });
@@ -52,15 +72,16 @@ export const deleteApplication = async (req, res) => {
       return res.status(404).json({ error: "Application not found" });
     }
 
-    // Optional: delete resume from Cloudinary
+    // Delete resume from Cloudinary
     if (app.resumePublicId) {
       await cloudinary.uploader.destroy(app.resumePublicId, {
-        resource_type: "raw",
+        resource_type: "raw", // important for PDFs
       });
     }
 
     await app.deleteOne();
-    res.json({ success: true });
+
+    res.json({ success: true, message: "Application deleted" });
   } catch (err) {
     console.error(err);
     res.status(500).json({ error: "Failed to delete application" });
