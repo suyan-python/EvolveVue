@@ -28,9 +28,9 @@ const Job = () =>
     ];
 
     return (
-        <section className="w-full min-h-screen bg-[#0b0e14] text-white">
+        <section className="w-full min-h-screen bg-[#0b0e14] text-white py-32">
             {/* 1. HERO SECTION: Aesthetic & Professional */}
-            <div className="w-full pt-24 px-6 md:px-12 ">
+            <div className="w-full  px-6 md:px-12 ">
                 <div className="max-w-7xl mx-auto">
                     <div className="flex flex-col gap-4">
                         <span className="flex items-center gap-2 text-[#d6b25e] uppercase tracking-[0.4em] text-[10px] font-bold">

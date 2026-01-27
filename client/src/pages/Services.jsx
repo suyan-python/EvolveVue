@@ -58,8 +58,6 @@ const Services = () =>
 
   return (
     <section className="relative w-full py-32 bg-[#0b0e14] overflow-hidden">
-      {/* Subtle Background Glow for Depth */}
-      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-[500px] bg-[#d6b25e]/[0.03] blur-[120px] rounded-full pointer-events-none"></div>
 
       <div className="max-w-7xl mx-auto px-6 md:px-12 relative z-10">
 

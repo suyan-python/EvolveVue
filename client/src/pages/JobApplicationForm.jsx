@@ -105,9 +105,24 @@ export default function JobApplicationForm()
 
     try
     {
+      /* ---------------- VALIDATIONS ---------------- */
+      if (!formData.resume)
+      {
+        setErrorMessage("Please upload your resume (PDF).");
+        setLoading(false);
+        return;
+      }
+
+      /* ---------------- CHECK EMAIL ---------------- */
       const emailCheckResponse = await fetch(
-        `${API_URL}/api/applications/check-email?email=${formData.email}`
+        `${API_URL}/api/applications/check-email?email=${encodeURIComponent(formData.email)}`
       );
+
+      if (!emailCheckResponse.ok)
+      {
+        throw new Error("Email check failed");
+      }
+
       const emailCheckData = await emailCheckResponse.json();
 
       if (emailCheckData.exists)
@@ -117,37 +132,41 @@ export default function JobApplicationForm()
         return;
       }
 
+      /* ---------------- PREPARE FORM DATA ---------------- */
       const formDataToSend = new FormData();
       formDataToSend.append("name", formData.name);
       formDataToSend.append("email", formData.email);
-      formDataToSend.append("resume", formData.resume);
-      formDataToSend.append("coverLetter", formData.coverLetter);
+      formDataToSend.append("resume", formData.resume); // must match upload.single("resume")
+      formDataToSend.append("coverLetter", formData.coverLetter || "");
 
+      /* ---------------- SUBMIT APPLICATION ---------------- */
       const response = await fetch(`${API_URL}/api/applications/apply`, {
         method: "POST",
-        body: formDataToSend,
+        body: formDataToSend, // DO NOT set headers manually
       });
 
       const data = await response.json();
 
-      if (response.ok)
+      if (!response.ok)
       {
-        setShowSuccess(true);
-        setFormData({ name: "", email: "", resume: null, coverLetter: "" });
-        setResumeName("");
-      } else
-      {
-        setErrorMessage(data.error || "Submission failed.");
+        throw new Error(data.error || "Submission failed");
       }
+
+      /* ---------------- SUCCESS ---------------- */
+      setShowSuccess(true);
+      setFormData({ name: "", email: "", resume: null, coverLetter: "" });
+      setResumeName("");
+
     } catch (error)
     {
       console.error("Error submitting application:", error);
-      setErrorMessage("❌ Submission failed. Try again later.");
+      setErrorMessage(error.message || "❌ Submission failed. Try again later.");
     } finally
     {
       setLoading(false);
     }
   };
+
 
 
   return (

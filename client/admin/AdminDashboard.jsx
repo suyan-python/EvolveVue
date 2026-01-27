@@ -60,6 +60,17 @@ export default function AdminDashboard()
         navigate("/admin/login");              // Redirect to login
     };
 
+    const viewResume = (resumeUrl) =>
+    {
+        if (!resumeUrl)
+        {
+            alert("No resume uploaded for this applicant.");
+            return;
+        }
+        window.open(resumeUrl, "_blank");
+    };
+
+
 
     if (loading)
         return (
@@ -104,9 +115,7 @@ export default function AdminDashboard()
                     >
                         <div className="flex justify-between items-start">
                             <div>
-                                <h2 className="text-xl font-semibold text-gray-800">
-                                    {app.name}
-                                </h2>
+                                <h2 className="text-xl font-semibold text-gray-800">{app.name}</h2>
                                 <a
                                     href={`mailto:${app.email}`}
                                     className="text-indigo-600 hover:underline text-sm"
@@ -121,14 +130,17 @@ export default function AdminDashboard()
 
                         {/* Resume & Cover Letter */}
                         <div className="mt-4 space-y-2">
+                            {/* Resume Link */}
                             <a
-                                href={`${API_URL}/${app.resumePath}`}
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className="block text-green-600 font-medium underline hover:text-green-800"
+                                href={app.resumeUrl}
+                                className="block text-blue-600 font-medium underline hover:text-blue-800"
                             >
-                                View Resume
+                                Download Resume
                             </a>
+
+
+
+                            {/* Cover Letter */}
                             <button
                                 onClick={() => setSelectedApp(app)}
                                 className="w-full text-left px-3 py-2 bg-indigo-500 text-white rounded-lg hover:bg-indigo-600 transition-all font-medium"
@@ -139,6 +151,8 @@ export default function AdminDashboard()
                     </div>
                 ))}
             </div>
+
+
 
             {/* Modal for Cover Letter */}
             {selectedApp && (
