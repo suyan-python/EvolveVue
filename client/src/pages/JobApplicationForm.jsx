@@ -143,7 +143,7 @@ export default function JobApplicationForm()
       formDataToSend.append("jobTitle", selectedJob.title);
       formDataToSend.append("jobTag", selectedJob.tag);
       formDataToSend.append("jobLocation", selectedJob.location);
-      formDataToSend.append("sourceWebsite", "evolvevue.com");
+      formDataToSend.append("sourceWebsite", window.location.hostname);
 
 
 

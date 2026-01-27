@@ -1,5 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import GeneralForm from "./GeneralForm";
+
 
 const Job = () =>
 {
@@ -51,7 +53,7 @@ const Job = () =>
 
             <div className="bg-[#0b0e14] min-h-screen">
                 {/* 1. JOB LISTINGS: Square & Structured */}
-                <div className="max-w-7xl mx-auto px-6 py-20">
+                <div className="max-w-7xl mx-auto px-6 py-12">
                     <div className="grid grid-cols-1 gap-4">
                         <h1 className="text-2xl md:text-4xl text-center md:text-start font-semibold" > Job Openings </h1>
                         {JOB_OPENINGS.map((job) => (
@@ -99,6 +101,7 @@ const Job = () =>
                         ))}
                     </div>
                 </div>
+                <GeneralForm />
 
                 {/* 2. FOOTER: The "Institutional" Seal */}
                 <footer className="w-full px-6 pb-20">
