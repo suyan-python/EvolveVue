@@ -16,7 +16,15 @@ export const checkEmail = async (req, res) => {
 // ✅ Apply Job
 export const applyJob = async (req, res) => {
   try {
-    const { name, email, coverLetter } = req.body;
+    const {
+      name,
+      email,
+      coverLetter,
+      jobTitle,
+      jobTag,
+      jobLocation,
+      sourceWebsite,
+    } = req.body;
 
     const exists = await JobApplication.findOne({ email });
     if (exists) return res.status(400).json({ error: "Email already used" });
@@ -25,28 +33,23 @@ export const applyJob = async (req, res) => {
       return res.status(400).json({ error: "Resume file is required" });
 
     const cloudinaryResponse = await uploadOnCloudinary(req.file.path);
-
     if (!cloudinaryResponse)
       return res.status(500).json({ error: "Resume upload failed" });
-
-    // ✅ DOWNLOADABLE URL
-    // const resumeUrl = cloudinary.url(cloudinaryResponse.public_id, {
-    //   resource_type: "raw",
-    //   flags: "attachment",
-    // });
-
-    const resumeUrl = cloudinaryResponse.url;
 
     const application = new JobApplication({
       name,
       email,
       coverLetter,
-      resumeUrl,
+      resumeUrl: cloudinaryResponse.secure_url,
       resumePublicId: cloudinaryResponse.public_id,
+
+      jobTitle,
+      jobTag,
+      jobLocation,
+      sourceWebsite,
     });
 
     await application.save();
-
     res.status(200).json({ success: true });
   } catch (err) {
     console.error(err);

@@ -133,11 +133,11 @@ export default function AdminDashboard()
                             {/* Resume Link */}
                             <a
                                 href={app.resumeUrl}
-                                className="block text-blue-600 font-medium underline hover:text-blue-800"
+                                target="_blank"
+                                className="block text-red-600 font-medium underline hover:text-blue-800"
                             >
                                 Download Resume
                             </a>
-
 
 
                             {/* Cover Letter */}
@@ -147,11 +147,20 @@ export default function AdminDashboard()
                             >
                                 View Cover Letter
                             </button>
+                            <p className="text-sm text-gray-500 mt-2">
+                                Position: <span className="font-medium">{app.jobTitle}</span>
+                            </p>
+                            <p className="text-sm text-gray-500">
+                                Type: {app.jobTag} | Location: {app.jobLocation}
+                            </p>
+                            <p className="text-xs text-gray-400">
+                                Applied via: {app.sourceWebsite}
+                            </p>
+
                         </div>
                     </div>
                 ))}
             </div>
-
 
 
             {/* Modal for Cover Letter */}

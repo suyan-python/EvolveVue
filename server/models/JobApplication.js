@@ -3,9 +3,16 @@ import mongoose from "mongoose";
 const JobApplicationSchema = new mongoose.Schema({
   name: String,
   email: { type: String, unique: true },
-  resumeUrl: String, // <- Cloudinary URL
-  resumePublicId: String, // <- optional for delete
+  resumeUrl: String,
+  resumePublicId: String,
   coverLetter: String,
+
+  // 🔥 NEW
+  jobTitle: String,
+  jobTag: String,
+  jobLocation: String,
+  sourceWebsite: String,
+
   appliedAt: { type: Date, default: Date.now },
 });
 

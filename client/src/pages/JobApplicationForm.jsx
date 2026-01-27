@@ -136,8 +136,16 @@ export default function JobApplicationForm()
       const formDataToSend = new FormData();
       formDataToSend.append("name", formData.name);
       formDataToSend.append("email", formData.email);
-      formDataToSend.append("resume", formData.resume); // must match upload.single("resume")
+      formDataToSend.append("resume", formData.resume);
       formDataToSend.append("coverLetter", formData.coverLetter || "");
+
+
+      formDataToSend.append("jobTitle", selectedJob.title);
+      formDataToSend.append("jobTag", selectedJob.tag);
+      formDataToSend.append("jobLocation", selectedJob.location);
+      formDataToSend.append("sourceWebsite", "evolvevue.com");
+
+
 
       /* ---------------- SUBMIT APPLICATION ---------------- */
       const response = await fetch(`${API_URL}/api/applications/apply`, {
@@ -315,6 +323,9 @@ export default function JobApplicationForm()
               >
                 {loading ? "Verifying Details..." : "Submit Application"}
               </button>
+              <div className="text-xs text-gray-600 text-center">
+                evolvevue.com
+              </div>
             </form>
           </div>
         </div>
@@ -475,17 +486,6 @@ export default function JobApplicationForm()
           </motion.div>
         )}
       </AnimatePresence>
-
-      {/* <div className="mt-20">
-        <div className="p-6 rounded-md bg-white/5 border border-white/10 ">
-          <h4 className="text-[#d6b25e] font-semibold mb-2">Security & Privacy</h4>
-          <p className="text-xs text-gray-500 leading-normal">
-            Your data is encrypted and handled according to healthcare compliance standards. We never share your personal information.
-          </p>
-        </div>
-
-      </div> */}
-
     </div>
 
   );
