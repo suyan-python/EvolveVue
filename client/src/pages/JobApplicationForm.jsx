@@ -6,7 +6,7 @@ import { CheckCircle2, Clock, Info, MapPin, X } from "lucide-react";
 import { useParams, Navigate } from "react-router-dom";
 
 import JOB_OPENINGS from "../data/jobs";
-import { Helmet } from "react-helmet-async";
+import { Helmet } from "react-helmet";
 
 
 export default function JobApplicationForm()

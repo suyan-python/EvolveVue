@@ -7,7 +7,15 @@
     "dev": "vite",
     "build": "vite build",
     "lint": "eslint .",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "postbuild": "react-snap"
+  },
+  "reactSnap": {
+    "source": "dist",
+    "minifyHtml": {
+      "collapseWhitespace": false,
+      "removeComments": false
+    }
   },
   "dependencies": {
     "@canvasjs/react-charts": "^1.0.2",
@@ -28,6 +36,7 @@
     "react-intersection-observer": "^10.0.2",
     "react-lazy-load-image-component": "^1.6.3",
     "react-router-dom": "^7.2.0",
+    "react-snap": "^1.23.0",
     "recharts": "^2.15.1",
     "styled-components": "^6.1.15",
     "uuid": "^11.1.0",

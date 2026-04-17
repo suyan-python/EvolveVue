@@ -3,7 +3,7 @@ import { Link, useParams } from "react-router-dom";
 import GeneralForm from "./GeneralForm";
 
 import JOB_OPENINGS from "../data/jobs";
-import { Helmet } from "react-helmet-async";
+import { Helmet } from "react-helmet";
 
 
 const Job = () =>
