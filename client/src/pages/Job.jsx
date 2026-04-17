@@ -1,33 +1,13 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import GeneralForm from "./GeneralForm";
+
+import JOB_OPENINGS from "../data/jobs";
+import { Helmet } from "react-helmet-async";
 
 
 const Job = () =>
 {
-    const JOB_OPENINGS = [
-        {
-            id: "medical-documentation-specialist",
-            title: "Medical Documentation Specialist",
-            tag: "Clinical",
-            location: "Remote / Full-time",
-            salary: "Competitive",
-        },
-        {
-            id: "data-entry-analyst",
-            title: "Data Entry Analyst",
-            tag: "Clerical",
-            location: "Remote / Contract",
-            salary: "Fixed Rate",
-        },
-        {
-            id: "quality-assurance-reviewer",
-            title: "Quality Assurance Reviewer",
-            tag: "Clinical",
-            location: "US Shift / Hybrid",
-            salary: "Competitive",
-        },
-    ];
 
     return (
         <section className="w-full min-h-screen bg-[#0b0e14] text-white py-32">
@@ -57,46 +37,65 @@ const Job = () =>
                     <div className="grid grid-cols-1 gap-4">
                         <h1 className="text-2xl md:text-4xl text-center md:text-start font-semibold" > Job Openings </h1>
                         {JOB_OPENINGS.map((job) => (
+
                             <div
                                 key={job.id}
                                 className="group relative flex flex-col md:flex-row md:items-center justify-between 
-                         p-8 bg-[#121212] border border-white/5 
-                         border-l-4 border-l-white/10 hover:border-l-[#d6b25e] 
-                         transition-all duration-300 shadow-2xl"
+    p-8 bg-[#0f1218] border border-white/5 
+    border-l-4 border-l-transparent hover:border-l-[#d6b25e] 
+    rounded-xl transition-all duration-300 shadow-xl hover:shadow-2xl"
                             >
 
-                                {/* Subtle Linear Background for Authenticity */}
-                                <div className="absolute inset-0 bg-gradient-to-r from-[#d6b25e]/[0.02] to-transparent opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none"></div>
+                                {/* Subtle Professional Hover Layer */}
+                                <div className="absolute inset-0 bg-gradient-to-r from-[#d6b25e]/[0.03] to-transparent opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none rounded-xl"></div>
 
+                                {/* LEFT CONTENT */}
                                 <div className="relative z-10">
-                                    <div className="flex items-center gap-4 mb-3">
-                                        <span className="text-[#d6b25e] text-[10px] font-black uppercase tracking-[0.3em]">
-                                            {job.tag}
+
+                                    {/* Meta Row */}
+                                    <div className="flex flex-wrap items-center gap-3 mb-3 text-[10px] uppercase tracking-widest">
+
+                                        <span className="px-3 py-1 bg-[#d6b25e]/10 text-[#d6b25e] font-bold rounded-full">
+                                            {job.department}
                                         </span>
-                                        <div className="w-1 h-1 bg-gray-700 rounded-full"></div>
-                                        <span className="text-gray-500 text-[10px] uppercase tracking-widest font-bold">
-                                            ID: {job.id.slice(0, 8)} • {job.location}
+
+                                        <span className="text-gray-500 font-semibold">
+                                            {job.workType}
+                                        </span>
+
+                                        <span className="text-gray-600">
+                                            {job.location}
                                         </span>
                                     </div>
 
-                                    <h3 className="text-xl md:text-2xl font-bold text-white tracking-tight">
+                                    {/* Title */}
+                                    <h3 className="text-xl md:text-2xl font-semibold text-white tracking-tight">
                                         {job.title}
                                     </h3>
-                                    <p className="mt-2 text-xs text-gray-500 uppercase tracking-widest font-medium">
-                                        Financial Bracket: <span className="text-gray-300">{job.salary}</span>
-                                    </p>
+
+                                    {/* Secondary Info (Important for trust) */}
+                                    <div className="mt-3 flex flex-wrap gap-6 text-xs text-gray-400 font-medium">
+                                        <span>Shift: {job.shift}</span>
+                                        <span>Openings: {job.vacancies}</span>
+                                    </div>
+
                                 </div>
 
+                                {/* RIGHT CTA */}
                                 <div className="relative z-10 mt-8 md:mt-0">
                                     <Link
                                         to={`/application/apply/${job.id}`}
-                                        className="inline-flex items-center justify-center px-10 py-4 
-                             border border-[#d6b25e]/30 text-[#d6b25e] text-[11px] font-black uppercase tracking-[0.2em]
-                             hover:bg-[#d6b25e] hover:text-black transition-all duration-500 w-full md:w-auto"
+                                        className="inline-flex items-center justify-center px-8 py-3 
+        border border-[#d6b25e]/40 text-[#d6b25e] 
+        text-[11px] font-bold uppercase tracking-[0.2em]
+        rounded-lg
+        hover:bg-[#d6b25e] hover:text-black 
+        transition-all duration-300 w-full md:w-auto"
                                     >
-                                        Apply Application
+                                        Apply Now
                                     </Link>
                                 </div>
+
                             </div>
                         ))}
                     </div>
