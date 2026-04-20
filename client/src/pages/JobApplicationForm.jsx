@@ -2,7 +2,7 @@
 import { motion, AnimatePresence } from "framer-motion";
 import { useState } from "react";
 import Logo from "../assets/logo/evolve.png"
-import { CheckCircle2, Clock, Info, MapPin, X } from "lucide-react";
+import { AlertCircle, Briefcase, CheckCircle2, Clock, Info, MapPin, Users, X } from "lucide-react";
 import { useParams, Navigate } from "react-router-dom";
 
 import JOB_OPENINGS from "../data/jobs";
@@ -45,48 +45,6 @@ export default function JobApplicationForm()
       </div>
     );
   }
-
-
-  const jobDescription = {
-    title: "Medical Report Reviewer (Office-Based)",
-    location: "Balkumari, Lalitpur",
-    contract: "18-Month Minimum Service Commitment",
-    training: "1-Month Paid Mandatory Training (100% Attendance)",
-    overview: [
-      "Analyze and review medical records for quality and compliance.",
-      "Identify key clinical findings and ensure documentation standards.",
-      "Support the medical documentation and quality review team.",
-    ],
-    responsibilities: [
-      "Identify, review, and classify medical and legal documents accurately.",
-      "Extract key findings and flag missing, unclear, or inconsistent information.",
-      "Enter and annotate data in structured templates following internal guidelines.",
-      "Verify accuracy and consistency through rigorous quality assurance checks.",
-      "Coordinate with QA teams and escalate issues to internal departments.",
-      "Contribute to workflow efficiency by providing process improvement feedback.",
-    ],
-    qualifications: [
-      "Bachelor's in Physiotherapy (BPT)",
-      "Bachelor's in Nursing or Pharmacy",
-      "Bachelor's in Public Health (BPH)",
-      "BBA or Bachelor's in Computer Science",
-      "Medical or health science background highly preferred.",
-    ],
-    requirements: [
-      "Excellent written and spoken English communication skills.",
-      "Proficiency in MS Word and MS Excel.",
-      "Minimum typing speed of 40 WPM (verified by test).",
-      "Ability to work independently with high attention to detail.",
-      "Strong time management and adaptability skills.",
-    ],
-    benefits: [
-      "Competitive salary package.",
-      "Paid training and structured onboarding.",
-      "Career growth pathways (QA & Leadership).",
-      "Supportive, team-oriented work culture.",
-    ],
-    shift: ["6:30 AM – 3:00 PM NST", "Monday to Friday (Saturday & Sunday Off)"]
-  };
 
 
   const handleSubmit = async (e) =>
@@ -375,10 +333,10 @@ export default function JobApplicationForm()
 
 
         {/* Job Description Modal with Enhanced Animations */}
+        {/* Job Description Modal with Enhanced Animations */}
         <AnimatePresence>
-          {showModal && (
+          {showModal && selectedJob && (
             <motion.div
-              // Animation: Smooth fade and scale-up
               initial={{ opacity: 0, scale: 0.95 }}
               animate={{ opacity: 1, scale: 1 }}
               exit={{ opacity: 0, scale: 0.95 }}
@@ -386,14 +344,13 @@ export default function JobApplicationForm()
               className="fixed inset-0 z-[150] bg-[#0b0e14] flex flex-col overflow-hidden"
             >
               {/* --- TOP NAVIGATION BAR --- */}
-              <div className="w-full h-16 md:h-20 border-b border-white/5 flex items-center justify-between px-6 md:px-12 bg-[#0b0e14]/80  sticky top-0 z-[160]">
+              <div className="w-full h-16 md:h-20 border-b border-white/5 flex items-center justify-between px-6 md:px-12 bg-[#0b0e14]/80 sticky top-0 z-[160]">
                 <div className="flex items-center gap-3">
                   <div className="w-2 h-2 bg-[#9cee69] rounded-full animate-pulse shadow-[0_0_8px_#9cee69]"></div>
                   <span className="text-[9px] md:text-[10px] font-black text-white uppercase tracking-[0.3em] whitespace-nowrap">
                     Application Description
                   </span>
                 </div>
-
                 <button
                   onClick={() => setShowModal(false)}
                   className="flex items-center gap-2 group text-gray-400 hover:text-yellow-500 transition-all"
@@ -405,120 +362,250 @@ export default function JobApplicationForm()
                 </button>
               </div>
 
-              {/* --- MAIN CONTENT: Responsive Layout --- */}
+              {/* --- MAIN CONTENT --- */}
               <div className="flex-1 flex flex-col lg:flex-row overflow-y-auto lg:overflow-hidden">
 
-                {/* LEFT SIDEBAR: Vital Statistics */}
+                {/* LEFT SIDEBAR */}
                 <aside className="w-full lg:w-[380px] bg-[#0e121a] border-r border-white/5 p-8 md:p-12 lg:overflow-y-auto">
                   <motion.div
                     initial={{ opacity: 0, x: -20 }}
                     animate={{ opacity: 1, x: 0 }}
                     transition={{ delay: 0.2 }}
                   >
-                    <h2 className="text-2xl md:text-3xl font-bold text-white mb-3 leading-tight">{jobDescription.title}</h2>
+                    <h2 className="text-2xl md:text-3xl font-bold text-white mb-3 leading-tight">
+                      {selectedJob.title}
+                    </h2>
                     <div className="w-12 h-1 bg-yellow-500 mb-10"></div>
 
                     <div className="space-y-8">
-                      <div className="flex items-start gap-4">
-                        <MapPin className="text-yellow-500 mt-1" size={18} />
-                        <div>
-                          <p className="text-[10px] font-black text-gray-500 uppercase tracking-widest mb-1">Location</p>
-                          <p className="text-gray-200 text-sm font-medium">{jobDescription.location}</p>
-                        </div>
-                      </div>
 
-                      <div className="flex items-start gap-4">
-                        <Clock className="text-yellow-500 mt-1" size={18} />
-                        <div>
-                          <p className="text-[10px] font-black text-gray-500 uppercase tracking-widest mb-1">Shift Schedule</p>
-                          {jobDescription.shift.map((s, i) => (
-                            <p key={i} className="text-gray-200 text-sm font-medium">{s}</p>
-                          ))}
+                      {/* Location */}
+                      {selectedJob.location && (
+                        <div className="flex items-start gap-4">
+                          <MapPin className="text-yellow-500 mt-1 flex-shrink-0" size={18} />
+                          <div>
+                            <p className="text-[10px] font-black text-gray-500 uppercase tracking-widest mb-1">Location</p>
+                            <p className="text-gray-200 text-sm font-medium">{selectedJob.location}</p>
+                          </div>
                         </div>
-                      </div>
+                      )}
 
+                      {/* Shift */}
+                      {selectedJob.shift?.length > 0 && (
+                        <div className="flex items-start gap-4">
+                          <Clock className="text-yellow-500 mt-1 flex-shrink-0" size={18} />
+                          <div>
+                            <p className="text-[10px] font-black text-gray-500 uppercase tracking-widest mb-1">Shift Schedule</p>
+                            {selectedJob.shift.map((s, i) => (
+                              <p key={i} className="text-gray-200 text-sm font-medium">{s}</p>
+                            ))}
+                          </div>
+                        </div>
+                      )}
+
+                      {/* Holiday Note */}
+                      {selectedJob.holidayNote && (
+                        <div className="flex items-start gap-4">
+                          <AlertCircle className="text-yellow-500/60 mt-1 flex-shrink-0" size={16} />
+                          <p className="text-gray-500 text-[11px] leading-relaxed font-medium italic">
+                            {selectedJob.holidayNote}
+                          </p>
+                        </div>
+                      )}
+
+                      {/* Work Type */}
+                      {selectedJob.workType && (
+                        <div className="flex items-start gap-4">
+                          <Briefcase className="text-yellow-500 mt-1 flex-shrink-0" size={18} />
+                          <div>
+                            <p className="text-[10px] font-black text-gray-500 uppercase tracking-widest mb-1">Work Type</p>
+                            <p className="text-gray-200 text-sm font-medium">{selectedJob.workType}</p>
+                          </div>
+                        </div>
+                      )}
+
+                      {/* Vacancies */}
+                      {selectedJob.vacancies && (
+                        <div className="flex items-start gap-4">
+                          <Users className="text-yellow-500 mt-1 flex-shrink-0" size={18} />
+                          <div>
+                            <p className="text-[10px] font-black text-gray-500 uppercase tracking-widest mb-1">Openings</p>
+                            <p className="text-gray-200 text-sm font-medium">{selectedJob.vacancies} Position{selectedJob.vacancies > 1 ? "s" : ""}</p>
+                          </div>
+                        </div>
+                      )}
+
+                      {/* Contract + Training */}
                       <div className="bg-[#12171f] p-5 rounded-2xl border border-white/5 space-y-4">
                         <div className="flex items-center gap-3">
                           <div className="w-1.5 h-1.5 bg-yellow-500 rounded-full"></div>
                           <p className="text-[10px] font-black text-white uppercase tracking-widest">Commitment</p>
                         </div>
-                        <p className="text-gray-400 text-xs leading-relaxed font-medium">{jobDescription.contract}</p>
+                        {selectedJob.contract && (
+                          <p className="text-gray-400 text-xs leading-relaxed font-medium">{selectedJob.contract}</p>
+                        )}
+                        {selectedJob.training && (
+                          <div className="pt-3 border-t border-white/5 space-y-1">
+                            <p className="text-[10px] font-black text-gray-500 uppercase tracking-widest mb-2">Training & Probation</p>
+                            <p className="text-gray-400 text-xs font-medium">
+                              Duration: <span className="text-gray-200">{selectedJob.training.duration}</span>
+                            </p>
+                            <p className="text-gray-400 text-xs font-medium">
+                              Attendance: <span className="text-gray-200">{selectedJob.training.attendance}</span>
+                            </p>
+                          </div>
+                        )}
                       </div>
+
                     </div>
                   </motion.div>
                 </aside>
 
-                {/* RIGHT CONTENT: Detailed Sections */}
+                {/* RIGHT CONTENT */}
                 <main className="flex-1 bg-[#0b0e14] p-6 md:p-12 lg:p-20 lg:overflow-y-auto">
                   <div className="max-w-4xl mx-auto space-y-16">
 
                     {/* 01. Overview */}
-                    <section>
-                      <div className="flex items-center gap-4 mb-8">
-                        <span className="text-white/30 font-black text-4xl">01</span>
-                        <h4 className="text-white font-black uppercase tracking-[0.2em] text-[11px]">Role Overview</h4>
-                      </div>
-                      <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                        {jobDescription.overview.map((item, i) => (
-                          <div key={i} className="p-5 bg-[#12171f] border border-white/5 rounded-2xl text-gray-400 text-sm leading-relaxed hover:border-yellow-500/20 transition-colors">
-                            {item}
-                          </div>
-                        ))}
-                      </div>
-                    </section>
+                    {selectedJob.overview && (
+                      <section>
+                        <div className="flex items-center gap-4 mb-8">
+                          <span className="text-white/30 font-black text-4xl">01</span>
+                          <h4 className="text-white font-black uppercase tracking-[0.2em] text-[11px]">Role Overview</h4>
+                        </div>
+                        {/* overview is a string — render as a single block */}
+                        <div className="p-6 bg-[#12171f] border border-white/5 rounded-2xl text-gray-400 text-sm leading-relaxed hover:border-yellow-500/20 transition-colors">
+                          {selectedJob.overview}
+                        </div>
+                      </section>
+                    )}
 
                     {/* 02. Qualifications */}
-                    <section>
-                      <div className="flex items-center gap-4 mb-8">
-                        <span className="text-white/30 font-black text-4xl">02</span>
-                        <h4 className="text-white font-black uppercase tracking-[0.2em] text-[11px]">Academic Prerequisites</h4>
-                      </div>
-                      <div className="flex flex-wrap gap-2 md:gap-3">
-                        {jobDescription.qualifications.map((item, i) => (
-                          <span key={i} className="px-4 py-2 bg-white/5 border border-white/10 rounded-lg text-[11px] text-gray-300 font-bold uppercase tracking-wide">
-                            {item}
-                          </span>
-                        ))}
-                      </div>
-                    </section>
+                    {selectedJob.qualifications?.length > 0 && (
+                      <section>
+                        <div className="flex items-center gap-4 mb-8">
+                          <span className="text-white/30 font-black text-4xl">02</span>
+                          <h4 className="text-white font-black uppercase tracking-[0.2em] text-[11px]">Academic Prerequisites</h4>
+                        </div>
+                        <div className="flex flex-wrap gap-2 md:gap-3">
+                          {selectedJob.qualifications.map((item, i) => (
+                            <span key={i} className="px-4 py-2 bg-white/5 border border-white/10 rounded-lg text-[11px] text-gray-300 font-bold uppercase tracking-wide">
+                              {item}
+                            </span>
+                          ))}
+                        </div>
+                      </section>
+                    )}
 
                     {/* 03. Responsibilities */}
-                    <section>
-                      <div className="flex items-center gap-4 mb-8">
-                        <span className="text-white/30 font-black text-4xl">03</span>
-                        <h4 className="text-white font-black uppercase tracking-[0.2em] text-[11px]">Primary Responsibilities</h4>
-                      </div>
-                      <ul className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-6">
-                        {jobDescription.responsibilities.map((item, i) => (
-                          <li key={i} className="flex gap-4 text-sm text-gray-400 leading-relaxed group">
-                            <CheckCircle2 className="text-white/40 group-hover:text-white transition-colors flex-shrink-0" size={18} />
-                            <span>{item}</span>
-                          </li>
-                        ))}
-                      </ul>
-                    </section>
+                    {selectedJob.responsibilities?.length > 0 && (
+                      <section>
+                        <div className="flex items-center gap-4 mb-8">
+                          <span className="text-white/30 font-black text-4xl">03</span>
+                          <h4 className="text-white font-black uppercase tracking-[0.2em] text-[11px]">Primary Responsibilities</h4>
+                        </div>
+                        <ul className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-6">
+                          {selectedJob.responsibilities.map((item, i) => (
+                            <li key={i} className="flex gap-4 text-sm text-gray-400 leading-relaxed group">
+                              <CheckCircle2 className="text-white/40 group-hover:text-white transition-colors flex-shrink-0" size={18} />
+                              <span>{item}</span>
+                            </li>
+                          ))}
+                        </ul>
+                      </section>
+                    )}
 
-                    {/* Benefits Section */}
-                    <section className="bg-gradient-to-br from-[#12171f] to-[#0b0e14] p-8 md:p-12 rounded-[2.5rem] border border-white/5">
-                      <h4 className="text-[#9cee69] font-black uppercase tracking-[0.3em] text-[10px] mb-8 text-center">Institutional Benefits</h4>
-                      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8">
-                        {jobDescription.benefits.map((item, i) => (
-                          <div key={i} className="text-center">
-                            <p className="text-white text-xs font-bold uppercase tracking-tighter leading-tight">{item}</p>
-                          </div>
-                        ))}
-                      </div>
-                    </section>
+                    {/* 04. Requirements */}
+                    {selectedJob.requirements?.length > 0 && (
+                      <section>
+                        <div className="flex items-center gap-4 mb-8">
+                          <span className="text-white/30 font-black text-4xl">04</span>
+                          <h4 className="text-white font-black uppercase tracking-[0.2em] text-[11px]">Eligibility & Requirements</h4>
+                        </div>
+                        <ul className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-6">
+                          {selectedJob.requirements.map((item, i) => (
+                            <li key={i} className="flex gap-4 text-sm text-gray-400 leading-relaxed group">
+                              <CheckCircle2 className="text-white/40 group-hover:text-yellow-500 transition-colors flex-shrink-0" size={18} />
+                              <span>{item}</span>
+                            </li>
+                          ))}
+                        </ul>
+                      </section>
+                    )}
 
-                    {/* Final Call to Action */}
-                    <div className="pt-20 pb-10 border-t border-white/5 flex flex-col items-center">
-                      <p className="text-gray-500 text-[10px] uppercase tracking-[0.4em] mb-8 font-black text-center">Inquiry & Application Portal</p>
+                    {/* 05. Additional Skills */}
+                    {selectedJob.additionalSkills?.length > 0 && (
+                      <section>
+                        <div className="flex items-center gap-4 mb-8">
+                          <span className="text-white/30 font-black text-4xl">05</span>
+                          <h4 className="text-white font-black uppercase tracking-[0.2em] text-[11px]">Additional Skills</h4>
+                        </div>
+                        <ul className="space-y-4">
+                          {selectedJob.additionalSkills.map((item, i) => (
+                            <li key={i} className="flex gap-4 text-sm text-gray-400 leading-relaxed">
+                              <span className="text-yellow-500/50 font-black flex-shrink-0">—</span>
+                              <span>{item}</span>
+                            </li>
+                          ))}
+                        </ul>
+                      </section>
+                    )}
+
+                    {/* Benefits */}
+                    {selectedJob.benefits?.length > 0 && (
+                      <section className="bg-gradient-to-br from-[#12171f] to-[#0b0e14] p-8 md:p-12 rounded-[2.5rem] border border-white/5">
+                        <h4 className="text-[#9cee69] font-black uppercase tracking-[0.3em] text-[10px] mb-8 text-center">
+                          Institutional Benefits
+                        </h4>
+                        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8">
+                          {selectedJob.benefits.map((item, i) => (
+                            <div key={i} className="text-center">
+                              <p className="text-white/80 text-xs font-semibold uppercase tracking-tighter leading-tight">{item}</p>
+                            </div>
+                          ))}
+                        </div>
+                      </section>
+                    )}
+
+                    {/* How to Apply */}
+                    <div className="pt-20 pb-10 border-t border-white/5 flex flex-col items-center gap-6">
+                      <p className="text-gray-500 text-[10px] uppercase tracking-[0.4em] font-black text-center">
+                        Inquiry & Application Portal
+                      </p>
+
+                      {/* Apply note */}
+                      {selectedJob.applyNote && (
+                        <p className="text-gray-500 text-xs text-center max-w-md leading-relaxed">
+                          {selectedJob.applyNote}
+                        </p>
+                      )}
+
+                      {/* Email(s) */}
+                      {selectedJob.applyEmail?.length > 0 && (
+                        <div className="flex flex-wrap justify-center gap-3">
+                          {selectedJob.applyEmail.map((email, i) => (
+                            <a
+                              key={i}
+                              href={`mailto:${email}`}
+                              className="text-[11px] font-medium text-yellow-500/50 border border-yellow-500/30 rounded-lg px-4 py-2 hover:bg-yellow-500/10 transition-all tracking-wide"
+                            >
+                              {email}
+                            </a>
+                          ))}
+                        </div>
+                      )}
+
                       <button
-
-                        onClick={() => setShowModal(false)}
-                        className="bg-yellow-500 text-black px-12 py-4 rounded-xl font-black uppercase tracking-widest text-xs hover:bg-yellow-600 transition-all shadow-xl shadow-yellow-500/20"
+                        onClick={() =>
+                        {
+                          if (selectedJob.applyEmail?.[0])
+                          {
+                            window.location.href = `mailto:${selectedJob.applyEmail[0]}`;
+                          }
+                          setShowModal(false);
+                        }}
+                        className="bg-yellow-500 text-black px-12 py-4 rounded-xl font-black uppercase tracking-widest text-xs hover:bg-yellow-600 transition-all shadow-xl shadow-yellow-500/20 cursor-pointer flex "
                       >
-                        Apply
+                        Apply Now
                       </button>
                     </div>
 

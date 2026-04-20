@@ -2,8 +2,6 @@ import React from "react";
 
 // Assuming assets are imported as in your previous code
 import geyata from "../assets/leads/geyata2.png";
-import birat from "../assets/leads/birat.webp";
-import shashank from "../assets/leads/shashank.webp";
 import swormin from "../assets/leads/2.webp";
 import prakriti from "../assets/leads/4.webp";
 import dilasha from "../assets/leads/dilasha.webp";
@@ -12,8 +10,6 @@ import nita from "../assets/leads/nita.webp";
 const teamData = {
   executive: { name: "Dr. Geyata Shrestha [PT]", role: "Chief Team Lead", image: geyata },
   clinical: [
-    { name: "Dr. Birat Khanal", role: "Clinical Lead", image: birat },
-    { name: "Dr. Shashank Singh Shahi", role: "Clinical Lead", image: shashank },
     { name: "Dr. Prakriti Shah", role: "Clinical Lead", image: prakriti },
   ],
   clerical: [
