@@ -569,7 +569,7 @@ export default function JobApplicationForm()
                     {/* How to Apply */}
                     <div className="pt-20 pb-10 border-t border-white/5 flex flex-col items-center gap-6">
                       <p className="text-gray-500 text-[10px] uppercase tracking-[0.4em] font-black text-center">
-                        Inquiry & Application Portal
+                        Inquiry & Application
                       </p>
 
                       {/* Apply note */}
@@ -595,15 +595,8 @@ export default function JobApplicationForm()
                       )}
 
                       <button
-                        onClick={() =>
-                        {
-                          if (selectedJob.applyEmail?.[0])
-                          {
-                            window.location.href = `mailto:${selectedJob.applyEmail[0]}`;
-                          }
-                          setShowModal(false);
-                        }}
-                        className="bg-yellow-500 text-black px-12 py-4 rounded-xl font-black uppercase tracking-widest text-xs hover:bg-yellow-600 transition-all shadow-xl shadow-yellow-500/20 cursor-pointer flex "
+                        onClick={() => setShowModal(false)}
+                        className="bg-[#d6b25e] text-black px-12 py-4 rounded-xl font-black uppercase tracking-widest text-xs hover:bg-[#b49650] transition-all cursor-pointer flex "
                       >
                         Apply Now
                       </button>
