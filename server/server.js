@@ -9,6 +9,8 @@ import connectDB from "./config/db.js";
 import jobRoutes from "./routes/jobRoutes.js";
 import adminRoutes from "./routes/adminRoutes.js";
 import applicationRoutes from "./routes/applicationRoutes.js";
+import resultRoutes from "./routes/resultRoutes.js";
+import { globalLimiter } from "./middleware/rateLimiter.js";
 
 const app = express();
 initCloudinary();
@@ -16,6 +18,7 @@ initCloudinary();
 // ---------- Middlewares ----------
 app.use(cors({ origin: "*" }));
 app.use(express.json());
+app.use(globalLimiter);
 
 // ---------- Database ----------
 connectDB();
@@ -24,6 +27,7 @@ connectDB();
 app.use("/api", applicationRoutes);
 app.use("/api/applications", jobRoutes);
 app.use("/api/admin", adminRoutes);
+app.use("/api/results", resultRoutes);
 
 // ---------- Static Files ----------
 app.use("/uploads", express.static(path.join(process.cwd(), "uploads")));
