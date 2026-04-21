@@ -16,7 +16,13 @@ const app = express();
 initCloudinary();
 
 // ---------- Middlewares ----------
-app.use(cors({ origin: "*" }));
+// app.use(cors({ origin: "*" }));
+app.use(
+  cors({
+    origin: ["http://localhost:5173", "https://typing.evolvevue.com.np", "*"],
+    credentials: true,
+  }),
+);
 app.use(express.json());
 app.use(globalLimiter);
 
