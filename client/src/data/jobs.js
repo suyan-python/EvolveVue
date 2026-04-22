@@ -30,7 +30,7 @@ export const JOBS = [
     // ── Application ───────────────────────────────────────────────────────────
     applyEmail: ["hrevolvevue@gmail.com", "evolvevue25@gmail.com"],
     applyNote:
-      "Submit your updated CV and a typing test result screenshot (min. 40 WPM)",
+      "Submit your updated CV and a typing test result (min. 40 WPM)",
 
     // ── Content Sections ──────────────────────────────────────────────────────
     overview:

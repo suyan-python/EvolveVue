@@ -300,7 +300,7 @@ export default function JobApplicationForm()
                     <span className="bg-[#d6b25e] text-black text-[10px] font-bold px-4 py-2 rounded-lg">BROWSE</span>
                   </label>
                   <p className="text-[11px] text-gray-500">
-                    Please include your CV and Typing Test results. <a href="https://www.typing.com/student/tests" target="_blank" className="text-[#d6b25e] hover:underline">Verify your speed here.</a>
+                    Please include your CV and Typing Test results. <a href="https://typing.evolvevue.com.np/" target="_blank" className="text-[#d6b25e] hover:underline">Verify your speed here.</a>
                   </p>
                 </div>
 
@@ -575,7 +575,10 @@ export default function JobApplicationForm()
                       {/* Apply note */}
                       {selectedJob.applyNote && (
                         <p className="text-gray-500 text-xs text-center max-w-md leading-relaxed">
-                          {selectedJob.applyNote}
+                          {selectedJob.applyNote} <br />
+                          From: <a href="https://typing.evolvevue.com.np/" className="text-yellow-500/50 hover:text-blue-200 underline transition-all " target="_blank" rel="noopener noreferrer">
+                            https://typing.evolvevue.com.np/
+                          </a>
                         </p>
                       )}
 
