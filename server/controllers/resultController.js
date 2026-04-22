@@ -50,3 +50,19 @@ export const getAllResults = async (_req, res) => {
     return res.status(500).json({ message: "Server error." });
   }
 };
+
+export const deleteResult = async (req, res) => {
+  try {
+    const { id } = req.params;
+
+    const deleted = await Result.findByIdAndDelete(id);
+
+    if (!deleted) {
+      return res.status(404).json({ message: "Result not found" });
+    }
+
+    res.json({ message: "Result deleted successfully" });
+  } catch (err) {
+    res.status(500).json({ message: "Server error" });
+  }
+};

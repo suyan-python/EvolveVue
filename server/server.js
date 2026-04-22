@@ -19,7 +19,12 @@ initCloudinary();
 // app.use(cors({ origin: "*" }));
 app.use(
   cors({
-    origin: ["http://localhost:5173", "https://typing.evolvevue.com.np", "*"],
+    origin: [
+      "http://localhost:5173",
+      "https://typing.evolvevue.com.np",
+      "*",
+      "https://vudeviservices.com.np",
+    ],
     credentials: true,
   }),
 );
