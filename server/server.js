@@ -22,6 +22,7 @@ app.use(
     origin: [
       "http://localhost:5173",
       "https://typing.evolvevue.com.np",
+      "https://evolvevue.com.np",
       "*",
       "https://vudeviservices.com.np",
     ],
