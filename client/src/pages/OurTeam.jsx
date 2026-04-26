@@ -27,6 +27,7 @@ const ProfileCard = ({ person, isLarge = false }) => (
         src={person.image}
         alt={person.name}
         className="w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700"
+        loading="lazy"
       />
       {/* Bottom Gradient Overlay */}
       <div className="absolute inset-0 bg-gradient-to-t from-[#0b0e14] via-transparent to-transparent opacity-80"></div>
@@ -52,11 +53,6 @@ export default function TeamHierarchy()
 {
   return (
     <section className="relative px-6 py-32 bg-[#0b0e14] overflow-hidden">
-      {/* Structural Background Pattern */}
-      <div className="absolute inset-0 opacity-[0.02] pointer-events-none"
-        style={{ backgroundImage: `url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 0h40v40H0z' fill='none'/%3E%3Cpath d='M0 0h1v40H0zM0 0h40v1H0z' fill='%23ffffff'/%3E%3C/svg%3E")` }}>
-      </div>
-
       <div className="relative z-10 max-w-7xl mx-auto">
         {/* --- HEADER --- */}
         <div className="text-center mb-32">
