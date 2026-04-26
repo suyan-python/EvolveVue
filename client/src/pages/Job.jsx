@@ -15,7 +15,7 @@ const Job = () =>
             <div className="w-full  px-6 md:px-12 ">
                 <div className="max-w-7xl mx-auto">
                     <div className="flex flex-col gap-4">
-                        <span className="flex items-center gap-2 text-[#d6b25e] uppercase tracking-[0.4em] text-[10px] font-bold">
+                        <span className="flex items-center gap-2 text-[#d6b25e] uppercase tracking-[0.4em] text-[8px] md:text-[10px] font-bold">
                             <span className="w-2 h-2 rounded-full bg-[#d6b25e] animate-pulse"></span>
                             Now Hiring Professionals
                         </span>
@@ -23,7 +23,7 @@ const Job = () =>
                             Shape the Future of <br />
                             <span className="text-gray-500">Medical Documentation.</span>
                         </h1>
-                        <p className="mt-6 text-gray-400 max-w-2xl text-lg leading-relaxed">
+                        <p className="mt-2 md:mt-6 text-gray-400 max-w-2xl text-xs md:text-lg leading-relaxed">
                             We are looking for detail-oriented experts to support global healthcare providers
                             with accurate and compliant clinical records.
                         </p>
@@ -35,7 +35,7 @@ const Job = () =>
                 {/* 1. JOB LISTINGS: Square & Structured */}
                 <div className="max-w-7xl mx-auto px-6 py-12">
                     <div className="grid grid-cols-1 gap-4">
-                        <h1 className="text-2xl md:text-4xl text-center md:text-start font-semibold" > Job Openings </h1>
+                        <h1 className="text-2xl md:text-4xl text-center md:text-start font-semibold tracking-widest uppercase" > Job Openings </h1>
                         {JOB_OPENINGS.map((job) => (
 
                             <div

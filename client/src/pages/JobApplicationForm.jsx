@@ -208,17 +208,17 @@ export default function JobApplicationForm()
         <div className="min-h-screen w-full bg-[#0B0E14] text-white flex flex-col lg:flex-row overflow-x-hidden">
 
           {/* LEFT SIDE: Branding & Trust (40% Width) */}
-          <div className="w-full lg:w-[40%] p-10 md:p-20 flex flex-col justify-between border-r border-white/5">
+          <div className="w-full lg:w-[40%] p-10 md:p-20 flex flex-col justify-between ">
             <div>
-              <img src={Logo} alt="Logo" className="w-40 mb-12" />
+              <img src={Logo} alt="Logo" className="w-40 mb-12 hidden md:block" />
 
               <div className="space-y-6">
-                <span className="text-[#d6b25e] uppercase tracking-[0.3em] text-xs font-bold">Official Application Portal</span>
+                <span className="text-[#d6b25e] uppercase tracking-[0.3em] text-[10px] md:text-xs font-bold">Official Application Portal</span>
                 <h1 className="text-4xl md:text-5xl font-bold leading-tight tracking-tight">
                   Join Our Clinical <br />
                   <span className="text-gray-400">Documentation Team</span>
                 </h1>
-                <p className="text-gray-400 text-lg max-w-md leading-relaxed">
+                <p className="text-gray-400 text-xs md:text-lg max-w-md leading-relaxed">
                   We maintain the highest standards of medical documentation. Your expertise helps physicians deliver better patient care.
                 </p>
                 <button
@@ -240,7 +240,7 @@ export default function JobApplicationForm()
             <div className="max-w-2xl">
               {/* Header Info */}
               <div className="mb-12">
-                <h2 className="text-3xl font-semibold text-white">Applying for <span className="yellowText">{selectedJob.title} </span> </h2>
+                <h2 className="text-xl md:text-3xl font-semibold text-white">Applying for <span className="yellowText">{selectedJob.title} </span> </h2>
                 <div className="flex gap-4 mt-3">
                   <span className="px-3 py-1 rounded-full bg-white/5 border border-white/10 text-[10px] uppercase tracking-widest text-gray-400">
                     {selectedJob.tag}

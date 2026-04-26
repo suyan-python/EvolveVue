@@ -43,10 +43,10 @@ const NewsUpdates = () =>
       <div className="relative z-10 max-w-7xl mx-auto px-6">
 
         {/* --- SECTION HEADER --- */}
-        <div className="mb-20">
+        <div className="mb-12 md:mb-20">
           <div className="flex items-center gap-3 mb-6">
             <div className="w-12 h-[1px] bg-[#d6b25e]"></div>
-            <span className="text-[10px] font-bold text-[#d6b25e] uppercase tracking-[0.5em]">Corporate Intelligence</span>
+            <span className="text-[8px] md:text-[10px] font-bold text-[#d6b25e] uppercase tracking-[0.5em]">Corporate Intelligence</span>
           </div>
           <h2 className="text-4xl md:text-6xl font-bold text-white tracking-tighter">
             Insights <span className="text-gray-500 italic font-serif">&</span> Updates.

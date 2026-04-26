@@ -32,7 +32,7 @@ const FooterBT = () =>
     <footer
       className={`
         fixed bottom-0 left-0 w-full z-50 hidden md:block
-        bg-[#0b0e14]/90 backdrop-blur-xl border-t border-white/10
+        bg-[#0b0e14] border-t border-white/10
         transform transition-all duration-700 ease-in-out
         ${isVisible ? "translate-y-0 opacity-100" : "translate-y-full opacity-0"}
       `}

@@ -9,10 +9,6 @@ function Footer()
 
   return (
     <footer className="bg-[#0b0e14] text-white pt-24 pb-12 w-full relative overflow-hidden border-t border-white/10">
-      {/* Structural Background Pattern */}
-      <div className="absolute inset-0 opacity-[0.02] pointer-events-none"
-        style={{ backgroundImage: `url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 0h40v40H0z' fill='none'/%3E%3Cpath d='M0 0h1v40H0zM0 0h40v1H0z' fill='%23ffffff'/%3E%3C/svg%3E")` }}>
-      </div>
 
       <div className="max-w-7xl mx-auto px-6 relative z-10">
 

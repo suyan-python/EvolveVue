@@ -49,7 +49,7 @@ function Hero()
           className="mb-8 flex items-center gap-3 px-5 py-2 rounded-full border border-white/5 bg-white/[0.02] "
         >
           <span className="w-1.5 h-1.5 rounded-full bg-[#d6b25e] shadow-[0_0_10px_#d6b25e]"></span>
-          <span className="text-[10px] font-bold tracking-[0.4em] uppercase text-gray-400">
+          <span className="text-[8px] md:text-[10px] font-bold tracking-[0.4em] uppercase text-gray-400">
             Global Medical Standards <span className="text-[#d6b25e] mx-2">|</span> ISO & HIPAA Certified
           </span>
         </motion.div>
@@ -73,7 +73,7 @@ function Hero()
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.2 }}
-          className="text-5xl md:text-8xl font-bold tracking-tighter leading-[0.95] text-white"
+          className="text-4xl md:text-8xl font-bold tracking-tighter leading-[0.95] text-white"
         >
           Precision <span className="text-[#d6b25e]">Data.</span> <br />
           Absolute <span className="text-gray-500">Integrity.</span>
@@ -84,7 +84,7 @@ function Hero()
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 1, delay: 0.4 }}
-          className="mt-10 text-gray-400 text-lg md:text-xl max-w-2xl leading-relaxed font-medium"
+          className="mt-10 text-gray-400 text-sm md:text-xl max-w-2xl leading-relaxed font-medium"
         >
           Evolve Vue optimizes healthcare ecosystems through <span className="text-white">secure clinical documentation</span> and
           unmatched administrative accuracy.
@@ -95,7 +95,7 @@ function Hero()
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.6 }}
-          className="flex flex-col sm:flex-row gap-5 mt-16 w-full sm:w-auto"
+          className="flex flex-col sm:flex-row gap-5 mt-16 md:w-full w-auto  items-center justify-center"
         >
           <NavLink
             to="/services"
@@ -119,7 +119,7 @@ function Hero()
           initial={{ opacity: 0 }}
           animate={{ opacity: 0.5 }}
           transition={{ duration: 1, delay: 1 }}
-          className="mt-24 pt-12 border-t border-white/5 w-full flex flex-wrap justify-center gap-12 md:gap-24"
+          className="mt-8 md:mt-24 pt-12 border-t border-white/5 w-full flex flex-wrap justify-center gap-12 md:gap-24"
         >
           <div className="group flex flex-col items-center gap-2">
             <span className="text-[10px] font-black text-[#d6b25e] tracking-widest uppercase">99.9%</span>
