@@ -2,7 +2,7 @@
 import { motion, AnimatePresence } from "framer-motion";
 import { useState } from "react";
 import Logo from "../assets/logo/evolve.png"
-import { AlertCircle, Briefcase, CheckCircle2, Clock, Info, MapPin, Users, X } from "lucide-react";
+import { AlertCircle, ArrowUpRight, Briefcase, CheckCircle2, Clock, Info, MapPin, Users, X } from "lucide-react";
 import { useParams, Navigate } from "react-router-dom";
 
 import JOB_OPENINGS from "../data/jobs";
@@ -24,6 +24,8 @@ export default function JobApplicationForm()
   const [showModal, setShowModal] = useState(false);
   const [loading, setLoading] = useState(false);
   const { jobId } = useParams();
+
+  const [redirecting, setRedirecting] = useState(false);
 
 
   const selectedJob = JOB_OPENINGS.find(
@@ -125,6 +127,24 @@ export default function JobApplicationForm()
     }
   };
 
+  const handleInterviewRedirect = () =>
+  {
+    setRedirecting(true);
+
+    // Get interview link directly from selected job data
+    const interviewLink = selectedJob?.jobLink;
+
+    if (interviewLink)
+    {
+      window.open(interviewLink, "_blank");
+    }
+
+    setTimeout(() =>
+    {
+      setRedirecting(false);
+    }, 1200);
+  };
+
 
   return (
     <>
@@ -181,7 +201,7 @@ export default function JobApplicationForm()
           })}
         </script>
       </Helmet>
-      <div className=" min-h-screen flex items-center justify-center px-4 sm:px-6 lg:px-8 py-24 relative overflow-hidden">
+      <div className=" min-h-screen flex items-center justify-center md:px-8 py-24 relative overflow-hidden">
 
         {/* Success Modal - Refined for Corporate Look */}
         {showSuccess && (
@@ -205,7 +225,7 @@ export default function JobApplicationForm()
         )}
 
         {/* Main Form Container */}
-        <div className="min-h-screen w-full bg-[#0B0E14] text-white flex flex-col lg:flex-row overflow-x-hidden">
+        <div className="min-h-screen w-full bg-[#0B0E14] text-white flex flex-col-reverse lg:flex-row overflow-x-hidden">
 
           {/* LEFT SIDE: Branding & Trust (40% Width) */}
           <div className="w-full lg:w-[40%] p-10 md:p-20 flex flex-col justify-between ">
@@ -213,8 +233,8 @@ export default function JobApplicationForm()
               <img src={Logo} alt="Logo" className="w-40 mb-12 hidden md:block" />
 
               <div className="space-y-6">
-                <span className="text-[#d6b25e] uppercase tracking-[0.3em] text-[10px] md:text-xs font-bold">Official Application Portal</span>
-                <h1 className="text-4xl md:text-5xl font-bold leading-tight tracking-tight">
+                <span className="hidden md:block text-[#d6b25e] uppercase tracking-[0.3em] text-[10px] md:text-xs font-bold">Official Application Portal</span>
+                <h1 className="hidden md:block text-4xl md:text-5xl font-bold leading-tight tracking-tight">
                   Join Our Clinical <br />
                   <span className="text-gray-400">Documentation Team</span>
                 </h1>
@@ -236,22 +256,22 @@ export default function JobApplicationForm()
           </div>
 
           {/* RIGHT SIDE: The Form (60% Width) */}
-          <div className="w-full lg:w-[60%] bg-[#121212] p-10 md:p-20 flex flex-col justify-center">
+          <div className="w-full lg:w-[60%] bg-[#2] p-10 md:p-20 flex flex-col justify-center">
             <div className="max-w-2xl">
               {/* Header Info */}
               <div className="mb-12">
-                <h2 className="text-xl md:text-3xl font-semibold text-white">Applying for <span className="yellowText">{selectedJob.title} </span> </h2>
+                <h2 className="text-3xl md:text-5xl font-semibold text-white">Applying for <span className="yellowText font-light">{selectedJob.title} </span> </h2>
                 <div className="flex gap-4 mt-3">
-                  <span className="px-3 py-1 rounded-full bg-white/5 border border-white/10 text-[10px] uppercase tracking-widest text-gray-400">
+                  <span className="px-3 py-1 rounded-full bg-white/5 border border-white/10 text-[8px] md:text-[10px] uppercase tracking-widest text-gray-400">
                     {selectedJob.tag}
                   </span>
-                  <span className="px-3 py-1 rounded-full bg-white/5 border border-white/10 text-[10px] uppercase tracking-widest text-gray-400">
+                  <span className="px-3 py-1 rounded-full bg-white/5 border border-white/10 text-[8px] md:text-[10px] uppercase tracking-widest text-gray-400">
                     {selectedJob.location}
                   </span>
                 </div>
               </div>
 
-              <form onSubmit={handleSubmit} className="space-y-8">
+              {/* <form onSubmit={handleSubmit} className="space-y-8">
                 {errorMessage && (
                   <div className="p-4 rounded-xl bg-red-500/10 border border-red-500/20 text-red-400 text-sm animate-pulse">
                     {errorMessage}
@@ -259,7 +279,6 @@ export default function JobApplicationForm()
                 )}
 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                  {/* Full Name */}
                   <div className="space-y-2">
                     <label className="text-[10px] uppercase tracking-[0.2em] font-bold text-gray-500">Full Name</label>
                     <input
@@ -270,7 +289,6 @@ export default function JobApplicationForm()
                     />
                   </div>
 
-                  {/* Email Address */}
                   <div className="space-y-2">
                     <label className="text-[10px] uppercase tracking-[0.2em] font-bold text-gray-500">Email Address</label>
                     <input
@@ -282,7 +300,6 @@ export default function JobApplicationForm()
                   </div>
                 </div>
 
-                {/* Resume Upload Section */}
                 <div className="space-y-3">
                   <label className="text-[10px] uppercase tracking-[0.2em] font-bold text-gray-500">Resume & Credentials</label>
                   <input type="file" accept=".pdf" required className="hidden" id="resume-upload"
@@ -304,7 +321,6 @@ export default function JobApplicationForm()
                   </p>
                 </div>
 
-                {/* Cover Letter */}
                 <div className="space-y-2">
                   <label className="text-[10px] uppercase tracking-[0.2em] font-bold text-gray-500">Cover Letter (Optional)</label>
                   <textarea
@@ -315,7 +331,6 @@ export default function JobApplicationForm()
                   ></textarea>
                 </div>
 
-                {/* Final Action */}
                 <button
                   type="submit" disabled={loading}
                   className={`w-full py-5 rounded-md text-sm font-bold uppercase tracking-[0.2em] transition-all
@@ -326,7 +341,80 @@ export default function JobApplicationForm()
                 >
                   {loading ? "Verifying Details..." : "Submit Application"}
                 </button>
-              </form>
+              </form> */}
+
+              <div className="space-y-8">
+                {/* AI Container with Animated Gradient and Glow */}
+                <div className="relative p-6 md:p-8 rounded-xl border border-purple-500/30 bg-gradient-to-br from-indigo-950 via-slate-900 to-purple-950 overflow-hidden shadow-[0_0_50px_-12px_rgba(168,85,247,0.2)]">
+
+                  {/* Decorative AI Lens Flare / Glow Effects */}
+                  <div className="absolute -top-20 -right-20 w-40 h-40 bg-purple-500/20 rounded-full blur-[60px] animate-pulse"></div>
+                  <div className="absolute -bottom-20 -left-20 w-40 h-40 bg-indigo-500/20 rounded-full blur-[60px] animate-pulse delay-700"></div>
+
+                  <div className="relative z-10">
+                    {/* Top Badge with Micro-Glow */}
+                    <div className="inline-flex items-center gap-2 px-2.5 py-1 rounded-full bg-purple-500/10 border border-purple-500/20 text-[8px] md:text-[10px] uppercase tracking-[0.25em] text-purple-400 font-bold mb-3 shadow-[0_0_15px_rgba(168,85,247,0.15)]">
+                      <span className="w-1.5 h-1.5 rounded-full bg-purple-400 animate-ping"></span>
+                      AI Interview Assessment
+                    </div>
+
+                    <h3 className="text-xl md:text-2xl font-bold text-white tracking-tight mt-1">
+                      Start Your AI Interview Test
+                    </h3>
+
+                    <p className="text-xs md:text-sm text-gray-300 mt-3 leading-relaxed">
+                      This assessment is designed to evaluate your communication, clarity, and
+                      role-specific understanding for <span className="text-purple-300 font-semibold drop-shadow-[0_0_10px_rgba(168,85,247,0.5)]">
+                        {selectedJob.title}
+                      </span>.
+                      The process is automated, structured, and takes only a few minutes.
+                    </p>
+
+                    {/* Modern High-Tech Badges */}
+                    <div className="flex flex-wrap gap-3 mt-6">
+                      {[
+                        "AI Evaluated",
+                        "Role Based Questions",
+                        "Instant Processing"
+                      ].map((item, i) => (
+                        <span
+                          key={i}
+                          className="text-[8px] md:text-[10px] uppercase tracking-widest px-4 py-2 rounded-md bg-white/[0.03] border border-white/10 text-gray-300 backdrop-blur-sm hover:border-purple-500/40 transition-colors duration-300"
+                        >
+                          {item}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+
+                {/* Futuristic Action Button */}
+                <button
+                  type="button"
+                  onClick={handleInterviewRedirect}
+                  disabled={redirecting}
+                  className={`w-full py-5 rounded-xl text-xs md:text-sm font-bold uppercase tracking-[0.2em] transition-all duration-300 flex items-center justify-center gap-3 cursor-pointer
+      ${redirecting
+                      ? "bg-slate-800 text-slate-500 border border-slate-700 cursor-not-allowed"
+                      : "bg-gradient-to-r from-purple-600 to-indigo-600 text-white hover:from-purple-500 hover:to-indigo-500 shadow-[0_0_30px_rgba(168,85,247,0.4)] hover:shadow-[0_0_40px_rgba(168,85,247,0.6)] hover:-translate-y-[1px] active:translate-y-[1px]"
+                    }`}
+                >
+                  {redirecting ? (
+                    <>
+                      <span className="w-4 h-4 border-2 border-white/30 border-t-white rounded-full animate-spin"></span>
+                      Launching System...
+                    </>
+                  ) : (
+                    "Initiate Interview"
+                  )}
+                  <ArrowUpRight />
+                </button>
+
+                <p className="text-[10px] md:text-[14px] text-slate-200 text-center tracking-wide italic">
+                  Note: Ensure a stable connection and camera/mic access before starting.
+                </p>
+              </div>
+
             </div>
           </div>
         </div>
