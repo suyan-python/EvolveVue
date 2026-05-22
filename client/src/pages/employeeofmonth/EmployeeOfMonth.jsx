@@ -4,29 +4,31 @@ import EmployeeCard from "./EmployeeCard"; // Import the component above
 // import Photo1 from "../assets/team/saraswati.jpg";
 // import Photo2 from "../assets/team/manish.jpg";
 
-import ashmita from "../../assets/month/ashmita.jpeg";
-import anusha from "../../assets/month/anusha.jpeg";
+import jemini from "../../assets/month/jemini.jpeg";
+import suyog from "../../assets/month/suyog.jpeg";
+
+
 
 const EmployeeSpotlightSection = () =>
 {
     const spotlights = [
         {
-            name: "Ashmita Iteni",
-            designation: "Medical Data Analyst",
-            department: "Clinical Team",
-            month: "march",
-            year: "2026",
-            focus: "Improving data accuracy and reducing reporting inconsistencies across clinical documentation workflows.",
-            image: ashmita,
-        },
-        {
-            name: "Anusha Bastola",
+            name: "Suyog Thapa",
             designation: "Medical Report Reviewer",
             department: "Clerical Team",
             month: "march",
             year: "2026",
             focus: "Enhancing document quality by identifying inconsistencies and ensuring compliance with internal review standards.",
-            image: anusha,
+            image: suyog,
+        },
+        {
+            name: "Jemini Sharma",
+            designation: "Medical Data Analyst",
+            department: "Clinical Team",
+            month: "march",
+            year: "2026",
+            focus: "Improving data accuracy and reducing reporting inconsistencies across clinical documentation workflows.",
+            image: jemini,
         },
     ];
 
