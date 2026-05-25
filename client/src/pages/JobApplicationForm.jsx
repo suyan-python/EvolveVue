@@ -479,7 +479,7 @@ export default function JobApplicationForm()
                       )}
 
                       {/* Shift */}
-                      {selectedJob.shift?.length > 0 && (
+                      {/* {selectedJob.shift?.length > 0 && (
                         <div className="flex items-start gap-4">
                           <Clock className="text-yellow-500 mt-1 flex-shrink-0" size={18} />
                           <div>
@@ -489,7 +489,7 @@ export default function JobApplicationForm()
                             ))}
                           </div>
                         </div>
-                      )}
+                      )} */}
 
                       {/* Holiday Note */}
                       {selectedJob.holidayNote && (

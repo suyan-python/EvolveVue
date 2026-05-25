@@ -13,19 +13,19 @@ const EmployeeSpotlightSection = () =>
 {
     const spotlights = [
         {
-            name: "Suyog Thapa",
+            name: "Suyog Rai",
             designation: "Medical Report Reviewer",
             department: "Clerical Team",
-            month: "march",
+            month: "april",
             year: "2026",
             focus: "Enhancing document quality by identifying inconsistencies and ensuring compliance with internal review standards.",
             image: suyog,
         },
         {
-            name: "Jemini Sharma",
+            name: "Jemini Shrestha",
             designation: "Medical Data Analyst",
             department: "Clinical Team",
-            month: "march",
+            month: "april",
             year: "2026",
             focus: "Improving data accuracy and reducing reporting inconsistencies across clinical documentation workflows.",
             image: jemini,
@@ -43,7 +43,7 @@ const EmployeeSpotlightSection = () =>
                             <span className="w-8 h-[1px] bg-yellow-500"></span> Institutional Spotlight
                         </div>
                         <h2 className="text-3xl md:text-5xl font-bold text-white tracking-tight">
-                            Our Employees of the Month - <span className="text-yellow-500 italic font-serif">March, 2026</span>
+                            Our Employees of the Month - <span className="text-yellow-500 italic font-serif">April, 2026</span>
                         </h2>
                     </div>
                     <p className="text-gray-500 text-xs md:text-sm md:text-right max-w-xs border-l md:border-l-0 md:border-r border-white/10 pl-6 md:pl-0 md:pr-6">
