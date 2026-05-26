@@ -1,6 +1,8 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { ShieldCheck, Activity, Database, Users } from "lucide-react";
+import ProfileCard from "../components/ProfileCard";
+import SystemTicker from "../components/SystemStick";
 
 // Assuming assets are imported as in your previous code
 import geyata from "../assets/leads/geyata.webp";
@@ -8,18 +10,30 @@ import swormin from "../assets/leads/2.webp";
 import prakriti from "../assets/leads/4.webp";
 import dilasha from "../assets/leads/dilasha.webp";
 import nita from "../assets/leads/nita.webp";
-import ProfileCard from "../components/ProfileCard";
-import SystemTicker from "../components/SystemStick";
+
+import sanjana from "../assets/leads/sanjana.webp";
+import luna from "../assets/leads/luna.webp";
+import sajjal from "../assets/leads/sajjal.webp";
+
+
 
 const teamData = {
   executive: { name: "Dr. Geyata Shrestha [PT]", role: "Chief Team Lead", image: geyata },
   clinical: [
     { name: "Dr. Prakriti Shah", role: "Clinical Lead", image: prakriti },
+    { name: "Dr. Sanjeev Yadav", role: "Clinical Lead", image: prakriti },
+    { name: "Dr. Aabha Shakya", role: "Clinical Lead", image: prakriti },
+    { name: "Ms. Priya Malla", role: "Clinical Lead", image: prakriti },
   ],
-  clerical: [
+  clerical1: [
     { name: "Dr. Dilasha Bhandari [PT]", role: "Clerical Lead", image: dilasha },
     { name: "Mr. Swornim Rajbhandari", role: "Clerical Lead", image: swormin },
-    { name: "PT Nita Bohara", role: "Clerical Lead", image: nita },
+    { name: "Dr. Nita Bohara [PT]", role: "Clerical Lead", image: nita },
+  ],
+  clerical2: [
+    { name: "Ms. Sanjana Maharjan", role: "Clerical Lead", image: sanjana },
+    { name: "Ms. Luna Maharjan", role: "Clerical Lead", image: luna },
+    { name: "Mr. Sajjal KC", role: "Clerical Lead", image: sajjal },
   ],
 };
 
@@ -100,7 +114,7 @@ export default function TeamHierarchy()
                   <Database size={18} />
                   <span className="text-[10px] font-black uppercase tracking-[0.4em]">Division 02</span>
                 </div>
-                <h4 className="text-3xl font-bold text-white">Clerical Operations</h4>
+                <h4 className="text-3xl font-bold text-white">Clerical [Team 1]</h4>
               </div>
               <p className="text-gray-500 text-xs md:text-right max-w-xs font-medium">
                 Managing technical infrastructure, data workflows, and 24/7 administrative synchronization.
@@ -108,7 +122,27 @@ export default function TeamHierarchy()
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
-              {teamData.clerical.map((person, idx) => (
+              {teamData.clerical1.map((person, idx) => (
+                <ProfileCard key={idx} person={person} />
+              ))}
+            </div>
+          </section>
+          <section>
+            <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6 border-b border-white/5 pb-8">
+              <div>
+                <div className="flex items-center gap-3 text-yellow-500 mb-2">
+                  <Database size={18} />
+                  <span className="text-[10px] font-black uppercase tracking-[0.4em]">Division 02</span>
+                </div>
+                <h4 className="text-3xl font-bold text-white">Clerical [Team 2]</h4>
+              </div>
+              <p className="text-gray-500 text-xs md:text-right max-w-xs font-medium">
+                Managing technical infrastructure, data workflows, and 24/7 administrative synchronization.
+              </p>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+              {teamData.clerical2.map((person, idx) => (
                 <ProfileCard key={idx} person={person} />
               ))}
             </div>

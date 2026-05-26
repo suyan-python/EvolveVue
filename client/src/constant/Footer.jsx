@@ -1,6 +1,13 @@
 import React from 'react';
 import { Link } from "react-router-dom";
-import { FaArrowUp, FaLinkedinIn, FaEnvelope, FaMapMarkerAlt } from "react-icons/fa";
+import { FaArrowUp, FaMapMarkerAlt } from "react-icons/fa";
+import
+{
+  FaFacebookF,
+  FaInstagram,
+  FaLinkedinIn,
+  FaEnvelope,
+} from "react-icons/fa";
 import Logo from "../assets/logo/hori.png";
 
 function Footer()
@@ -21,13 +28,59 @@ function Footer()
             <p className="text-gray-500 text-sm leading-relaxed max-w-sm font-medium">
               Evolve Vue Private Limited is a specialized BPO institution providing high-fidelity clinical documentation and global administrative support.
             </p>
-            <div className="mt-8 flex gap-4">
+            {/* <div className="mt-8 flex gap-4">
               <a href="#" className="w-10 h-10 border border-white/10 flex items-center justify-center text-gray-500 hover:text-[#d6b25e] hover:border-[#d6b25e] transition-all duration-500">
                 <FaLinkedinIn size={14} />
               </a>
               <a href="mailto:evolvevue25@gmail.com" className="w-10 h-10 border border-white/10 flex items-center justify-center text-gray-500 hover:text-[#d6b25e] hover:border-[#d6b25e] transition-all duration-500">
                 <FaEnvelope size={14} />
               </a>
+            </div> */}
+
+            <div className="mt-8 flex items-center gap-4">
+
+              {/* Facebook */}
+              <a
+                href="https://www.facebook.com/profile.php?id=61575003911885"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Evolve Vue Facebook"
+                className="w-10 h-10 border border-white/10 flex items-center justify-center text-gray-500 hover:text-[#d6b25e] hover:border-[#d6b25e] hover:bg-[#d6b25e]/5 transition-all duration-300"
+              >
+                <FaFacebookF size={13} />
+              </a>
+
+              {/* Instagram */}
+              <a
+                href="https://www.instagram.com/evolvevue/"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Evolve Vue Instagram"
+                className="w-10 h-10 border border-white/10 flex items-center justify-center text-gray-500 hover:text-[#d6b25e] hover:border-[#d6b25e] hover:bg-[#d6b25e]/5 transition-all duration-300"
+              >
+                <FaInstagram size={14} />
+              </a>
+
+              {/* LinkedIn */}
+              <a
+                href="https://www.linkedin.com/company/evolve-vue"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Evolve Vue LinkedIn"
+                className="w-10 h-10 border border-white/10 flex items-center justify-center text-gray-500 hover:text-[#d6b25e] hover:border-[#d6b25e] hover:bg-[#d6b25e]/5 transition-all duration-300"
+              >
+                <FaLinkedinIn size={13} />
+              </a>
+
+              {/* Email */}
+              <a
+                href="mailto:evolvevue25@gmail.com"
+                aria-label="Email Evolve Vue"
+                className="w-10 h-10 border border-white/10 flex items-center justify-center text-gray-500 hover:text-[#d6b25e] hover:border-[#d6b25e] hover:bg-[#d6b25e]/5 transition-all duration-300"
+              >
+                <FaEnvelope size={13} />
+              </a>
+
             </div>
           </div>
 
@@ -35,7 +88,7 @@ function Footer()
           <div className="md:col-span-2 lg:col-span-2">
             <h4 className="text-[10px] font-black uppercase tracking-[0.4em] text-[#d6b25e] mb-8">Sitemap</h4>
             <ul className="space-y-4">
-              {['Home', 'Services', 'About', 'Team', 'Careers'].map((item) => (
+              {['Services', 'About', 'Team', 'Application'].map((item) => (
                 <li key={item}>
                   <Link
                     to={`/${item.toLowerCase()}`}
