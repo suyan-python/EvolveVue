@@ -15,15 +15,18 @@ import sanjana from "../assets/leads/sanjana.webp";
 import luna from "../assets/leads/luna.webp";
 import sajjal from "../assets/leads/sajjal.webp";
 
+import sanjeev from "../assets/leads/sanjeev.webp";
+import aabha from "../assets/leads/aabha.webp";
+import priya from "../assets/leads/priya.webp";
 
 
 const teamData = {
   executive: { name: "Dr. Geyata Shrestha [PT]", role: "Chief Team Lead", image: geyata },
   clinical: [
     { name: "Dr. Prakriti Shah", role: "Clinical Lead", image: prakriti },
-    { name: "Dr. Sanjeev Yadav", role: "Clinical Lead", image: prakriti },
-    { name: "Dr. Aabha Shakya", role: "Clinical Lead", image: prakriti },
-    { name: "Ms. Priya Malla", role: "Clinical Lead", image: prakriti },
+    { name: "Dr. Sanjeev Yadav", role: "Clinical Lead", image: sanjeev },
+    { name: "Ms. Priya Malla", role: "Clinical Lead", image: priya },
+    { name: "Dr. Aabha Shakya", role: "Clinical Lead", image: aabha },
   ],
   clerical1: [
     { name: "Dr. Dilasha Bhandari [PT]", role: "Clerical Lead", image: dilasha },
