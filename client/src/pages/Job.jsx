@@ -36,68 +36,76 @@ const Job = () =>
                 <div className="max-w-7xl mx-auto px-6 py-12">
                     <div className="grid grid-cols-1 gap-4">
                         <h1 className="text-2xl md:text-4xl text-center md:text-start font-semibold tracking-widest uppercase" > Job Openings </h1>
-                        {JOB_OPENINGS.map((job) => (
+                        {JOB_OPENINGS.length > 0 ? (
+                            JOB_OPENINGS.map((job) => (
+                                <div
+                                    key={job.id}
+                                    className="group relative flex flex-col md:flex-row md:items-center justify-between 
+            p-8 bg-[#0f1218] border border-white/5 
+            border-l-4 border-l-transparent hover:border-l-[#d6b25e] 
+            rounded-xl transition-all duration-300 shadow-xl hover:shadow-2xl"
+                                >
+                                    {/* Subtle Professional Hover Layer */}
+                                    <div className="absolute inset-0 bg-gradient-to-r from-[#d6b25e]/[0.03] to-transparent opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none rounded-xl"></div>
 
-                            <div
-                                key={job.id}
-                                className="group relative flex flex-col md:flex-row md:items-center justify-between 
-    p-8 bg-[#0f1218] border border-white/5 
-    border-l-4 border-l-transparent hover:border-l-[#d6b25e] 
-    rounded-xl transition-all duration-300 shadow-xl hover:shadow-2xl"
-                            >
+                                    {/* LEFT CONTENT */}
+                                    <div className="relative z-10">
+                                        <div className="flex flex-wrap items-center gap-3 mb-3 text-[10px] uppercase tracking-widest">
+                                            <span className="px-3 py-1 bg-[#d6b25e]/10 text-[#d6b25e] font-bold rounded-full">
+                                                {job.department}
+                                            </span>
 
-                                {/* Subtle Professional Hover Layer */}
-                                <div className="absolute inset-0 bg-gradient-to-r from-[#d6b25e]/[0.03] to-transparent opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none rounded-xl"></div>
+                                            <span className="text-gray-500 font-semibold">
+                                                {job.workType}
+                                            </span>
 
-                                {/* LEFT CONTENT */}
-                                <div className="relative z-10">
+                                            <span className="text-gray-600">
+                                                {job.location}
+                                            </span>
+                                        </div>
 
-                                    {/* Meta Row */}
-                                    <div className="flex flex-wrap items-center gap-3 mb-3 text-[10px] uppercase tracking-widest">
+                                        <h3 className="text-xl md:text-2xl font-semibold text-white tracking-tight">
+                                            {job.title}
+                                        </h3>
 
-                                        <span className="px-3 py-1 bg-[#d6b25e]/10 text-[#d6b25e] font-bold rounded-full">
-                                            {job.department}
-                                        </span>
-
-                                        <span className="text-gray-500 font-semibold">
-                                            {job.workType}
-                                        </span>
-
-                                        <span className="text-gray-600">
-                                            {job.location}
-                                        </span>
+                                        <div className="mt-3 flex flex-wrap gap-6 text-xs text-gray-400 font-medium">
+                                            <span>Shift: {job.shift}</span>
+                                            <span>Openings: {job.vacancies}</span>
+                                        </div>
                                     </div>
 
-                                    {/* Title */}
-                                    <h3 className="text-xl md:text-2xl font-semibold text-white tracking-tight">
-                                        {job.title}
-                                    </h3>
-
-                                    {/* Secondary Info (Important for trust) */}
-                                    <div className="mt-3 flex flex-wrap gap-6 text-xs text-gray-400 font-medium">
-                                        <span>Shift: {job.shift}</span>
-                                        <span>Openings: {job.vacancies}</span>
+                                    <div className="relative z-10 mt-8 md:mt-0">
+                                        <Link
+                                            to={`/application/apply/${job.id}`}
+                                            className="inline-flex items-center justify-center px-8 py-3 
+                    border border-[#d6b25e]/40 text-[#d6b25e] 
+                    text-[11px] font-bold uppercase tracking-[0.2em]
+                    rounded-lg hover:bg-[#d6b25e] hover:text-black 
+                    transition-all duration-300 w-full md:w-auto"
+                                        >
+                                            Apply Now
+                                        </Link>
                                     </div>
-
                                 </div>
+                            ))
+                        ) : (
+                            <div className="text-center py-16 px-8 bg-[#0f1218] border border-white/5 rounded-xl">
+                                <h3 className="text-2xl font-semibold text-white mb-4">
+                                    No Current Openings
+                                </h3>
 
-                                {/* RIGHT CTA */}
-                                <div className="relative z-10 mt-8 md:mt-0">
-                                    <Link
-                                        to={`/application/apply/${job.id}`}
-                                        className="inline-flex items-center justify-center px-8 py-3 
-        border border-[#d6b25e]/40 text-[#d6b25e] 
-        text-[11px] font-bold uppercase tracking-[0.2em]
-        rounded-lg
-        hover:bg-[#d6b25e] hover:text-black 
-        transition-all duration-300 w-full md:w-auto"
-                                    >
-                                        Apply Now
-                                    </Link>
-                                </div>
-
+                                <p className="text-gray-400 max-w-3xl mx-auto leading-relaxed">
+                                    We do not have any active job openings at the moment. However,
+                                    we are always interested in connecting with talented individuals.
+                                    Please submit your CV/Resume through the
+                                    <span className="text-[#d6b25e] font-bold mx-1">
+                                        General Talent Inquiry Form
+                                    </span>
+                                    below, and we will keep your profile on record for future
+                                    opportunities.
+                                </p>
                             </div>
-                        ))}
+                        )}
                     </div>
                 </div>
                 <GeneralForm />
