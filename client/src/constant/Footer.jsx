@@ -32,7 +32,7 @@ function Footer()
               <a href="#" className="w-10 h-10 border border-white/10 flex items-center justify-center text-gray-500 hover:text-[#d6b25e] hover:border-[#d6b25e] transition-all duration-500">
                 <FaLinkedinIn size={14} />
               </a>
-              <a href="mailto:evolvevue25@gmail.com" className="w-10 h-10 border border-white/10 flex items-center justify-center text-gray-500 hover:text-[#d6b25e] hover:border-[#d6b25e] transition-all duration-500">
+              <a href="mailto:info@evolvevue.com.np" className="w-10 h-10 border border-white/10 flex items-center justify-center text-gray-500 hover:text-[#d6b25e] hover:border-[#d6b25e] transition-all duration-500">
                 <FaEnvelope size={14} />
               </a>
             </div> */}
@@ -74,7 +74,7 @@ function Footer()
 
               {/* Email */}
               <a
-                href="mailto:evolvevue25@gmail.com"
+                href="mailto:info@evolvevue.com.np"
                 aria-label="Email Evolve Vue"
                 className="w-10 h-10 border border-white/10 flex items-center justify-center text-gray-500 hover:text-[#d6b25e] hover:border-[#d6b25e] hover:bg-[#d6b25e]/5 transition-all duration-300"
               >
@@ -104,18 +104,51 @@ function Footer()
 
           {/* Column 3: Global Support (3 Cols) */}
           <div className="md:col-span-3 lg:col-span-2">
-            <h4 className="text-[10px] font-black uppercase tracking-[0.4em] text-[#d6b25e] mb-8">Contact Protocol</h4>
+            <h4 className="text-[10px] font-black uppercase tracking-[0.4em] text-[#d6b25e] mb-8">Contact</h4>
             <div className="space-y-6">
-              <div className="group cursor-default">
-                <p className="text-[9px] font-black text-gray-600 uppercase tracking-widest mb-1">Direct Line</p>
-                <p className="text-sm text-gray-400 group-hover:text-white transition-colors">+977 9851174646</p>
-              </div>
-              <div className="group cursor-default">
-                <p className="text-[9px] font-black text-gray-600 uppercase tracking-widest mb-1">HQ Location</p>
-                <p className="text-sm text-gray-400 group-hover:text-white transition-colors leading-snug">
-                  Balkumari-Gwarko,<br />Lalitpur, Nepal
+
+              {/* Phone */}
+              <a
+                href="tel:+9779851174646"
+                className="group block transition-all duration-300"
+              >
+                <p className="text-[9px] font-black text-gray-600 uppercase tracking-widest mb-1">
+                  Direct Line
                 </p>
-              </div>
+                <p className="text-sm text-gray-400 group-hover:text-[#d6b25e] transition-colors">
+                  +977 9851174646
+                </p>
+              </a>
+
+              {/* Email */}
+              <a
+                href="mailto:info@evolvevue.com.np"
+                className="group block transition-all duration-300"
+              >
+                <p className="text-[9px] font-black text-gray-600 uppercase tracking-widest mb-1">
+                  Email
+                </p>
+                <p className="text-sm text-gray-400 group-hover:text-[#d6b25e] transition-colors break-all">
+                  info@evolvevue.com.np
+                </p>
+              </a>
+
+              {/* Location */}
+              <a
+                href="https://maps.app.goo.gl/m3sWbHrJtLbu9KD87"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group block transition-all duration-300"
+              >
+                <p className="text-[9px] font-black text-gray-600 uppercase tracking-widest mb-1">
+                  HQ Location
+                </p>
+                <p className="text-sm text-gray-400 group-hover:text-[#d6b25e] transition-colors leading-snug">
+                  Balkumari–Gwarko,<br />
+                  Lalitpur, Nepal
+                </p>
+              </a>
+
             </div>
           </div>
 

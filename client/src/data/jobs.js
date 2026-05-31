@@ -7,7 +7,6 @@ export const JOBS = [
   //   title: "Medical Report Reviewer",
   //   tag: "Clinical",
   //   department: "Clinical",
-
   //   // ── Location & Schedule ───────────────────────────────────────────────────
   //   location: "Balkumari, Lalitpur",
   //   workType: "Work from Office",
@@ -18,7 +17,6 @@ export const JOBS = [
   //   ],
   //   holidayNote:
   //     "We do not observe Nepali holidays (including Dashain & Tihar) or US holidays.",
-
   //   // ── Commitment ────────────────────────────────────────────────────────────
   //   contract: "Minimum 18-Month Service Commitment",
   //   training: {
@@ -26,15 +24,12 @@ export const JOBS = [
   //     attendance: "100% Mandatory",
   //   },
   //   vacancies: 3,
-
   //   // ── Application ───────────────────────────────────────────────────────────
-  //   applyEmail: ["hrevolvevue@gmail.com", "evolvevue25@gmail.com"],
+  //   applyEmail: ["hrevolvevue@gmail.com", "info@evolvevue.com.np"],
   //   applyNote: "Submit your updated CV and a typing test result (min. 40 WPM)",
-
   //   // ── Content Sections ──────────────────────────────────────────────────────
   //   overview:
   //     "Evolve Vue Pvt. Ltd. is hiring Medical Report Reviewers to join our medical documentation and quality review team. The role involves analyzing and reviewing medical records, identifying key findings, and ensuring documents meet quality and compliance standards.",
-
   //   responsibilities: [
   //     "Identify, review, and classify medical and legal documents accurately for downstream processing.",
   //     "Extract key findings, highlight important details, and flag missing, unclear, or inconsistent information.",
@@ -49,7 +44,6 @@ export const JOBS = [
   //     "Enter and structure data accurately in standardized templates or systems.",
   //     "Maintain high standards of accuracy, consistency, and formatting.",
   //   ],
-
   //   qualifications: [
   //     "Bachelor's or Master's in Physiotherapy",
   //     "Bachelor's or Master's in Nursing",
@@ -57,7 +51,6 @@ export const JOBS = [
   //     "Bachelor's or Master's in Public Health",
   //     "Or any other related medical field",
   //   ],
-
   //   requirements: [
   //     "Professional written and spoken English (Language Skills).",
   //     "Strong knowledge of Microsoft Word & Excel (Technical Skills).",
@@ -66,14 +59,12 @@ export const JOBS = [
   //     "Strong attention to detail, pattern recognition, and time management.",
   //     "Ability to work independently with minimal supervision.",
   //   ],
-
   //   additionalSkills: [
   //     "Familiarity with medical terminology, abbreviations, and document structure.",
   //     "Ability to interpret clinical context and extract relevant information accurately.",
   //     "Experience with EHR systems, document viewers, or data entry tools.",
   //     "High standards for documentation quality, accuracy, and consistency.",
   //   ],
-
   //   benefits: [
   //     "Competitive salary package.",
   //     "Paid structured training and onboarding.",

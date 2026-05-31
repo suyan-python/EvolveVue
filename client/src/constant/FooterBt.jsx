@@ -82,12 +82,12 @@ const FooterBT = () =>
           </a>
 
           {/* Email Channel */}
-          <a href="mailto:evolvevue25@gmail.com" className="flex flex-col items-end group">
+          <a href="mailto:info@evolvevue.com.np" className="flex flex-col items-end group">
             <div className="flex items-center gap-2 text-gray-500 group-hover:text-[#d6b25e] transition-colors">
               <span className="text-[8px] font-black uppercase tracking-widest">Mail</span>
               <Mail size={10} />
             </div>
-            <span className="text-[11px] font-bold text-white tracking-tight">evolvevue25@gmail.com</span>
+            <span className="text-[11px] font-bold text-white tracking-tight">info@evolvevue.com.np</span>
           </a>
 
           {/* Institutional Badge */}

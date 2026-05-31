@@ -42,9 +42,9 @@ function Contact()
               {[
                 {
                   label: "Data Submission / Inquiries",
-                  val: "evolvevue25@gmail.com",
+                  val: "info@evolvevue.com.np",
                   icon: FaEnvelope,
-                  href: "mailto:evolvevue25@gmail.com",
+                  href: "mailto:info@evolvevue.com.np",
                 },
                 {
                   label: "Operational Hotlines",
