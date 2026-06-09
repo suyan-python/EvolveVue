@@ -191,62 +191,57 @@ export const JOBS = [
 
   {
     // ── Identity ──────────────────────────────────────────────────────────────
-    id: "medical-report-reviewer",
+    id: "medical-report-reviewer-v2",
     title: "Medical Report Reviewer",
     tag: "Clinical",
     department: "Clinical",
     // ── Location & Schedule ───────────────────────────────────────────────────
-    location: "Balkumari, Lalitpur",
+    location: "Balkumari, Gwarko, Lalitpur",
     workType: "Work from Office",
     shift: [
       "6:30 AM – 3:00 PM NST",
-      "or 7:30 AM – 4:00 PM NST",
       "Monday to Friday (Saturday & Sunday Off)",
     ],
     holidayNote:
-      "We do not observe Nepali holidays (including Dashain & Tihar) or US holidays.",
+      "We do not observe Nepali holidays (including Dashain & Tihar) or US holidays. No leave during Dashain and Tihar.",
     // ── Commitment ────────────────────────────────────────────────────────────
     contract: "Minimum 18-Month Service Commitment",
     training: {
-      duration: "3 Months",
+      duration: "1 Month (Paid)",
       attendance: "100% Mandatory",
     },
     vacancies: 10,
     // ── Application ───────────────────────────────────────────────────────────
     applyEmail: ["hrevolvevue@gmail.com", "evolvevue25@gmail.com"],
     applyNote:
-      "Submit your updated CV and a typing test result screenshot (minimum 40 WPM) from https://www.typing.evolvevue.com",
+      "Submit your updated CV and a typing test screenshot (minimum 40 WPM). Only shortlisted candidates will be contacted.",
     // ── Content Sections ──────────────────────────────────────────────────────
     overview:
-      "Evolve Vue Pvt. Ltd. is hiring Medical Report Reviewers to join our medical documentation and quality review team. The role involves analyzing and reviewing medical records, identifying key findings, and ensuring documents meet quality and compliance standards.",
+      "Evolve Vue Pvt. Ltd. is hiring Medical Report Reviewers to join our medical documentation and quality review team. The role involves analyzing and reviewing medical records, identifying key findings, and ensuring documents meet quality and compliance standards. Candidates must demonstrate strong analytical skills, attention to detail, and the ability to work efficiently across multiple types of documents.",
     responsibilities: [
       "Identify, review, and classify medical and legal documents accurately for downstream processing.",
       "Extract key findings, highlight important details, and flag missing, unclear, or inconsistent information.",
       "Enter and annotate data in structured templates or tools following internal guidelines.",
       "Verify accuracy, completeness, and consistency of document content and participate in quality assurance checks.",
-      "Coordinate with QA teams and other internal departments, escalating issues and providing timely updates.",
+      "Coordinate with QA teams and other internal departments, escalating issues and providing timely updates on progress.",
       "Contribute to process improvement by providing feedback and suggestions for workflow efficiency.",
-      "Review and analyze clinical documents such as progress notes, diagnostic reports, operative notes, and discharge summaries.",
-      "Interpret medical information accurately using clinical knowledge and context.",
-      "Extract key data including diagnoses, procedures, medications, lab values, and provider notes.",
-      "Identify relevant clinical findings and ensure documentation completeness.",
-      "Enter and structure data accurately in standardized templates or systems.",
-      "Maintain high standards of accuracy, consistency, and formatting.",
     ],
     qualifications: [
-      "Bachelor's or Master's in Physiotherapy",
       "Bachelor's or Master's in Nursing",
       "Bachelor's or Master's in Pharmacy",
       "Bachelor's or Master's in Public Health",
-      "Or any other related medical field",
+      "BBA",
+      "Bachelor's in Computer Science",
+      "Or any other related field",
     ],
     requirements: [
-      "Professional written and spoken English (Language Skills).",
-      "Strong knowledge of Microsoft Word & Excel (Technical Skills).",
-      "Minimum typing speed of 40 WPM — verified by test.",
-      "Must remain responsive throughout the shift (emails, tasks, notifications).",
-      "Strong attention to detail, pattern recognition, and time management.",
-      "Ability to work independently with minimal supervision.",
+      "Minimum 18-month service commitment — non-negotiable.",
+      "Excellent written and spoken English (Language Skills).",
+      "Medical or health science background preferred.",
+      "Proficient in MS Word and Excel (Technical Skills).",
+      "Minimum typing speed of 40 WPM — verified by screenshot.",
+      "Must maintain communication and responsiveness throughout the shift.",
+      "Strong accuracy, attention to detail, time management, adaptability, and ability to work independently.",
     ],
     additionalSkills: [
       "Familiarity with medical terminology, abbreviations, and document structure.",
@@ -256,8 +251,8 @@ export const JOBS = [
     ],
     benefits: [
       "Competitive salary package.",
-      "Paid structured training and onboarding.",
-      "Career growth pathways (QA & Leadership).",
+      "Paid training and structured onboarding.",
+      "Career growth opportunities (QA & leadership pathways).",
       "Supportive, team-oriented work culture.",
     ],
   },
