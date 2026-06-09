@@ -8,7 +8,6 @@ import { Helmet } from "react-helmet";
 
 const Job = () =>
 {
-
     return (
         <section className="w-full min-h-screen bg-[#0b0e14] text-white py-32">
             {/* 1. HERO SECTION: Aesthetic & Professional */}
