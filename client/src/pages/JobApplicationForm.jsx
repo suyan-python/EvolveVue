@@ -271,7 +271,7 @@ export default function JobApplicationForm()
                 </div>
               </div>
 
-              {/* <form onSubmit={handleSubmit} className="space-y-8">
+              <form onSubmit={handleSubmit} className="space-y-8">
                 {errorMessage && (
                   <div className="p-4 rounded-xl bg-red-500/10 border border-red-500/20 text-red-400 text-sm animate-pulse">
                     {errorMessage}
@@ -316,8 +316,8 @@ export default function JobApplicationForm()
                     </div>
                     <span className="bg-[#d6b25e] text-black text-[10px] font-bold px-4 py-2 rounded-lg">BROWSE</span>
                   </label>
-                  <p className="text-[11px] text-gray-500">
-                    Please include your CV and Typing Test results. <a href="https://typing.evolvevue.com.np/" target="_blank" className="text-[#d6b25e] hover:underline">Verify your speed here.</a>
+                  <p className="text-[11px] text-gray-400">
+                    Please include your CV and Typing Test results. <a href="https://typing.evolvevue.com.np/" target="_blank" className="text-[#d6b25e] underline text-xl font-bold ">Verify your speed here.</a>
                   </p>
                 </div>
 
@@ -341,18 +341,17 @@ export default function JobApplicationForm()
                 >
                   {loading ? "Verifying Details..." : "Submit Application"}
                 </button>
-              </form> */}
+              </form>
 
-              <div className="space-y-8">
-                {/* AI Container with Animated Gradient and Glow */}
+
+              {/* peatch ai */}
+              {/* <div className="space-y-8">
                 <div className="relative p-6 md:p-8 rounded-xl border border-purple-500/30 bg-gradient-to-br from-indigo-950 via-slate-900 to-purple-950 overflow-hidden shadow-[0_0_50px_-12px_rgba(168,85,247,0.2)]">
 
-                  {/* Decorative AI Lens Flare / Glow Effects */}
                   <div className="absolute -top-20 -right-20 w-40 h-40 bg-purple-500/20 rounded-full blur-[60px] animate-pulse"></div>
                   <div className="absolute -bottom-20 -left-20 w-40 h-40 bg-indigo-500/20 rounded-full blur-[60px] animate-pulse delay-700"></div>
 
                   <div className="relative z-10">
-                    {/* Top Badge with Micro-Glow */}
                     <div className="inline-flex items-center gap-2 px-2.5 py-1 rounded-full bg-purple-500/10 border border-purple-500/20 text-[8px] md:text-[10px] uppercase tracking-[0.25em] text-purple-400 font-bold mb-3 shadow-[0_0_15px_rgba(168,85,247,0.15)]">
                       <span className="w-1.5 h-1.5 rounded-full bg-purple-400 animate-ping"></span>
                       AI Interview Assessment
@@ -370,7 +369,6 @@ export default function JobApplicationForm()
                       The process is automated, structured, and takes only a few minutes.
                     </p>
 
-                    {/* Modern High-Tech Badges */}
                     <div className="flex flex-wrap gap-3 mt-6">
                       {[
                         "AI Evaluated",
@@ -388,7 +386,6 @@ export default function JobApplicationForm()
                   </div>
                 </div>
 
-                {/* Futuristic Action Button */}
                 <button
                   type="button"
                   onClick={handleInterviewRedirect}
@@ -413,7 +410,7 @@ export default function JobApplicationForm()
                 <p className="text-[10px] md:text-[14px] text-slate-200 text-center tracking-wide italic">
                   Note: Ensure a stable connection and camera/mic access before starting.
                 </p>
-              </div>
+              </div> */}
 
             </div>
           </div>

@@ -70,7 +70,7 @@ const Job = () =>
 
                                         <div className="mt-3 flex flex-wrap gap-6 text-xs text-gray-400 font-medium">
                                             <span>Shift: {job.shift}</span>
-                                            <span>Openings: {job.vacancies}</span>
+                                            <span className="text-[#d6b25e] font-bold ">Openings: {job.vacancies}</span>
                                         </div>
                                     </div>
 
