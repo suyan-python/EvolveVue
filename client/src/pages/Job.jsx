@@ -16,15 +16,18 @@ const Job = () =>
                     <div className="flex flex-col gap-4">
                         <span className="flex items-center gap-2 text-[#d6b25e] uppercase tracking-[0.4em] text-[8px] md:text-[10px] font-bold">
                             <span className="w-2 h-2 rounded-full bg-[#d6b25e] animate-pulse"></span>
-                            Now Hiring Professionals
+                            Careers Updated Daily
                         </span>
+
                         <h1 className="text-4xl md:text-6xl font-bold tracking-tight">
-                            Shape the Future of <br />
-                            <span className="text-gray-500">Medical Documentation.</span>
+                            We're Growing — <br />
+                            <span className="text-gray-500">Join Us on the Journey.</span>
                         </h1>
+
                         <p className="mt-2 md:mt-6 text-gray-400 max-w-2xl text-xs md:text-lg leading-relaxed">
-                            We are looking for detail-oriented experts to support global healthcare providers
-                            with accurate and compliant clinical records.
+                            We are actively hiring talented individuals across multiple roles. Check back
+                            often for newly posted opportunities and become part of a team dedicated to
+                            excellence, innovation, and professional growth.
                         </p>
                     </div>
                 </div>
@@ -34,7 +37,7 @@ const Job = () =>
                 {/* 1. JOB LISTINGS: Square & Structured */}
                 <div className="max-w-7xl mx-auto px-6 py-12">
                     <div className="grid grid-cols-1 gap-4">
-                        <h1 className="text-2xl md:text-4xl text-center md:text-start font-semibold tracking-widest uppercase" > Job Openings </h1>
+                        <h1 className="text-2xl md:text-4xl text-center md:text-start font-semibold tracking-widest uppercase" > Job Openings - June-July, 2026 </h1>
                         {JOB_OPENINGS.length > 0 ? (
                             JOB_OPENINGS.map((job) => (
                                 <div
