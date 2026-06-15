@@ -25,17 +25,9 @@ function Footer()
           {/* Column 1: Institutional Identity (4 Cols) */}
           <div className="md:col-span-4 lg:col-span-5">
             <img src={Logo} alt="Evolve Vue" className="w-48 mb-8 opacity-90" />
-            <p className="text-gray-500 text-sm leading-relaxed max-w-sm font-medium">
+            <p className="text-gray-500 text-xs md:text-sm leading-relaxed max-w-sm font-medium">
               Evolve Vue Private Limited is a specialized BPO institution providing high-fidelity clinical documentation and global administrative support.
             </p>
-            {/* <div className="mt-8 flex gap-4">
-              <a href="#" className="w-10 h-10 border border-white/10 flex items-center justify-center text-gray-500 hover:text-[#d6b25e] hover:border-[#d6b25e] transition-all duration-500">
-                <FaLinkedinIn size={14} />
-              </a>
-              <a href="mailto:info@evolvevue.com.np" className="w-10 h-10 border border-white/10 flex items-center justify-center text-gray-500 hover:text-[#d6b25e] hover:border-[#d6b25e] transition-all duration-500">
-                <FaEnvelope size={14} />
-              </a>
-            </div> */}
 
             <div className="mt-8 flex items-center gap-4">
 

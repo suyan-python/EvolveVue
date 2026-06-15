@@ -5,7 +5,7 @@ import Binayak from "../assets/person/binayak2.jpeg";
 const MeetFounder = () =>
 {
     return (
-        <section className="relative min-h-screen flex items-center justify-center bg-[#0b0e14] py-32 px-6 overflow-hidden">
+        <section className="relative min-h-screen flex items-center justify-center bg-[#0b0e14] py-24 md:py-32 px-6 overflow-hidden">
             {/* 1. Structural Background Pattern (Consistency across sections) */}
             <div
                 className="absolute inset-0 opacity-[0.02] pointer-events-none"
@@ -69,7 +69,7 @@ const MeetFounder = () =>
                         transition={{ delay: 0.2 }}
                         className="lg:col-span-7 flex flex-col pt-12 lg:pt-0"
                     >
-                        <h4 className="text-xs font-black text-gray-500 uppercase tracking-[0.4em] mb-8">Founder's Statement</h4>
+                        <h4 className="text-[10px] md:text-xs font-black text-gray-500 uppercase tracking-[0.4em] mb-8">Founder's Statement</h4>
 
                         <div className="space-y-8">
                             <p className="text-2xl md:text-4xl font-medium text-white leading-tight tracking-tight">
@@ -80,7 +80,7 @@ const MeetFounder = () =>
 
                             <div className="w-20 h-[2px] bg-[#d6b25e]"></div>
 
-                            <div className="text-gray-400 text-lg leading-relaxed space-y-6 max-w-2xl font-medium">
+                            <div className="text-gray-400 text-xs md:text-lg leading-relaxed space-y-6 max-w-2xl font-medium">
                                 <p>
                                     As an entrepreneur and problem-solver, my journey with Evolve Vue began with a singular focus:
                                     to provide healthcare providers with the <strong>uncompromising accuracy</strong> they require to focus on patient care.

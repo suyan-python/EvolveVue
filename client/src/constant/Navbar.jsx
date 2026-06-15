@@ -35,8 +35,9 @@ function Navbar()
   const navLinks = [
     { to: "/", label: "Home" },
     { to: "/about", label: "Evolve" },
-    { to: "/team", label: "Our Team" },
     { to: "/services", label: "Services" },
+    { to: "/team", label: "Our Team" },
+    { to: "/events", label: "Our Events" },
     { to: "/contact", label: "Contact" },
     { to: "/application", label: "Careers", isButton: true },
   ];
@@ -152,12 +153,12 @@ function Navbar()
                     </span>
 
                     {link.isButton ? (
-                      <button className="w-full py-5 bg-[#d6b25e] text-black font-bold text-sm uppercase tracking-[0.2em] active:scale-95 transition-all">
+                      <button className="w-full py-3 bg-[#d6b25e] text-black font-bold text-[10px] uppercase tracking-[0.2em] active:scale-95 transition-all">
                         {link.label}
                       </button>
                     ) : (
                       <div className="flex flex-col">
-                        <span className={`text-4xl tracking-tighter transition-all ${isActive
+                        <span className={`text-lg tracking-tighter transition-all ${isActive
                           ? "text-white font-semibold"
                           : "text-white/40 font-medium group-hover:text-white"
                           }`}>

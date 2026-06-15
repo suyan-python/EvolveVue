@@ -108,7 +108,7 @@ function WholeTeam()
             <div className="w-12 h-[1px] bg-[#d6b25e]"></div>
             <span className="text-[10px] font-black text-[#d6b25e] uppercase tracking-[0.4em]">Organizational Chart</span>
           </div>
-          <h2 className="text-4xl md:text-6xl font-bold text-white tracking-tighter">
+          <h2 className="text-4xl md:text-6xl font-light text-white tracking-tighter">
             Leadership <span className="text-gray-500 italic font-serif">&</span> Structure.
           </h2>
         </div>
@@ -154,7 +154,7 @@ function WholeTeam()
 
               {/* Division Header */}
               <div>
-                <h3 className="text-xs font-black text-gray-600 uppercase tracking-[0.6em]">
+                <h3 className="text-xs font-black text-gray-200 uppercase tracking-[0.6em]">
                   Dept // {division.divisionName}
                 </h3>
                 <div className="mt-2 w-16 h-[1px] bg-[#d6b25e]"></div>

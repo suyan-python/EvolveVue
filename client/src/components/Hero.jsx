@@ -99,7 +99,7 @@ function Hero()
         >
           <NavLink
             to="/services"
-            className="px-14 py-5 bg-[#d6b25e] text-black font-black text-xs tracking-[0.2em] rounded-full 
+            className="px-14 py-5 bg-[#d6b25e] text-black font-black text-xs tracking-[0.2em] rounded-xl 
                        hover:bg-white transition-all duration-500 shadow-[0_15px_30px_rgba(214,178,94,0.2)]"
           >
             VIEW SOLUTIONS
@@ -107,7 +107,7 @@ function Hero()
 
           <NavLink
             to="/team"
-            className="px-14 py-5 bg-transparent border border-white/10 text-white font-black text-xs tracking-[0.2em] rounded-full 
+            className="px-14 py-5 bg-transparent border border-white/10 text-white font-black text-xs tracking-[0.2em] rounded-xl 
                        hover:bg-white hover:text-black transition-all duration-500"
           >
             OUR EXPERTISE

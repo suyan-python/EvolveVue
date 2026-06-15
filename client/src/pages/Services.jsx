@@ -59,13 +59,21 @@ const Services = () =>
   return (
     <section className="relative w-full py-32 bg-[#0b0e14] overflow-hidden">
 
+      {/* Background Effects */}
+      <div className="absolute inset-0 pointer-events-none">
+        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[700px] h-[700px] bg-[#d6b25e]/5 blur-3xl rounded-full" />
+        <div className="absolute bottom-0 right-0 w-[500px] h-[500px] bg-white/5 blur-3xl rounded-full" />
+      </div>
+
       <div className="max-w-7xl mx-auto px-6 md:px-12 relative z-10">
 
-        {/* Section Header */}
-        <div className="max-w-3xl mb-24">
+        {/* HEADER */}
+        <div className="max-w-3xl mb-12 md:mb-24">
+
           <motion.div
             initial={{ opacity: 0, x: -20 }}
             whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
             className="flex items-center gap-3 mb-6"
           >
             <div className="w-10 h-[1px] bg-[#d6b25e]"></div>
@@ -77,71 +85,101 @@ const Services = () =>
           <motion.h2
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="text-4xl md:text-6xl font-bold text-white mb-8 tracking-tighter leading-tight"
+            className="text-4xl md:text-6xl font-light text-white mb-8 tracking-tighter"
           >
             Precision-Driven <br />
-            <span className="text-gray-500  font-medium ">Healthcare Solutions.</span>
+            <span className="text-gray-500 font-medium">
+              Healthcare Solutions.
+            </span>
           </motion.h2>
 
-          <p className="text-gray-400 text-lg leading-relaxed border-l border-white/10 pl-8">
-            Bridging the gap between clinical care and administrative precision. We provide
-            physicians with the data integrity required for modern medical excellence.
+          <p className="text-gray-400 text-xs md:text-lg leading-relaxed border-l border-[#d6b25e]/20 pl-8">
+            Bridging clinical intelligence with structured documentation systems
+            that power accuracy, compliance, and operational scale.
           </p>
+
         </div>
 
-        {/* Services Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {services.map((service, index) => (
-            <motion.div
-              key={index}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: index * 0.05 }}
-              className="group relative bg-[#121212] border border-white/5 p-10 rounded-3xl transition-all duration-500 hover:border-[#d6b25e]/30 flex flex-col items-start overflow-hidden"
-            >
-              {/* Internal Spotlight Glow on Hover */}
-              <div className="absolute inset-0 bg-gradient-to-br from-[#d6b25e]/[0.05] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+        {/* SERVICES GRID (Editorial Layout) */}
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8">
 
-              {/* Icon Section */}
-              <div className="relative z-10 w-14 h-14 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center text-[#d6b25e] text-2xl mb-8 group-hover:scale-110 group-hover:bg-[#d6b25e] group-hover:text-black transition-all duration-500 shadow-2xl">
-                {service.icon}
-              </div>
+          {services.map((service, index) =>
+          {
 
-              {/* Text Content */}
-              <div className="relative z-10">
-                <h3 className="text-xl font-bold text-white mb-4 tracking-tight group-hover:translate-x-1 transition-transform">
+            const isFeatured = index === 0;
+
+            return (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, delay: index * 0.05 }}
+                className={`relative group overflow-hidden border border-white/5 bg-[#121212] rounded-3xl transition-all duration-500
+              ${isFeatured ? "lg:col-span-6 p-12" : "lg:col-span-3 p-8"}
+            `}
+              >
+
+                {/* Glow Layer */}
+                <div className="absolute inset-0 bg-gradient-to-br from-[#d6b25e]/10 to-transparent opacity-0 group-hover:opacity-100 transition duration-500" />
+
+                {/* Floating accent line */}
+                <div className="absolute top-0 left-0 w-0 h-[2px] bg-[#d6b25e] group-hover:w-full transition-all duration-700" />
+
+                {/* ICON */}
+                <div className="relative z-10 mb-8">
+                  <div className="w-14 h-14 rounded-2xl flex items-center justify-center bg-white/5 border border-white/10 text-[#d6b25e] group-hover:bg-[#d6b25e] group-hover:text-black transition-all duration-500">
+                    {service.icon}
+                  </div>
+                </div>
+
+                {/* TITLE */}
+                <h3 className={`relative z-10 text-white font-bold tracking-tight mb-4
+              ${isFeatured ? "text-3xl" : "text-xl"}
+            `}>
                   {service.title}
                 </h3>
-                <p className="text-gray-500 leading-relaxed text-sm font-medium mb-10 group-hover:text-gray-300 transition-colors">
+
+                {/* DESCRIPTION */}
+                <p className={`relative z-10 text-gray-500 leading-relaxed mb-10
+              ${isFeatured ? "text-base" : "text-sm"}
+            `}>
                   {service.description}
                 </p>
-              </div>
 
-              {/* Trust Badge at bottom of card */}
-              <div className="mt-auto relative z-10 flex items-center gap-2">
-                <div className="w-1.5 h-1.5 bg-[#d6b25e] rounded-full shadow-[0_0_8px_#d6b25e]"></div>
-                <span className="text-[9px] font-black text-gray-500 uppercase tracking-widest group-hover:text-white transition-colors">
-                  Quality Verified
-                </span>
-              </div>
-            </motion.div>
-          ))}
+                {/* CTA / MICRO INTERACTION */}
+                <div className="relative z-10 flex items-center justify-between mt-auto">
+
+                  <div className="flex items-center gap-2">
+                    <div className="w-2 h-2 rounded-full bg-[#d6b25e] shadow-[0_0_10px_#d6b25e]" />
+                    <span className="text-[9px] uppercase tracking-widest text-gray-500 group-hover:text-white transition">
+                      Verified System
+                    </span>
+                  </div>
+                </div>
+
+              </motion.div>
+            );
+          })}
+
         </div>
 
-        {/* Bottom Trust Section */}
-        <div className="mt-24 pt-12 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-8">
-          <div className="flex items-center gap-6 opacity-40 grayscale hover:grayscale-0 hover:opacity-100 transition-all">
-            {/* These would be small icons for HIPAA, ISO, etc */}
-            <span className="text-xs font-bold text-white tracking-widest border border-white px-3 py-1">HIPAA</span>
-            <span className="text-xs font-bold text-white tracking-widest border border-white px-3 py-1">GDPR</span>
-            <span className="text-xs font-bold text-white tracking-widest border border-white px-3 py-1">ISO 27001</span>
+        {/* TRUST STRIP */}
+        <div className="mt-24 pt-12 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-6 text-white
+        ">
+
+          <div className="flex items-center gap-4 opacity-40 hover:opacity-100 transition">
+            <span className="text-xs border border-white/10 px-3 py-1">HIPAA</span>
+            <span className="text-xs border border-white/10 px-3 py-1">GDPR</span>
+            <span className="text-xs border border-white/10 px-3 py-1">ISO 27001</span>
           </div>
-          <p className="text-[10px] text-gray-600 uppercase tracking-[0.2em] font-bold">
-            Securely Processing 1M+ Clinical Records Annually
+
+          <p className="text-[10px] text-gray-400 uppercase tracking-[0.3em] font-bold">
+            Processing Clinical Intelligence at Scale
           </p>
+
         </div>
+
       </div>
     </section>
   );

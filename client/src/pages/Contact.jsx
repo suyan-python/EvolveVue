@@ -10,7 +10,7 @@ function Contact()
       <div className="max-w-7xl mx-auto relative z-10">
 
         {/* --- HEADER --- */}
-        <div className="mb-24">
+        <div className="mb-12 md:mb-24">
           <motion.div
             initial={{ opacity: 0, x: -20 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -19,7 +19,7 @@ function Contact()
             <div className="w-12 h-[1px] bg-[#d6b25e]"></div>
             <span className="text-[10px] font-bold text-[#d6b25e] uppercase tracking-[0.5em]">Head Office</span>
           </motion.div>
-          <h2 className="text-4xl md:text-6xl font-bold text-white tracking-tighter">
+          <h2 className="text-4xl md:text-6xl font-light text-white tracking-tighter">
             Global <span className="text-gray-500">Connectivity.</span>
           </h2>
         </div>
@@ -93,11 +93,11 @@ function Contact()
 
                     <span
                       className="
-            text-gray-300 font-medium tracking-tight
+            text-gray-300 font-light tracking-tight
             group-hover:text-white
             underline-offset-4
             group-hover:underline
-            transition-colors
+            transition-colors text-xs md:text-base
           "
                     >
                       {item.val}
@@ -134,11 +134,11 @@ function Contact()
             <div className="absolute top-0 inset-x-0 z-20 bg-gradient-to-b from-[#0b0e14] to-transparent p-8 flex justify-between items-start pointer-events-none">
               <div className="flex items-center gap-3 bg-[#121212]/90 border border-white/10 px-4 py-2 rounded-sm backdrop-blur-sm">
                 <FaClock className="text-[#d6b25e] text-xs" />
-                <span className="text-[10px] text-white font-black uppercase tracking-widest">GMT +5:45 (NEPAL)</span>
+                <span className="text-[7px] md:text-[10px] text-white font-black uppercase tracking-widest">GMT +5:45 (NEPAL)</span>
               </div>
               <div className="flex items-center gap-3 bg-[#121212]/90 border border-white/10 px-4 py-2 rounded-sm backdrop-blur-sm">
                 <FaGlobe className="text-[#d6b25e] text-xs" />
-                <span className="text-[10px] text-white font-black uppercase tracking-widest">Lat: 27.6672° N</span>
+                <span className="text-[7px] md:text-[10px] text-white font-black uppercase tracking-widest">Lat: 27.6672° N</span>
               </div>
             </div>
 

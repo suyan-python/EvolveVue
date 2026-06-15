@@ -19,7 +19,7 @@ const Job = () =>
                             Careers Updated Daily
                         </span>
 
-                        <h1 className="text-4xl md:text-6xl font-bold tracking-tight">
+                        <h1 className="text-4xl md:text-6xl font-light tracking-tight">
                             We're Growing — <br />
                             <span className="text-gray-500">Join Us on the Journey.</span>
                         </h1>

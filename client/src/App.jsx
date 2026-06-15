@@ -22,6 +22,8 @@ import "./animation.css";
 import "./index.css";
 import MobileNav from "./constant/Mobilenav";
 import Job from "./pages/Job";
+import EventsPreview from "./pages/EventsPreview";
+import EventsGallery from "./pages/EventsGallery";
 
 function LayoutWrapper({ children })
 {
@@ -55,6 +57,8 @@ function App()
           <Route path="/about" element={<AboutUs />} />
           <Route path="/services" element={<Services />} />
           <Route path="/contact" element={<Contact />} />
+          <Route path="/events" element={<EventsPreview />} />
+          <Route path="/events/:slug" element={<EventsGallery />} />
 
           <Route path="/application" element={<Job />} />
           <Route path="/application/apply/:jobId" element={<JobApplicationForm />} />

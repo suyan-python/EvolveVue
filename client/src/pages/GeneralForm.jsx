@@ -85,14 +85,14 @@ export default function GeneralForm()
                     {/* Section Header */}
                     <div className="relative z-10 mb-12  flex flex-col justify-center items-center text-center">
                         <div className="flex items-center justify- gap-3 mb-4">
-                            <div className="w-10 h-10 rounded-xl flex items-center justify-center yellowText">
+                            <div className="hidden  w-10 h-10 rounded-xl md:flex items-center justify-center yellowText">
                                 <Briefcase size={20} />
                             </div>
                             <h2 className="text-2xl md:text-3xl font-semibold text-white tracking-tight">
                                 General Talent <span className="yellowText">Inquiry</span>
                             </h2>
                         </div>
-                        <p className="text-gray-400 text-sm md:text-base leading-relaxed max-w-xl">
+                        <p className="text-gray-400 text-xs md:text-base leading-relaxed max-w-xl">
                             Don't see a specific opening? Submit your credentials to our
                             <span className="text-[#9cee69]/70 font-bold"> Talent Database</span>.
                             Our recruitment team monitors this portal for future roles.
