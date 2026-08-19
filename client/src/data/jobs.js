@@ -188,74 +188,73 @@ export const JOBS = [
   //     },
   //   ],
   // },
-
-  {
-    // ── Identity ──────────────────────────────────────────────────────────────
-    id: "medical-report-reviewer-v2",
-    title: "Medical Report Reviewer",
-    tag: "Clinical",
-    department: "Clinical",
-    // ── Location & Schedule ───────────────────────────────────────────────────
-    location: "Balkumari, Gwarko, Lalitpur",
-    workType: "Work from Office",
-    shift: [
-      "6:30 AM – 3:00 PM NST",
-      "Monday to Friday (Saturday & Sunday Off)",
-    ],
-    holidayNote:
-      "We do not observe Nepali holidays (including Dashain & Tihar) or US holidays. No leave during Dashain and Tihar.",
-    // ── Commitment ────────────────────────────────────────────────────────────
-    contract: "Minimum 18-Month Service Commitment",
-    training: {
-      duration: "1 Month (Paid)",
-      attendance: "100% Mandatory",
-    },
-    vacancies: 10,
-    // ── Application ───────────────────────────────────────────────────────────
-    applyEmail: ["hrevolvevue@gmail.com", "evolvevue25@gmail.com"],
-    applyNote:
-      "Submit your updated CV and a typing test screenshot (minimum 40 WPM). Only shortlisted candidates will be contacted.",
-    // ── Content Sections ──────────────────────────────────────────────────────
-    overview:
-      "Evolve Vue Pvt. Ltd. is hiring Medical Report Reviewers to join our medical documentation and quality review team. The role involves analyzing and reviewing medical records, identifying key findings, and ensuring documents meet quality and compliance standards. Candidates must demonstrate strong analytical skills, attention to detail, and the ability to work efficiently across multiple types of documents.",
-    responsibilities: [
-      "Identify, review, and classify medical and legal documents accurately for downstream processing.",
-      "Extract key findings, highlight important details, and flag missing, unclear, or inconsistent information.",
-      "Enter and annotate data in structured templates or tools following internal guidelines.",
-      "Verify accuracy, completeness, and consistency of document content and participate in quality assurance checks.",
-      "Coordinate with QA teams and other internal departments, escalating issues and providing timely updates on progress.",
-      "Contribute to process improvement by providing feedback and suggestions for workflow efficiency.",
-    ],
-    qualifications: [
-      "Bachelor's or Master's in Nursing",
-      "Bachelor's or Master's in Pharmacy",
-      "Bachelor's or Master's in Public Health",
-      "BBA",
-      "Bachelor's in Computer Science",
-      "Or any other related field",
-    ],
-    requirements: [
-      "Minimum 18-month service commitment — non-negotiable.",
-      "Excellent written and spoken English (Language Skills).",
-      "Medical or health science background preferred.",
-      "Proficient in MS Word and Excel (Technical Skills).",
-      "Minimum typing speed of 40 WPM — verified by screenshot.",
-      "Must maintain communication and responsiveness throughout the shift.",
-      "Strong accuracy, attention to detail, time management, adaptability, and ability to work independently.",
-    ],
-    additionalSkills: [
-      "Familiarity with medical terminology, abbreviations, and document structure.",
-      "Ability to interpret clinical context and extract relevant information accurately.",
-      "Experience with EHR systems, document viewers, or data entry tools.",
-      "High standards for documentation quality, accuracy, and consistency.",
-    ],
-    benefits: [
-      "Competitive salary package.",
-      "Paid training and structured onboarding.",
-      "Career growth opportunities (QA & leadership pathways).",
-      "Supportive, team-oriented work culture.",
-    ],
-  },
+  // {
+  //   // ── Identity ──────────────────────────────────────────────────────────────
+  //   id: "medical-report-reviewer-v2",
+  //   title: "Medical Report Reviewer",
+  //   tag: "Clinical",
+  //   department: "Clinical",
+  //   // ── Location & Schedule ───────────────────────────────────────────────────
+  //   location: "Balkumari, Gwarko, Lalitpur",
+  //   workType: "Work from Office",
+  //   shift: [
+  //     "6:30 AM – 3:00 PM NST",
+  //     "Monday to Friday (Saturday & Sunday Off)",
+  //   ],
+  //   holidayNote:
+  //     "We do not observe Nepali holidays (including Dashain & Tihar) or US holidays. No leave during Dashain and Tihar.",
+  //   // ── Commitment ────────────────────────────────────────────────────────────
+  //   contract: "Minimum 18-Month Service Commitment",
+  //   training: {
+  //     duration: "1 Month (Paid)",
+  //     attendance: "100% Mandatory",
+  //   },
+  //   vacancies: 10,
+  //   // ── Application ───────────────────────────────────────────────────────────
+  //   applyEmail: ["hrevolvevue@gmail.com", "evolvevue25@gmail.com"],
+  //   applyNote:
+  //     "Submit your updated CV and a typing test screenshot (minimum 40 WPM). Only shortlisted candidates will be contacted.",
+  //   // ── Content Sections ──────────────────────────────────────────────────────
+  //   overview:
+  //     "Evolve Vue Pvt. Ltd. is hiring Medical Report Reviewers to join our medical documentation and quality review team. The role involves analyzing and reviewing medical records, identifying key findings, and ensuring documents meet quality and compliance standards. Candidates must demonstrate strong analytical skills, attention to detail, and the ability to work efficiently across multiple types of documents.",
+  //   responsibilities: [
+  //     "Identify, review, and classify medical and legal documents accurately for downstream processing.",
+  //     "Extract key findings, highlight important details, and flag missing, unclear, or inconsistent information.",
+  //     "Enter and annotate data in structured templates or tools following internal guidelines.",
+  //     "Verify accuracy, completeness, and consistency of document content and participate in quality assurance checks.",
+  //     "Coordinate with QA teams and other internal departments, escalating issues and providing timely updates on progress.",
+  //     "Contribute to process improvement by providing feedback and suggestions for workflow efficiency.",
+  //   ],
+  //   qualifications: [
+  //     "Bachelor's or Master's in Nursing",
+  //     "Bachelor's or Master's in Pharmacy",
+  //     "Bachelor's or Master's in Public Health",
+  //     "BBA",
+  //     "Bachelor's in Computer Science",
+  //     "Or any other related field",
+  //   ],
+  //   requirements: [
+  //     "Minimum 18-month service commitment — non-negotiable.",
+  //     "Excellent written and spoken English (Language Skills).",
+  //     "Medical or health science background preferred.",
+  //     "Proficient in MS Word and Excel (Technical Skills).",
+  //     "Minimum typing speed of 40 WPM — verified by screenshot.",
+  //     "Must maintain communication and responsiveness throughout the shift.",
+  //     "Strong accuracy, attention to detail, time management, adaptability, and ability to work independently.",
+  //   ],
+  //   additionalSkills: [
+  //     "Familiarity with medical terminology, abbreviations, and document structure.",
+  //     "Ability to interpret clinical context and extract relevant information accurately.",
+  //     "Experience with EHR systems, document viewers, or data entry tools.",
+  //     "High standards for documentation quality, accuracy, and consistency.",
+  //   ],
+  //   benefits: [
+  //     "Competitive salary package.",
+  //     "Paid training and structured onboarding.",
+  //     "Career growth opportunities (QA & leadership pathways).",
+  //     "Supportive, team-oriented work culture.",
+  //   ],
+  // },
 ];
 
 export default JOBS;

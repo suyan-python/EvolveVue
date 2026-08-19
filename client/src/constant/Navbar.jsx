@@ -34,7 +34,7 @@ function Navbar()
 
   const navLinks = [
     { to: "/", label: "Home" },
-    { to: "/about", label: "Evolve" },
+    { to: "/about", label: "Who We Are" },
     { to: "/services", label: "Services" },
     { to: "/team", label: "Our Team" },
     { to: "/events", label: "Our Events" },

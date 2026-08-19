@@ -26,7 +26,7 @@ const ProfileCard = React.memo(({ person, isLarge = false }) => (
                 <img
                     src={person.image}
                     alt={person.name}
-                    className="w-full h-full object-cover grayscale brightness-90 group-hover:grayscale-0 group-hover:brightness-110 transition-all duration-700"
+                    className="w-full h-full object-cover  brightness-90  group-hover:brightness-110 transition-all duration-700"
                 />
 
                 {/* The "Scanner" Overlay: A subtle light bar that moves on hover */}

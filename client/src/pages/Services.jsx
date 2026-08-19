@@ -88,7 +88,7 @@ const Services = () =>
             className="text-4xl md:text-6xl font-light text-white mb-8 tracking-tighter"
           >
             Precision-Driven <br />
-            <span className="text-gray-500 font-medium">
+            <span className="text-gray-500 font-light">
               Healthcare Solutions.
             </span>
           </motion.h2>
@@ -100,12 +100,11 @@ const Services = () =>
 
         </div>
 
-        {/* SERVICES GRID (Editorial Layout) */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8">
+        {/* SERVICES GRID */}
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-px bg-white/10 border border-white/10">
 
           {services.map((service, index) =>
           {
-
             const isFeatured = index === 0;
 
             return (
@@ -114,49 +113,263 @@ const Services = () =>
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ duration: 0.6, delay: index * 0.05 }}
-                className={`relative group overflow-hidden border border-white/5 bg-[#121212] rounded-3xl transition-all duration-500
-              ${isFeatured ? "lg:col-span-6 p-12" : "lg:col-span-3 p-8"}
-            `}
+                transition={{
+                  duration: 0.7,
+                  delay: index * 0.06,
+                  ease: [0.22, 1, 0.36, 1],
+                }}
+                className={`
+          group relative overflow-hidden
+          bg-[#101010]
+          min-h-[360px]
+          flex flex-col
+          transition-all duration-700
+          ${isFeatured
+                    ? "lg:col-span-6 lg:min-h-[430px]"
+                    : "lg:col-span-3"
+                  }
+        `}
               >
 
-                {/* Glow Layer */}
-                <div className="absolute inset-0 bg-gradient-to-br from-[#d6b25e]/10 to-transparent opacity-0 group-hover:opacity-100 transition duration-500" />
+                {/* -------------------------------- */}
+                {/* BACKGROUND INDEX */}
+                {/* -------------------------------- */}
 
-                {/* Floating accent line */}
-                <div className="absolute top-0 left-0 w-0 h-[2px] bg-[#d6b25e] group-hover:w-full transition-all duration-700" />
-
-                {/* ICON */}
-                <div className="relative z-10 mb-8">
-                  <div className="w-14 h-14 rounded-2xl flex items-center justify-center bg-white/5 border border-white/10 text-[#d6b25e] group-hover:bg-[#d6b25e] group-hover:text-black transition-all duration-500">
-                    {service.icon}
-                  </div>
+                <div
+                  className="
+            absolute
+            -right-5
+            -top-10
+            text-[140px]
+            md:text-[180px]
+            font-black
+            leading-none
+            tracking-tighter
+            text-white/[0.025]
+            select-none
+            pointer-events-none
+            transition-transform
+            duration-1000
+            group-hover:translate-x-[-10px]
+            group-hover:text-white/[0.04]
+          "
+                >
+                  {String(index + 1).padStart(2, "0")}
                 </div>
 
-                {/* TITLE */}
-                <h3 className={`relative z-10 text-white font-bold tracking-tight mb-4
-              ${isFeatured ? "text-3xl" : "text-xl"}
-            `}>
-                  {service.title}
-                </h3>
 
-                {/* DESCRIPTION */}
-                <p className={`relative z-10 text-gray-500 leading-relaxed mb-10
-              ${isFeatured ? "text-base" : "text-sm"}
-            `}>
-                  {service.description}
-                </p>
+                {/* -------------------------------- */}
+                {/* TOP ACCENT */}
+                {/* -------------------------------- */}
 
-                {/* CTA / MICRO INTERACTION */}
-                <div className="relative z-10 flex items-center justify-between mt-auto">
+                <div
+                  className="
+            absolute
+            top-0
+            left-0
+            w-0
+            h-[1px]
+            bg-[#d6b25e]
+            group-hover:w-full
+            transition-all
+            duration-700
+          "
+                />
 
-                  <div className="flex items-center gap-2">
-                    <div className="w-2 h-2 rounded-full bg-[#d6b25e] shadow-[0_0_10px_#d6b25e]" />
-                    <span className="text-[9px] uppercase tracking-widest text-gray-500 group-hover:text-white transition">
-                      Verified System
+
+                {/* -------------------------------- */}
+                {/* CONTENT */}
+                {/* -------------------------------- */}
+
+                <div
+                  className={`
+            relative z-10
+            flex flex-col
+            h-full
+            ${isFeatured
+                      ? "p-8 md:p-12"
+                      : "p-7 md:p-9"
+                    }
+          `}
+                >
+
+                  {/* HEADER */}
+                  <div className="flex items-center justify-between mb-auto">
+
+                    <span
+                      className="
+                text-[9px]
+                font-bold
+                uppercase
+                tracking-[0.3em]
+                text-[#d6b25e]
+              "
+                    >
+                      Service {String(index + 1).padStart(2, "0")}
                     </span>
+
+                    <div
+                      className="
+                w-9 h-9
+                rounded-full
+                border border-white/10
+                flex items-center justify-center
+                text-gray-600
+                transition-all
+                duration-500
+                group-hover:border-[#d6b25e]/50
+                group-hover:text-[#d6b25e]
+              "
+                    >
+                      <span className="text-xs">↗</span>
+                    </div>
+
                   </div>
+
+
+                  {/* ICON */}
+
+                  <div className="mt-20 mb-7">
+
+                    <div
+                      className="
+                w-11 h-11
+                flex items-center justify-center
+                border border-white/10
+                bg-white/[0.025]
+                text-[#d6b25e]
+                transition-all
+                duration-500
+                group-hover:border-[#d6b25e]/40
+                group-hover:bg-[#d6b25e]
+                group-hover:text-black
+              "
+                    >
+                      {service.icon}
+                    </div>
+
+                  </div>
+
+
+                  {/* TITLE */}
+
+                  <h3
+                    className={`
+              font-medium
+              tracking-tight
+              text-white
+              leading-tight
+              mb-4
+              transition-transform
+              duration-500
+              group-hover:translate-x-1
+              ${isFeatured
+                        ? "text-2xl md:text-3xl"
+                        : "text-xl"
+                      }
+            `}
+                  >
+                    {service.title}
+                  </h3>
+
+
+                  {/* DESCRIPTION */}
+
+                  <p
+                    className={`
+              text-gray-500
+              leading-relaxed
+              max-w-xl
+              ${isFeatured
+                        ? "text-sm md:text-base"
+                        : "text-sm"
+                      }
+            `}
+                  >
+                    {service.description}
+                  </p>
+
+
+                  {/* -------------------------------- */}
+                  {/* FOOTER */}
+                  {/* -------------------------------- */}
+
+                  <div
+                    className="
+              mt-10
+              pt-5
+              border-t
+              border-white/10
+              flex
+              items-center
+              justify-between
+            "
+                  >
+
+                    <div className="flex items-center gap-2">
+
+                      <span
+                        className="
+                  w-1.5
+                  h-1.5
+                  rounded-full
+                  bg-[#d6b25e]
+                  transition-all
+                  duration-500
+                  group-hover:shadow-[0_0_12px_#d6b25e]
+                "
+                      />
+
+                      <span
+                        className="
+                  text-[8px]
+                  uppercase
+                  tracking-[0.25em]
+                  text-gray-600
+                  group-hover:text-gray-400
+                  transition-colors
+                "
+                      >
+                        Verified System
+                      </span>
+
+                    </div>
+
+                    <span
+                      className="
+                text-[8px]
+                uppercase
+                tracking-[0.25em]
+                text-gray-700
+                group-hover:text-[#d6b25e]
+                transition-colors
+              "
+                    >
+                      Evolve Vue
+                    </span>
+
+                  </div>
+
                 </div>
+
+
+                {/* -------------------------------- */}
+                {/* HOVER EDGE */}
+                {/* -------------------------------- */}
+
+                <div
+                  className="
+            absolute
+            bottom-0
+            left-0
+            w-0
+            h-[2px]
+            bg-[#d6b25e]
+            group-hover:w-full
+            transition-all
+            duration-700
+          "
+                />
 
               </motion.div>
             );

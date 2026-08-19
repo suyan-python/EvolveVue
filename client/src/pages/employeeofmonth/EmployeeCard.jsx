@@ -23,7 +23,7 @@ const EmployeeCard = ({ image, name, designation, department, month, year, focus
                 <img
                     src={image}
                     alt={name}
-                    className="w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700"
+                    className="w-full h-full object-cover group-hover:scale-105 transition-all duration-700"
                 />
                 {/* Department Overlay */}
                 <div className="absolute bottom-0 left-0 w-full p-4 bg-gradient-to-t from-[#0b0e14] to-transparent">

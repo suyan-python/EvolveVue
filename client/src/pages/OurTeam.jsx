@@ -7,31 +7,27 @@ import SystemTicker from "../components/SystemStick";
 // Assuming assets are imported as in your previous code
 import geyata from "../assets/leads/geyata.webp";
 import swormin from "../assets/leads/2.webp";
-import prakriti from "../assets/leads/4.webp";
 import dilasha from "../assets/leads/dilasha.webp";
-import nita from "../assets/leads/nita.webp";
+import sulav from "../assets/leads/sulav.webp";
 
 import sanjana from "../assets/leads/sanjana.webp";
 import luna from "../assets/leads/luna.webp";
 import sajjal from "../assets/leads/sajjal.webp";
 
 import sanjeev from "../assets/leads/sanjeev.webp";
-import aabha from "../assets/leads/aabha.webp";
 import priya from "../assets/leads/priya.webp";
 
 
 const teamData = {
   executive: { name: "Dr. Geyata Shrestha [PT]", role: "Chief Team Lead", image: geyata },
   clinical: [
-    { name: "Dr. Prakriti Shah", role: "Clinical Lead", image: prakriti },
     { name: "Dr. Sanjeev Yadav", role: "Clinical Lead", image: sanjeev },
     { name: "Ms. Priya Malla", role: "Clinical Lead", image: priya },
-    { name: "Dr. Aabha Shakya", role: "Clinical Lead", image: aabha },
   ],
   clerical1: [
     { name: "Dr. Dilasha Bhandari [PT]", role: "Clerical Lead", image: dilasha },
     { name: "Mr. Swornim Rajbhandari", role: "Clerical Lead", image: swormin },
-    { name: "Dr. Nita Bohara [PT]", role: "Clerical Lead", image: nita },
+    { name: "Dr. Sulav Gautam [PT]", role: "Clerical Lead", image: sulav },
   ],
   clerical2: [
     { name: "Ms. Sanjana Maharjan", role: "Clerical Lead", image: sanjana },

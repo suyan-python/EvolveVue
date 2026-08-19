@@ -31,16 +31,12 @@ function WholeTeam()
       {
         divisionName: "Clinical Team",
         members: [
-          { name: "Dr. Prakriti Shah", role: "Pod Lead (Medical Data Analyst, QA)", image: prakriti },
-          { name: "Dr. Aabha Shakya", role: "Pod Lead (Medical Data Analyst, QA)" },
           { name: "Dr. Sanjeev Yadav", role: "Pod Lead (Medical Data Analyst, QA)" },
           { name: "Ms. Priya Malla", role: "Pod Lead (Medical Data Analyst, QA-Backup)" },
 
           { name: "Ms. Ashmita Iteni", role: "Medical Data Analyst" },
-          { name: "Dr. Ashwin KC", role: "Medical Data Analyst" },
           { name: "Ms. Jemini Shrestha", role: "Medical Data Analyst" },
           { name: "Dr. Nitesh Kumar Jha", role: "Medical Data Analyst" },
-          { name: "Dr. Nitisha Ghimire", role: "Medical Data Analyst" },
           { name: "Dr. Samundra Gurung", role: "Medical Data Analyst" },
 
           { name: "PT. Bipin Bashyal", role: "Medical Report Reviewer" },
@@ -57,7 +53,6 @@ function WholeTeam()
         members: [
           { name: "Dr. Dilasha Bhandari [PT]", role: "Pod Lead (Medical Report Reviewer, QA)", image: dilasha },
           { name: "Mr. Swornim Rajbhandari", role: "Pod Lead (Medical Report Reviewer, QA)", image: swormin },
-          { name: "Dr. Nita Bohara [PT]", role: "Pod Lead (Medical Report Reviewer, QA)", image: nita },
 
 
           { name: "Ms. Anusha Bastola", role: "Medical Report Reviewer" },
@@ -88,6 +83,7 @@ function WholeTeam()
           { name: "Ms. Simrika Bajracharya", role: "Medical Report Reviewer" },
           { name: "Ms. Sangita Nayak", role: "Medical Report Reviewer" },
           { name: "Ms. Kushum Bhattarai", role: "Medical Report Reviewer" },
+          { name: "Ms. Shikshya Shrestha", role: "Medical Report Reviewer" },
 
         ],
       },
@@ -124,7 +120,7 @@ function WholeTeam()
             <div className="md:w-1/4 aspect-[4/5] md:aspect-auto overflow-hidden">
               <img
                 src={teamHierarchy.leader.image}
-                className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-1000"
+                className="w-full h-full object-cover transition-all duration-1000"
               />
             </div>
             {/* Content */}

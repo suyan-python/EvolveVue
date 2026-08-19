@@ -1,11 +1,15 @@
 import React from "react";
 import { motion } from "framer-motion";
 import MeetFounder from "./MeetFounder";
+import CompanyNetwork from "../components/CompanyNetwork";
 
 function AboutUs()
 {
   return (
     <section className="relative w-full py-32  overflow-hidden text-white">
+
+      <CompanyNetwork currentCompany="evolve-vue" />
+
 
 
       <div className="relative z-10 max-w-7xl mx-auto px-6">
@@ -26,10 +30,10 @@ function AboutUs()
           <motion.h2
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            className="text-5xl md:text-7xl font-light tracking-tighter leading-tight"
+            className="text-4xl md:text-7xl  tracking-tighter leading-tight"
           >
             Precise Execution. <br />
-            <span className="text-gray-500 font-medium">Institutional Trust.</span>
+            <span className="text-gray-500 font-light">Institutional Trust.</span>
           </motion.h2>
         </div>
 
@@ -46,6 +50,16 @@ function AboutUs()
             </p>
           </div>
         </div>
+
+        {/* this is my who we are section in my website.get the design concept and vibe of my website. i want to insert a section above this section where all of my 5 different companies are displayed. and below that the above content will be displayed as we are now taking about Vu devi Services.
+those 5 companies are:
+Vu devi - vudevi.com.np
+Evolve Vue - current
+JHP - jewelhimalayanproducts.com
+JHCB - jewelhimalayanproducts.com/nepal-coffee-beans
+Inaya - jewelhimalayanproducts.com/inaya-cafe
+
+all these buttons should also be clicable. and also remember these all 5 company display section ill will be using across all of my webiste as common section or general section. so keep it professional and resuable. */}
 
         {/* --- VISION & MISSION (Sharp Grid) --- */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-px bg-white/10 border border-white/10 mb-16 md:mb-32 rounded-md overflow-hidden">

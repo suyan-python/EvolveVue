@@ -46,7 +46,7 @@ function Hero()
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
-          className="mb-8 flex items-center gap-3 px-5 py-2 rounded-full border border-white/5 bg-white/[0.02] "
+          className="mb-8 flex items-center gap-3 px-5 py-2  "
         >
           <span className="w-1.5 h-1.5 rounded-full bg-[#d6b25e] shadow-[0_0_10px_#d6b25e]"></span>
           <span className="text-[8px] md:text-[10px] font-bold tracking-[0.4em] uppercase text-gray-400">
