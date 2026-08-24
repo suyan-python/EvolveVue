@@ -27,7 +27,7 @@ const teamData = {
   clerical1: [
     { name: "Dr. Dilasha Bhandari [PT]", role: "Clerical Lead", image: dilasha },
     { name: "Mr. Swornim Rajbhandari", role: "Clerical Lead", image: swormin },
-    { name: "Dr. Sulav Gautam [PT]", role: "Clerical Lead", image: sulav },
+    { name: "Mr. Sulav Gautam", role: "Clerical Lead", image: sulav },
   ],
   clerical2: [
     { name: "Ms. Sanjana Maharjan", role: "Clerical Lead", image: sanjana },
