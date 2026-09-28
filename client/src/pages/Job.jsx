@@ -5,172 +5,190 @@ import GeneralForm from "./GeneralForm";
 import JOB_OPENINGS from "../data/jobs";
 import { Helmet } from "react-helmet";
 
+const Job = () => {
+  return (
+    <section className="w-full min-h-screen bg-[#0b0e14] text-white py-32">
+      {/* 1. HERO SECTION: Aesthetic & Professional */}
+      <div className="w-full  px-6 md:px-12 ">
+        <div className="max-w-7xl mx-auto">
+          <div className="flex flex-col gap-4">
+            <span className="flex items-center gap-2 text-[#d6b25e] uppercase tracking-[0.4em] text-[8px] md:text-[10px] font-bold">
+              <span className="w-2 h-2 rounded-full bg-[#d6b25e] animate-pulse"></span>
+              Careers Updated Daily
+            </span>
 
-const Job = () =>
-{
-    return (
-        <section className="w-full min-h-screen bg-[#0b0e14] text-white py-32">
-            {/* 1. HERO SECTION: Aesthetic & Professional */}
-            <div className="w-full  px-6 md:px-12 ">
-                <div className="max-w-7xl mx-auto">
-                    <div className="flex flex-col gap-4">
-                        <span className="flex items-center gap-2 text-[#d6b25e] uppercase tracking-[0.4em] text-[8px] md:text-[10px] font-bold">
-                            <span className="w-2 h-2 rounded-full bg-[#d6b25e] animate-pulse"></span>
-                            Careers Updated Daily
-                        </span>
+            <h1 className="text-4xl md:text-6xl font-bold tracking-tight">
+              We're Growing — <br />
+              <span className="yellowText font-light">
+                Join Us on the Journey.
+              </span>
+            </h1>
 
-                        <h1 className="text-4xl md:text-6xl font-light tracking-tight">
-                            We're Growing — <br />
-                            <span className="text-gray-500">Join Us on the Journey.</span>
-                        </h1>
+            <p className="mt-2 md:mt-6 text-gray-400 max-w-2xl text-xs md:text-lg leading-relaxed">
+              We are actively hiring talented individuals across multiple roles.
+              Check back often for newly posted opportunities and become part of
+              a team dedicated to excellence, innovation, and professional
+              growth.
+            </p>
+          </div>
+        </div>
+      </div>
 
-                        <p className="mt-2 md:mt-6 text-gray-400 max-w-2xl text-xs md:text-lg leading-relaxed">
-                            We are actively hiring talented individuals across multiple roles. Check back
-                            often for newly posted opportunities and become part of a team dedicated to
-                            excellence, innovation, and professional growth.
-                        </p>
-                    </div>
-                </div>
-            </div>
-
-            <div className="bg-[#0b0e14] min-h-screen">
-                {/* 1. JOB LISTINGS: Square & Structured */}
-                <div className="max-w-7xl mx-auto px-6 py-12">
-                    <div className="grid grid-cols-1 gap-4">
-                        <h1 className="text-2xl md:text-4xl text-center md:text-start font-semibold tracking-widest uppercase" > Job Openings - June-July, 2026 </h1>
-                        {JOB_OPENINGS.length > 0 ? (
-                            JOB_OPENINGS.map((job) => (
-                                <div
-                                    key={job.id}
-                                    className="group relative flex flex-col md:flex-row md:items-center justify-between 
+      <div className="bg-[#0b0e14] min-h-screen">
+        {/* 1. JOB LISTINGS: Square & Structured */}
+        <div className="max-w-7xl mx-auto px-6 py-12">
+          <div className="grid grid-cols-1 gap-4">
+            <h1 className="text-2xl md:text-4xl text-center md:text-start font-semibold tracking-widest uppercase">
+              {" "}
+              Job Openings - June-July, 2026{" "}
+            </h1>
+            {JOB_OPENINGS.length > 0 ? (
+              JOB_OPENINGS.map((job) => (
+                <div
+                  key={job.id}
+                  className="group relative flex flex-col md:flex-row md:items-center justify-between 
             p-8 bg-[#0f1218] border border-white/5 
             border-l-4 border-l-transparent hover:border-l-[#d6b25e] 
             rounded-xl transition-all duration-300 shadow-xl hover:shadow-2xl"
-                                >
-                                    {/* Subtle Professional Hover Layer */}
-                                    <div className="absolute inset-0 bg-gradient-to-r from-[#d6b25e]/[0.03] to-transparent opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none rounded-xl"></div>
+                >
+                  {/* Subtle Professional Hover Layer */}
+                  <div className="absolute inset-0 bg-gradient-to-r from-[#d6b25e]/[0.03] to-transparent opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none rounded-xl"></div>
 
-                                    {/* LEFT CONTENT */}
-                                    <div className="relative z-10">
-                                        <div className="flex flex-wrap items-center gap-3 mb-3 text-[10px] uppercase tracking-widest">
-                                            <span className="px-3 py-1 bg-[#d6b25e]/10 text-[#d6b25e] font-bold rounded-full">
-                                                {job.department}
-                                            </span>
+                  {/* LEFT CONTENT */}
+                  <div className="relative z-10">
+                    <div className="flex flex-wrap items-center gap-3 mb-3 text-[10px] uppercase tracking-widest">
+                      <span className="px-3 py-1 bg-[#d6b25e]/10 text-[#d6b25e] font-bold rounded-full">
+                        {job.department}
+                      </span>
 
-                                            <span className="text-gray-500 font-semibold">
-                                                {job.workType}
-                                            </span>
+                      <span className="text-gray-500 font-semibold">
+                        {job.workType}
+                      </span>
 
-                                            <span className="text-gray-600">
-                                                {job.location}
-                                            </span>
-                                        </div>
+                      <span className="text-gray-600">{job.location}</span>
+                    </div>
 
-                                        <h3 className="text-xl md:text-2xl font-semibold text-white tracking-tight">
-                                            {job.title}
-                                        </h3>
+                    <h3 className="text-xl md:text-2xl font-semibold text-white tracking-tight">
+                      {job.title}
+                    </h3>
 
-                                        <div className="mt-3 flex flex-wrap gap-6 text-xs text-gray-400 font-medium">
-                                            <span>Shift: {job.shift}</span>
-                                            <span className="text-[#d6b25e] font-bold ">Openings: {job.vacancies}</span>
-                                        </div>
-                                    </div>
+                    <div className="mt-3 flex flex-wrap gap-6 text-xs text-gray-400 font-medium">
+                      <span>Shift: {job.shift}</span>
+                      <span className="text-[#d6b25e] font-bold ">
+                        Openings: {job.vacancies}
+                      </span>
+                    </div>
+                  </div>
 
-                                    <div className="relative z-10 mt-8 md:mt-0">
-                                        <Link
-                                            to={`/application/apply/${job.id}`}
-                                            className="inline-flex items-center justify-center px-8 py-3 
+                  <div className="relative z-10 mt-8 md:mt-0">
+                    <Link
+                      to={`/application/apply/${job.id}`}
+                      className="inline-flex items-center justify-center px-8 py-3 
                     border border-[#d6b25e]/40 text-[#d6b25e] 
                     text-[11px] font-bold uppercase tracking-[0.2em]
                     rounded-lg hover:bg-[#d6b25e] hover:text-black 
                     transition-all duration-300 w-full md:w-auto"
-                                        >
-                                            Apply Now
-                                        </Link>
-                                    </div>
-                                </div>
-                            ))
-                        ) : (
-                            <div className="text-center py-16 px-8 bg-[#0f1218] border border-white/5 rounded-xl">
-                                <h3 className="text-2xl font-semibold text-white mb-4">
-                                    No Current Openings
-                                </h3>
-
-                                <p className="text-gray-400 max-w-3xl mx-auto leading-relaxed">
-                                    We do not have any active job openings at the moment. However,
-                                    we are always interested in connecting with talented individuals.
-                                    Please submit your CV/Resume through the
-                                    <span className="text-[#d6b25e] font-bold mx-1">
-                                        General Talent Inquiry Form
-                                    </span>
-                                    below, and we will keep your profile on record for future
-                                    opportunities.
-                                </p>
-                            </div>
-                        )}
-                    </div>
+                    >
+                      Apply Now
+                    </Link>
+                  </div>
                 </div>
-                <GeneralForm />
+              ))
+            ) : (
+              <div className="text-center py-16 px-8 bg-[#0f1218] border border-white/5 rounded-xl">
+                <h3 className="text-2xl font-semibold text-white mb-4">
+                  No Current Openings
+                </h3>
 
-                {/* 2. FOOTER: The "Institutional" Seal */}
-                <footer className="w-full px-6 pb-20">
-                    <div className="max-w-7xl mx-auto border-t border-white/10 pt-16">
-                        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+                <p className="text-gray-400 max-w-3xl mx-auto leading-relaxed">
+                  We do not have any active job openings at the moment. However,
+                  we are always interested in connecting with talented
+                  individuals. Please submit your CV/Resume through the
+                  <span className="text-[#d6b25e] font-bold mx-1">
+                    General Talent Inquiry Form
+                  </span>
+                  below, and we will keep your profile on record for future
+                  opportunities.
+                </p>
+              </div>
+            )}
+          </div>
+        </div>
+        <GeneralForm />
 
-                            {/* Left side: The Mission */}
-                            <div className="lg:col-span-7">
-                                <div className="flex items-center gap-3 mb-6">
-                                    <div className="w-8 h-[2px] bg-[#d6b25e]"></div>
-                                    <h4 className="text-xs font-black text-white uppercase tracking-[0.4em]">Commitment to Excellence</h4>
-                                </div>
-                                <p className="text-xl md:text-2xl text-gray-400 leading-snug max-w-2xl font-medium">
-                                    Our recruitment process is <span className="text-white">rigorous</span> because our standards are high.
-                                    We verify every professional to ensure absolute <span className="text-[#d6b25e]">medical accuracy</span>.
-                                </p>
-                            </div>
+        {/* 2. FOOTER: The "Institutional" Seal */}
+        <footer className="w-full px-6 pb-20">
+          <div className="max-w-7xl mx-auto border-t border-white/10 pt-16">
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+              {/* Left side: The Mission */}
+              <div className="lg:col-span-7">
+                <div className="flex items-center gap-3 mb-6">
+                  <div className="w-8 h-[2px] bg-[#d6b25e]"></div>
+                  <h4 className="text-xs font-black text-white uppercase tracking-[0.4em]">
+                    Commitment to Excellence
+                  </h4>
+                </div>
+                <p className="text-xl md:text-2xl text-gray-400 leading-snug max-w-2xl font-medium">
+                  Our recruitment process is{" "}
+                  <span className="text-white">rigorous</span> because our
+                  standards are high. We verify every professional to ensure
+                  absolute{" "}
+                  <span className="text-[#d6b25e]">medical accuracy</span>.
+                </p>
+              </div>
 
-                            {/* Right side: Trust Metrics */}
-                            <div className="lg:col-span-5 grid grid-cols-2 gap-8 border-l border-white/5 pl-0 lg:pl-12">
-                                <div>
-                                    <p className="text-[10px] font-bold text-gray-600 uppercase tracking-widest mb-2 text-center">Standard</p>
-                                    <div className="h-20 flex items-center justify-center border border-white/5 bg-white/[0.02]">
-                                        <span className="text-white font-black text-xs tracking-tighter">HIPAA COMPLIANT</span>
-                                    </div>
-                                </div>
-                                <div>
-                                    <p className="text-[10px] font-bold text-gray-600 uppercase tracking-widest mb-2 text-center">Integrity</p>
-                                    <div className="h-20 flex items-center justify-center border border-white/5 bg-white/[0.02]">
-                                        <span className="text-white font-black text-xs tracking-tighter">ISO CERTIFIED</span>
-                                    </div>
-                                </div>
-                            </div>
-
-                        </div>
-
-                        {/* Final Copyright Bar */}
-                        <div className="mt-20 flex flex-col md:flex-row justify-between items-center gap-6 text-[9px] font-bold text-gray-600 uppercase tracking-[0.3em]">
-                            <p>© 2026 EVOLVE VUE PVT. LTD. ALL RIGHTS RESERVED.</p>
-                            <div className="flex gap-8">
-                                <a href="#" className="hover:text-[#d6b25e] transition-colors">Privacy Protocol</a>
-                                <a href="#" className="hover:text-[#d6b25e] transition-colors">Terms of Service</a>
-                            </div>
-                        </div>
-                    </div>
-                </footer>
+              {/* Right side: Trust Metrics */}
+              <div className="lg:col-span-5 grid grid-cols-2 gap-8 border-l border-white/5 pl-0 lg:pl-12">
+                <div>
+                  <p className="text-[10px] font-bold text-gray-600 uppercase tracking-widest mb-2 text-center">
+                    Standard
+                  </p>
+                  <div className="h-20 flex items-center justify-center border border-white/5 bg-white/[0.02]">
+                    <span className="text-white font-black text-xs tracking-tighter">
+                      HIPAA COMPLIANT
+                    </span>
+                  </div>
+                </div>
+                <div>
+                  <p className="text-[10px] font-bold text-gray-600 uppercase tracking-widest mb-2 text-center">
+                    Integrity
+                  </p>
+                  <div className="h-20 flex items-center justify-center border border-white/5 bg-white/[0.02]">
+                    <span className="text-white font-black text-xs tracking-tighter">
+                      ISO CERTIFIED
+                    </span>
+                  </div>
+                </div>
+              </div>
             </div>
 
-            {/* 2. TRUST BAR: Small icons or text that build credibility */}
-            <div className="bg-white/[0.02] py-6 border-b border-white/5">
-                <div className="max-w-7xl mx-auto px-6 flex flex-wrap gap-8 justify-between text-[11px] uppercase tracking-widest text-gray-500 font-semibold">
-                    <span>✓ HIPAA Compliant Standards</span>
-                    <span>✓ Secure Data Handling</span>
-                    <span>✓ Professional Growth Tracks</span>
-                    <span>✓ Equal Opportunity Employer</span>
-                </div>
+            {/* Final Copyright Bar */}
+            <div className="mt-20 flex flex-col md:flex-row justify-between items-center gap-6 text-[9px] font-bold text-gray-600 uppercase tracking-[0.3em]">
+              <p>© 2026 EVOLVE VUE PVT. LTD. ALL RIGHTS RESERVED.</p>
+              <div className="flex gap-8">
+                <a href="#" className="hover:text-[#d6b25e] transition-colors">
+                  Privacy Protocol
+                </a>
+                <a href="#" className="hover:text-[#d6b25e] transition-colors">
+                  Terms of Service
+                </a>
+              </div>
             </div>
+          </div>
+        </footer>
+      </div>
 
-        </section>
-    );
+      {/* 2. TRUST BAR: Small icons or text that build credibility */}
+      <div className="bg-white/[0.02] py-6 border-b border-white/5">
+        <div className="max-w-7xl mx-auto px-6 flex flex-wrap gap-8 justify-between text-[11px] uppercase tracking-widest text-gray-500 font-semibold">
+          <span>✓ HIPAA Compliant Standards</span>
+          <span>✓ Secure Data Handling</span>
+          <span>✓ Professional Growth Tracks</span>
+          <span>✓ Equal Opportunity Employer</span>
+        </div>
+      </div>
+    </section>
+  );
 };
 
 export default Job;

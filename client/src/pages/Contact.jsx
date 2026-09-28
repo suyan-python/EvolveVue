@@ -1,14 +1,17 @@
 import React from "react";
 import { motion } from "framer-motion";
-import { FaMapMarkerAlt, FaEnvelope, FaPhoneAlt, FaClock, FaGlobe } from "react-icons/fa";
+import {
+  FaMapMarkerAlt,
+  FaEnvelope,
+  FaPhoneAlt,
+  FaClock,
+  FaGlobe,
+} from "react-icons/fa";
 
-function Contact()
-{
+function Contact() {
   return (
     <section className="relative w-full px-6 lg:px-20 py-32 overflow-hidden">
-
       <div className="max-w-7xl mx-auto relative z-10">
-
         {/* --- HEADER --- */}
         <div className="mb-12 md:mb-24">
           <motion.div
@@ -17,15 +20,16 @@ function Contact()
             className="flex items-center gap-3 mb-6"
           >
             <div className="w-12 h-[1px] bg-[#d6b25e]"></div>
-            <span className="text-[10px] font-bold text-[#d6b25e] uppercase tracking-[0.5em]">Head Office</span>
+            <span className="text-[10px] font-bold text-[#d6b25e] uppercase tracking-[0.5em]">
+              Head Office
+            </span>
           </motion.div>
-          <h2 className="text-4xl md:text-6xl font-light text-white tracking-tighter">
-            Global <span className="text-gray-500">Connectivity.</span>
+          <h2 className="text-4xl md:text-6xl font-bold text-white tracking-tighter">
+            Global <span className="yellowText font-light">Connectivity.</span>
           </h2>
         </div>
 
         <div className="flex flex-col lg:flex-row gap-1 border border-white/10 bg-white/10 rounded-md overflow-hidden">
-
           {/* Left: Communication Protocol (Information) */}
           <motion.div
             className="w-full lg:w-5/12 bg-[#121212] p-10 md:p-14"
@@ -34,8 +38,12 @@ function Contact()
             viewport={{ once: true }}
           >
             <div className="mb-12">
-              <h3 className="text-2xl font-bold text-white mb-2 tracking-tight">Evolve Vue Pvt. Ltd.</h3>
-              <p className="text-[#d6b25e] text-[10px] font-black uppercase tracking-[0.3em]">Central Operations Hub</p>
+              <h3 className="text-2xl font-bold text-white mb-2 tracking-tight">
+                Evolve Vue Pvt. Ltd.
+              </h3>
+              <p className="text-[#d6b25e] text-[10px] font-black uppercase tracking-[0.3em]">
+                Central Operations Hub
+              </p>
             </div>
 
             <div className="space-y-10">
@@ -107,7 +115,6 @@ function Contact()
               ))}
             </div>
 
-
             {/* Availability Matrix */}
             <div className="mt-16 pt-10 border-t border-white/5">
               <div className="flex items-center gap-4">
@@ -116,8 +123,12 @@ function Contact()
                   <div className="w-3 h-3 bg-[#d6b25e] rounded-full relative"></div>
                 </div>
                 <div>
-                  <p className="text-white text-xs font-bold uppercase tracking-widest">Active Status: 24/7</p>
-                  <p className="text-gray-600 text-[10px] font-medium mt-1 uppercase tracking-tighter">Support available across all global timezones</p>
+                  <p className="text-white text-xs font-bold uppercase tracking-widest">
+                    Active Status: 24/7
+                  </p>
+                  <p className="text-gray-600 text-[10px] font-medium mt-1 uppercase tracking-tighter">
+                    Support available across all global timezones
+                  </p>
                 </div>
               </div>
             </div>
@@ -134,11 +145,15 @@ function Contact()
             <div className="absolute top-0 inset-x-0 z-20 bg-gradient-to-b from-[#0b0e14] to-transparent p-8 flex justify-between items-start pointer-events-none">
               <div className="flex items-center gap-3 bg-[#121212]/90 border border-white/10 px-4 py-2 rounded-sm backdrop-blur-sm">
                 <FaClock className="text-[#d6b25e] text-xs" />
-                <span className="text-[7px] md:text-[10px] text-white font-black uppercase tracking-widest">GMT +5:45 (NEPAL)</span>
+                <span className="text-[7px] md:text-[10px] text-white font-black uppercase tracking-widest">
+                  GMT +5:45 (NEPAL)
+                </span>
               </div>
               <div className="flex items-center gap-3 bg-[#121212]/90 border border-white/10 px-4 py-2 rounded-sm backdrop-blur-sm">
                 <FaGlobe className="text-[#d6b25e] text-xs" />
-                <span className="text-[7px] md:text-[10px] text-white font-black uppercase tracking-widest">Lat: 27.6672° N</span>
+                <span className="text-[7px] md:text-[10px] text-white font-black uppercase tracking-widest">
+                  Lat: 27.6672° N
+                </span>
               </div>
             </div>
 

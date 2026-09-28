@@ -121,9 +121,8 @@ function WholeTeam() {
               Organizational Chart
             </span>
           </div>
-          <h2 className="text-4xl md:text-6xl font-light text-white tracking-tighter">
-            Leadership{" "}
-            <span className="text-gray-500 italic font-serif">&</span>{" "}
+          <h2 className="text-4xl md:text-6xl font-bold text-white tracking-tighter">
+            Leadership <span className="yellowText italic font-light">&</span>{" "}
             Structure.
           </h2>
         </div>

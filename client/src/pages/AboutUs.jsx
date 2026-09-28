@@ -3,17 +3,12 @@ import { motion } from "framer-motion";
 import MeetFounder from "./MeetFounder";
 import CompanyNetwork from "../components/CompanyNetwork";
 
-function AboutUs()
-{
+function AboutUs() {
   return (
     <section className="relative w-full py-32  overflow-hidden text-white">
-
       <CompanyNetwork currentCompany="evolve-vue" />
 
-
-
       <div className="relative z-10 max-w-7xl mx-auto px-6">
-
         {/* --- HEADER --- */}
         <div className="max-w-3xl mb-12 md:mb-24">
           <motion.div
@@ -30,23 +25,32 @@ function AboutUs()
           <motion.h2
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            className="text-4xl md:text-7xl  tracking-tighter leading-tight"
+            className="text-4xl md:text-7xl  tracking-tighter leading-tight font-bold"
           >
             Precise Execution. <br />
-            <span className="text-gray-500 font-light">Institutional Trust.</span>
+            <span className="text-gray-500 font-light yellowText">
+              Institutional Trust.
+            </span>
           </motion.h2>
         </div>
 
         {/* --- WHO WE ARE (Institutional Framework) --- */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 mb-16 md:mb-32">
           <div className="lg:col-span-4">
-            <h3 className="text-xs font-black uppercase tracking-[0.3em] text-[#d6b25e]">Institutional Overview</h3>
+            <h3 className="text-xs font-black uppercase tracking-[0.3em] text-[#d6b25e]">
+              Institutional Overview
+            </h3>
           </div>
           <div className="lg:col-span-8 p-12 bg-[#121212] border border-white/5 border-l-4 border-l-[#d6b25e] rounded-md">
             <p className="text-xs md:text-2xl text-gray-300 leading-relaxed font-medium">
-              Evolve Vue is a specialized medical BPO delivering <span className="text-white">high-fidelity documentation</span> and clinical support services.
-              We bridge the gap between complex patient encounters and <span className="text-white font-bold">accurate clinical records</span> through
-              rigorous compliance and technical excellence.
+              Evolve Vue is a specialized medical BPO delivering{" "}
+              <span className="text-white">high-fidelity documentation</span>{" "}
+              and clinical support services. We bridge the gap between complex
+              patient encounters and{" "}
+              <span className="text-white font-bold">
+                accurate clinical records
+              </span>{" "}
+              through rigorous compliance and technical excellence.
             </p>
           </div>
         </div>
@@ -64,26 +68,35 @@ all these buttons should also be clicable. and also remember these all 5 company
         {/* --- VISION & MISSION (Sharp Grid) --- */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-px bg-white/10 border border-white/10 mb-16 md:mb-32 rounded-md overflow-hidden">
           <div className="p-12 bg-[#0b0e14] group hover:bg-[#121212] transition-colors">
-            <span className="text-[10px] font-black text-[#d6b25e] uppercase tracking-[0.3em] mb-6 block">Future Objective</span>
+            <span className="text-[10px] font-black text-[#d6b25e] uppercase tracking-[0.3em] mb-6 block">
+              Future Objective
+            </span>
             <h3 className="text-3xl font-bold mb-6">Our Vision</h3>
             <p className="text-gray-400 text-xs md:text-lg leading-relaxed">
               To define the global benchmark for medical documentation, ensuring
-              unmatched <span className="text-white">efficiency, compliance, and innovation</span> in the healthcare BPO industry.
+              unmatched{" "}
+              <span className="text-white">
+                efficiency, compliance, and innovation
+              </span>{" "}
+              in the healthcare BPO industry.
             </p>
           </div>
           <div className="p-12 bg-[#0b0e14] group hover:bg-[#121212] transition-colors">
-            <span className="text-[10px] font-black text-[#d6b25e] uppercase tracking-[0.3em] mb-6 block">Operational Core</span>
+            <span className="text-[10px] font-black text-[#d6b25e] uppercase tracking-[0.3em] mb-6 block">
+              Operational Core
+            </span>
             <h3 className="text-3xl font-bold mb-6">Our Mission</h3>
             <p className="text-gray-400 text-xs md:text-lg leading-relaxed">
-              To deliver clinical support services with <span className="text-white">absolute precision</span>, maintaining
-              stringent ethical standards and technological advancement to support provider excellence.
+              To deliver clinical support services with{" "}
+              <span className="text-white">absolute precision</span>,
+              maintaining stringent ethical standards and technological
+              advancement to support provider excellence.
             </p>
           </div>
         </div>
 
         {/* --- CORE VALUES (The Pillars) --- */}
         <div className="mb-32">
-
           {/* Section Header */}
           <div className="flex items-center gap-6 mb-14">
             <h4 className="text-[10px] md:text-xs font-black text-white uppercase tracking-[0.35em] flex-shrink-0">
@@ -94,7 +107,6 @@ all these buttons should also be clicable. and also remember these all 5 company
 
           {/* Grid */}
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-5 md:gap-6">
-
             {[
               {
                 title: "Integrity",
@@ -142,12 +154,10 @@ all these buttons should also be clicable. and also remember these all 5 company
               </div>
             ))}
           </div>
-
         </div>
 
         {/* --- WHY CHOOSE US (Technical Metrics) --- */}
         <div className="relative overflow-hidden rounded-2xl border border-white/5 bg-gradient-to-br from-[#121212] via-[#0f1117] to-[#0b0e14] p-8 md:p-16">
-
           {/* Background Accent */}
           <div className="absolute -top-10 -right-10 text-[80px] md:text-[120px] font-black text-white/5 select-none">
             TRUSTED
@@ -163,14 +173,14 @@ all these buttons should also be clicable. and also remember these all 5 company
             <div className="w-16 h-[2px] bg-[#d6b25e] mt-6 mb-6"></div>
 
             <p className="text-sm md:text-base text-gray-400 leading-relaxed">
-              Built for precision, compliance, and scale — our systems are designed to support
-              modern clinical workflows with reliability and speed.
+              Built for precision, compliance, and scale — our systems are
+              designed to support modern clinical workflows with reliability and
+              speed.
             </p>
           </div>
 
           {/* Metrics Grid */}
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-10 relative z-10">
-
             {/* Card */}
             <div className="group p-6 rounded-xl border border-white/5 bg-white/5 hover:bg-white/10 transition-all duration-300">
               <span className="text-3xl md:text-4xl font-black text-[#d6b25e] block mb-2 group-hover:scale-105 transition-transform">
@@ -180,7 +190,8 @@ all these buttons should also be clicable. and also remember these all 5 company
                 Industry Expertise
               </p>
               <p className="text-sm text-gray-400 mt-3 leading-relaxed">
-                Proven clinical support experience across diverse healthcare systems.
+                Proven clinical support experience across diverse healthcare
+                systems.
               </p>
             </div>
 
@@ -192,7 +203,8 @@ all these buttons should also be clicable. and also remember these all 5 company
                 HIPAA Compliance
               </p>
               <p className="text-sm text-gray-400 mt-3 leading-relaxed">
-                Structured workflows with strict data security and validation layers.
+                Structured workflows with strict data security and validation
+                layers.
               </p>
             </div>
 
@@ -204,7 +216,8 @@ all these buttons should also be clicable. and also remember these all 5 company
                 Modern Technology
               </p>
               <p className="text-sm text-gray-400 mt-3 leading-relaxed">
-                Intelligent tools optimized for accuracy and faster turnaround times.
+                Intelligent tools optimized for accuracy and faster turnaround
+                times.
               </p>
             </div>
 
@@ -216,10 +229,10 @@ all these buttons should also be clicable. and also remember these all 5 company
                 Operational Support
               </p>
               <p className="text-sm text-gray-400 mt-3 leading-relaxed">
-                Continuous coverage ensuring uninterrupted clinical operations worldwide.
+                Continuous coverage ensuring uninterrupted clinical operations
+                worldwide.
               </p>
             </div>
-
           </div>
 
           {/* Bottom Glow Line */}
@@ -227,12 +240,9 @@ all these buttons should also be clicable. and also remember these all 5 company
             <div className="w-24 h-[1px] bg-gradient-to-r from-transparent via-[#d6b25e] to-transparent opacity-40"></div>
           </div>
         </div>
-
       </div>
 
-
       <MeetFounder />
-
     </section>
   );
 }
