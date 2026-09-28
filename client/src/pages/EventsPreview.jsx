@@ -25,7 +25,7 @@ const EventsPreview = () => {
             Life At Evolve Vue
           </span>
 
-          <h2 className="mt-5 text-4xl md:text-6xl font-bold text-white">
+          <h2 className="header mt-5 text-4xl md:text-6xl font-bold text-white">
             Events &<span className="yellowText font-light"> Experiences</span>
           </h2>
 

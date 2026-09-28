@@ -20,7 +20,8 @@ body {
   padding: 0;
   height: 100%;
   overflow-x: hidden;
-    font-family: "DM Sans", sans-serif;
+      font-family: "Inter", sans-serif;
+
     
 
 
@@ -51,13 +52,9 @@ body {
 }
 
 .header {
-  /* font-family: "Poppins", sans-serif; */
-  font-family: "Bricolage Grotesque", sans-serif;
+  font-family: "Manrope", sans-serif;
 }
-.subheader {
-  /* font-family: "Roboto", sans-serif; */
-  font-family: "Inter", sans-serif;
-}
+
 
 .yellowText {
   color: #d6b25e;

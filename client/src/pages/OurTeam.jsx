@@ -17,15 +17,22 @@ import sajjal from "../assets/leads/sajjal.webp";
 import sanjeev from "../assets/leads/sanjeev.webp";
 import priya from "../assets/leads/priya.webp";
 
-
 const teamData = {
-  executive: { name: "Dr. Geyata Shrestha [PT]", role: "Chief Team Lead", image: geyata },
+  executive: {
+    name: "Dr. Geyata Shrestha [PT]",
+    role: "Chief Team Lead",
+    image: geyata,
+  },
   clinical: [
     { name: "Dr. Sanjeev Yadav", role: "Clinical Lead", image: sanjeev },
     { name: "Ms. Priya Malla", role: "Clinical Lead", image: priya },
   ],
   clerical1: [
-    { name: "Dr. Dilasha Bhandari [PT]", role: "Clerical Lead", image: dilasha },
+    {
+      name: "Dr. Dilasha Bhandari [PT]",
+      role: "Clerical Lead",
+      image: dilasha,
+    },
     { name: "Mr. Swornim Rajbhandari", role: "Clerical Lead", image: swormin },
     { name: "Mr. Sulav Gautam", role: "Clerical Lead", image: sulav },
   ],
@@ -36,16 +43,13 @@ const teamData = {
   ],
 };
 
-export default function TeamHierarchy()
-{
+export default function TeamHierarchy() {
   return (
     <section
       className="relative px-6 pt-10 md:pt-24 bg-[#0b0e14] overflow-hidden border-t-2 border-[#d6b25e]"
       style={{ contentVisibility: "auto", containIntrinsicSize: "1000px" }}
     >
-
       <div className="relative z-10 max-w-7xl mx-auto ">
-
         {/* --- HEADER: System Identification --- */}
         <div className="flex flex-col items-center mb-20 md:mb-32">
           <motion.div
@@ -54,12 +58,14 @@ export default function TeamHierarchy()
             className="flex items-center gap-3 mb-6 px-4 py-1.5 rounded-full border border-white/5 bg-white/5"
           >
             <ShieldCheck size={12} className="text-[#d6b25e]" />
-            <span className="text-[8px] md:text-[10px] font-black text-[#d6b25e] uppercase tracking-[0.4em]">Verified Personnel Directive</span>
+            <span className="text-[8px] md:text-[10px] font-black text-[#d6b25e] uppercase tracking-[0.4em]">
+              Verified Personnel Directive
+            </span>
           </motion.div>
 
-          <h2 className="text-4xl md:text-7xl font-bold text-white tracking-tighter text-center ">
+          <h2 className="header text-4xl md:text-7xl font-bold text-white tracking-tighter text-center ">
             Organizational <br />
-            <span className="text-gray-600 italic font-serif">Leadership.</span>
+            <span className="yellowText font-light">Leadership.</span>
           </h2>
         </div>
 
@@ -70,7 +76,9 @@ export default function TeamHierarchy()
 
           <div className="flex items-center gap-4 mb-12">
             <div className="w-8 h-[1px] bg-[#d6b25e]/30"></div>
-            <h4 className="text-[11px] font-black text-white uppercase tracking-[0.3em]">Chief Executive Administration</h4>
+            <h4 className="text-[11px] font-black text-white uppercase tracking-[0.3em]">
+              Chief Executive Administration
+            </h4>
             <div className="w-8 h-[1px] bg-[#d6b25e]/30"></div>
           </div>
 
@@ -82,19 +90,23 @@ export default function TeamHierarchy()
 
         {/* --- DIVISIONAL GRID SYSTEM --- */}
         <div className="space-y-24">
-
           {/* CLINICAL DIVISION */}
           <section>
             <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6 border-b border-white/5 pb-8">
               <div>
                 <div className="flex items-center gap-3 text-[#9cee69] mb-2">
                   <Activity size={18} />
-                  <span className="text-[10px] font-black uppercase tracking-[0.4em]">Division 01</span>
+                  <span className="text-[10px] font-black uppercase tracking-[0.4em]">
+                    Division 01
+                  </span>
                 </div>
-                <h4 className="text-3xl font-bold text-white">Clinical Operations</h4>
+                <h4 className="text-3xl font-bold text-white">
+                  Clinical Operations
+                </h4>
               </div>
               <p className="text-gray-500 text-xs md:text-right max-w-xs font-medium">
-                Overseeing medical accuracy, HIPAA compliance, and diagnostic documentation integrity.
+                Overseeing medical accuracy, HIPAA compliance, and diagnostic
+                documentation integrity.
               </p>
             </div>
 
@@ -111,12 +123,17 @@ export default function TeamHierarchy()
               <div>
                 <div className="flex items-center gap-3 text-yellow-500 mb-2">
                   <Database size={18} />
-                  <span className="text-[10px] font-black uppercase tracking-[0.4em]">Division 02</span>
+                  <span className="text-[10px] font-black uppercase tracking-[0.4em]">
+                    Division 02
+                  </span>
                 </div>
-                <h4 className="text-3xl font-bold text-white">Clerical [Team 1]</h4>
+                <h4 className="text-3xl font-bold text-white">
+                  Clerical [Team 1]
+                </h4>
               </div>
               <p className="text-gray-500 text-xs md:text-right max-w-xs font-medium">
-                Managing technical infrastructure, data workflows, and 24/7 administrative synchronization.
+                Managing technical infrastructure, data workflows, and 24/7
+                administrative synchronization.
               </p>
             </div>
 
@@ -131,12 +148,17 @@ export default function TeamHierarchy()
               <div>
                 <div className="flex items-center gap-3 text-yellow-500 mb-2">
                   <Database size={18} />
-                  <span className="text-[10px] font-black uppercase tracking-[0.4em]">Division 02</span>
+                  <span className="text-[10px] font-black uppercase tracking-[0.4em]">
+                    Division 02
+                  </span>
                 </div>
-                <h4 className="text-3xl font-bold text-white">Clerical [Team 2]</h4>
+                <h4 className="text-3xl font-bold text-white">
+                  Clerical [Team 2]
+                </h4>
               </div>
               <p className="text-gray-500 text-xs md:text-right max-w-xs font-medium">
-                Managing technical infrastructure, data workflows, and 24/7 administrative synchronization.
+                Managing technical infrastructure, data workflows, and 24/7
+                administrative synchronization.
               </p>
             </div>
 
@@ -146,7 +168,6 @@ export default function TeamHierarchy()
               ))}
             </div>
           </section>
-
         </div>
 
         {/* --- INSTITUTIONAL SEAL: Trust Footer --- */}
@@ -161,11 +182,19 @@ export default function TeamHierarchy()
               <Users className="text-[#d6b25e]" size={32} />
             </div>
             <div className="space-y-4">
-              <h5 className="text-white font-bold text-base md:text-xl uppercase tracking-tight">Personnel Standards & Quality Assurance</h5>
+              <h5 className="text-white font-bold text-base md:text-xl uppercase tracking-tight">
+                Personnel Standards & Quality Assurance
+              </h5>
               <p className="text-gray-400 text-xs md:text-sm leading-relaxed max-w-4xl">
-                Every lead at <span className="text-[#d6b25e] font-bold">Evolve Vue</span> is a vetted professional with deep roots in healthcare systems.
-                Our leadership hierarchy is structured to ensure multiple checkpoints for data integrity,
-                maintaining a <span className="text-[#9cee69] font-mono">99.9% accuracy rate</span> across all clinical documentation pipelines.
+                Every lead at{" "}
+                <span className="text-[#d6b25e] font-bold">Evolve Vue</span> is
+                a vetted professional with deep roots in healthcare systems. Our
+                leadership hierarchy is structured to ensure multiple
+                checkpoints for data integrity, maintaining a{" "}
+                <span className="text-[#9cee69] font-mono">
+                  99.9% accuracy rate
+                </span>{" "}
+                across all clinical documentation pipelines.
               </p>
             </div>
           </div>
