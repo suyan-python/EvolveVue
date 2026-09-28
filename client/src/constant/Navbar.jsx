@@ -4,31 +4,24 @@ import Logo from "../assets/logo/hori.png";
 
 import { useLocation } from "react-router-dom";
 
-
-
-function Navbar()
-{
+function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const location = useLocation();
 
-  useEffect(() =>
-  {
+  useEffect(() => {
     setIsMenuOpen(false);
   }, [location.pathname]);
 
-  useEffect(() =>
-  {
-    const handleScroll = () =>
-    {
+  useEffect(() => {
+    const handleScroll = () => {
       setIsScrolled(window.scrollY > 50);
     };
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  const toggleMenu = () =>
-  {
+  const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
   };
 
@@ -50,22 +43,29 @@ function Navbar()
   const getActiveClass = ({ isActive }) =>
     isActive
       ? "yellowText font-bold border-b-2 border-yellow-500 pb-1 transition-all"
-      : "text-gray-300 hover:text-yellow-500 transition-all duration-300 font-medium";
+      : "text-gray-300 hover:text-yellow-500 transition-all duration-300  ";
 
   return (
     <>
       {/* Navbar Container */}
       <nav
-        className={`fixed top-0 w-full z-50 transition-all duration-700 ${isScrolled
-          ? "py-3 bg-[#0a0a0b]/90 backdrop-blur-xl border-b border-white/10 shadow-[0_10px_40px_rgba(0,0,0,0.8)]"
-          : "py-6 bg-transparent"
-          }`}
+        className={`fixed top-0 w-full z-50 transition-all duration-700 ${
+          isScrolled
+            ? "py-3 bg-[#0a0a0b]/90 backdrop-blur-xl border-b border-white/10 shadow-[0_10px_40px_rgba(0,0,0,0.8)]"
+            : "py-6 bg-transparent"
+        }`}
       >
         <div className="max-w-7xl mx-auto px-6 md:px-12 flex justify-between items-center">
-
           {/* Logo Area - Enhanced with subtle glow */}
-          <Link to="/" className="relative group transition-transform duration-500 hover:scale-105">
-            <img src={Logo} alt="Evolve Vue" className="w-36 sm:w-44 lg:w-48 drop-shadow-[0_0_15px_rgba(234,179,8,0.2)]" />
+          <Link
+            to="/"
+            className="relative group transition-transform duration-500 hover:scale-105"
+          >
+            <img
+              src={Logo}
+              alt="Evolve Vue"
+              className="w-36 sm:w-44 lg:w-48 drop-shadow-[0_0_15px_rgba(234,179,8,0.2)]"
+            />
           </Link>
 
           {/* Desktop Navigation */}
@@ -74,14 +74,18 @@ function Navbar()
               <NavLink
                 key={index}
                 to={link.to}
-                className={link.isButton ? "" : ({ isActive }) =>
-                  `text-[11px] font-black uppercase tracking-[0.25em] transition-all duration-300 relative group
-              ${isActive ? "yellowText" : "text-gray-400 hover:text-white"}`
+                className={
+                  link.isButton
+                    ? ""
+                    : ({ isActive }) =>
+                        `text-[11px]  uppercase tracking-[0.25em] transition-all duration-300 relative group
+              ${isActive ? "yellowText font-black " : "text-gray-400 hover:text-white "}`
                 }
                 end={!link.isButton}
               >
                 {link.isButton ? (
-                  <button className="
+                  <button
+                    className="
                 px-8 py-2.5
                 rounded-lg
                 yellow
@@ -95,7 +99,8 @@ function Navbar()
                 transition-all duration-500
                 active:scale-95
                 cursor-pointer
-              ">
+              "
+                  >
                     {link.label}
                   </button>
                 ) : (
@@ -117,9 +122,15 @@ function Navbar()
               aria-label="Toggle Menu"
             >
               <div className="w-6 space-y-1.5">
-                <span className={`block h-0.5 bg-current transform transition-all duration-500 ${isMenuOpen ? 'w-6 rotate-45 translate-y-2' : 'w-6'}`}></span>
-                <span className={`block h-0.5 bg-current transition-all duration-500 ${isMenuOpen ? 'opacity-0' : 'w-4 ml-auto'}`}></span>
-                <span className={`block h-0.5 bg-current transform transition-all duration-500 ${isMenuOpen ? 'w-6 -rotate-45 -translate-y-2' : 'w-6'}`}></span>
+                <span
+                  className={`block h-0.5 bg-current transform transition-all duration-500 ${isMenuOpen ? "w-6 rotate-45 translate-y-2" : "w-6"}`}
+                ></span>
+                <span
+                  className={`block h-0.5 bg-current transition-all duration-500 ${isMenuOpen ? "opacity-0" : "w-4 ml-auto"}`}
+                ></span>
+                <span
+                  className={`block h-0.5 bg-current transform transition-all duration-500 ${isMenuOpen ? "w-6 -rotate-45 -translate-y-2" : "w-6"}`}
+                ></span>
               </div>
             </button>
           </div>
@@ -128,8 +139,11 @@ function Navbar()
 
       {/* Mobile Menu Overlay - Full Screen Dark Tech Vibe */}
       <div
-        className={`fixed inset-0 z-30 bg-[#0b0e14] transition-all duration-700 ease-in-out ${isMenuOpen ? "translate-x-0 opacity-100" : "translate-x-full opacity-0"
-          } md:hidden`}
+        className={`fixed inset-0 z-30 bg-[#0b0e14] transition-all duration-700 ease-in-out ${
+          isMenuOpen
+            ? "translate-x-0 opacity-100"
+            : "translate-x-full opacity-0"
+        } md:hidden`}
       >
         {/* Reusable Grid Pattern from index.css */}
         <div className="bg-grid-pattern opacity-[0.03]"></div>
@@ -148,7 +162,9 @@ function Navbar()
                 {({ isActive }) => (
                   <>
                     {/* Indexing */}
-                    <span className={`text-[10px] font-bold ${isActive ? "text-[#d6b25e]" : "text-white/20"}`}>
+                    <span
+                      className={`text-[10px] font-bold ${isActive ? "text-[#d6b25e]" : "text-white/20"}`}
+                    >
                       0{index + 1}
                     </span>
 
@@ -158,15 +174,23 @@ function Navbar()
                       </button>
                     ) : (
                       <div className="flex flex-col">
-                        <span className={`text-lg tracking-tighter transition-all ${isActive
-                          ? "text-white font-semibold"
-                          : "text-white/40 font-medium group-hover:text-white"
-                          }`}>
+                        <span
+                          className={`text-lg tracking-tighter transition-all ${
+                            isActive
+                              ? "text-white font-semibold"
+                              : "text-white/40 font-medium group-hover:text-white"
+                          }`}
+                        >
                           {link.label}
                         </span>
                         {/* Active Indicator Line */}
-                        <div className={`h-[1px] transition-all duration-700 mt-1 ${isActive ? "w-full bg-[#d6b25e]" : "w-0 bg-white/10 group-hover:w-12"
-                          }`} />
+                        <div
+                          className={`h-[1px] transition-all duration-700 mt-1 ${
+                            isActive
+                              ? "w-full bg-[#d6b25e]"
+                              : "w-0 bg-white/10 group-hover:w-12"
+                          }`}
+                        />
                       </div>
                     )}
                   </>

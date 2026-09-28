@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
 
-import geyata from "../assets/person/all/Geyata Shrestha.webp"
+import geyata from "../assets/person/all/Geyata Shrestha.webp";
 
 import birat from "../assets/leads/birat.webp";
 import shashank from "../assets/leads/shashank.webp";
@@ -13,10 +13,7 @@ import dilasha from "../assets/leads/dilasha.webp";
 import nita from "../assets/leads/nita.webp";
 import CompactCard from "../components/CompactCard";
 
-
-function WholeTeam()
-{
-
+function WholeTeam() {
   // 🔹 Team Hierarchy Data
   const teamHierarchy = {
     leader: {
@@ -31,17 +28,23 @@ function WholeTeam()
       {
         divisionName: "Clinical Team",
         members: [
-          { name: "Dr. Sanjeev Yadav", role: "Pod Lead (Medical Data Analyst, QA)" },
-          { name: "Ms. Priya Malla", role: "Pod Lead (Medical Data Analyst, QA-Backup)" },
+          {
+            name: "Dr. Sanjeev Yadav",
+            role: "Pod Lead (Medical Data Analyst, QA)",
+          },
+          {
+            name: "Ms. Priya Malla",
+            role: "Pod Lead (Medical Data Analyst, QA-Backup)",
+          },
 
           { name: "Ms. Ashmita Iteni", role: "Medical Data Analyst" },
           { name: "Ms. Jemini Shrestha", role: "Medical Data Analyst" },
           { name: "Dr. Nitesh Kumar Jha", role: "Medical Data Analyst" },
           { name: "Dr. Samundra Gurung", role: "Medical Data Analyst" },
 
-          { name: "PT. Bipin Bashyal", role: "Medical Report Reviewer" },
-          { name: "Ms. Sabina Deoja", role: "Medical Report Reviewer" },
-          { name: "Ms. Pramita Thapa", role: "Medical Report Reviewer" },
+          { name: "PT. Bipin Bashyal", role: "Medical Data Analyst" },
+          { name: "Ms. Sabina Deoja", role: "Medical Data Analyst" },
+          { name: "Ms. Pramita Thapa", role: "Medical Data Analyst" },
           { name: "PT. Anurag Mishra", role: "Medical Report Reviewer" },
           { name: "PT. Dipa Budha Magar", role: "Medical Report Reviewer" },
           { name: "Ms. Dristi Shakya", role: "Medical Report Reviewer" },
@@ -51,9 +54,16 @@ function WholeTeam()
       {
         divisionName: "Clerical Team 1",
         members: [
-          { name: "Dr. Dilasha Bhandari [PT]", role: "Pod Lead (Medical Report Reviewer, QA)", image: dilasha },
-          { name: "Mr. Swornim Rajbhandari", role: "Pod Lead (Medical Report Reviewer, QA)", image: swormin },
-
+          {
+            name: "Dr. Dilasha Bhandari [PT]",
+            role: "Pod Lead (Medical Report Reviewer, QA)",
+            image: dilasha,
+          },
+          {
+            name: "Mr. Swornim Rajbhandari",
+            role: "Pod Lead (Medical Report Reviewer, QA)",
+            image: swormin,
+          },
 
           { name: "Ms. Anusha Bastola", role: "Medical Report Reviewer" },
           { name: "Mr. Kiran Tiwari", role: "Medical Report Reviewer" },
@@ -68,10 +78,18 @@ function WholeTeam()
       {
         divisionName: "Clerical Team 2",
         members: [
-
-          { name: "Ms. Luna Maharjan", role: "Pod Lead (Medical Report Reviewer, QA)" },
-          { name: "Mr. Sajjal KC", role: "Pod Lead (Medical Report Reviewer, QA)" },
-          { name: "Ms. Sanjana Maharjan", role: "Pod Lead (Medical Report Reviewer, QA)" },
+          {
+            name: "Ms. Luna Maharjan",
+            role: "Pod Lead (Medical Report Reviewer, QA)",
+          },
+          {
+            name: "Mr. Sajjal KC",
+            role: "Pod Lead (Medical Report Reviewer, QA)",
+          },
+          {
+            name: "Ms. Sanjana Maharjan",
+            role: "Pod Lead (Medical Report Reviewer, QA)",
+          },
 
           { name: "Mr. Shaurav Acharya", role: "Medical Report Reviewer" },
           { name: "Ms. Lumanti Shakya", role: "Medical Report Reviewer" },
@@ -84,12 +102,10 @@ function WholeTeam()
           { name: "Ms. Sangita Nayak", role: "Medical Report Reviewer" },
           { name: "Ms. Kushum Bhattarai", role: "Medical Report Reviewer" },
           { name: "Ms. Shikshya Shrestha", role: "Medical Report Reviewer" },
-
         ],
       },
     ],
   };
-
 
   return (
     <section className="relative w-full py-32 bg-[#0b0e14] overflow-hidden">
@@ -97,15 +113,18 @@ function WholeTeam()
       <div className="bg-grid-pattern opacity-[0.03]"></div>
 
       <div className="relative max-w-7xl mx-auto px-6">
-
         {/* --- 01. SECTION HEADER --- */}
         <div className="mb-24">
           <div className="flex items-center gap-3 mb-6">
             <div className="w-12 h-[1px] bg-[#d6b25e]"></div>
-            <span className="text-[10px] font-black text-[#d6b25e] uppercase tracking-[0.4em]">Organizational Chart</span>
+            <span className="text-[10px] font-black text-[#d6b25e] uppercase tracking-[0.4em]">
+              Organizational Chart
+            </span>
           </div>
           <h2 className="text-4xl md:text-6xl font-light text-white tracking-tighter">
-            Leadership <span className="text-gray-500 italic font-serif">&</span> Structure.
+            Leadership{" "}
+            <span className="text-gray-500 italic font-serif">&</span>{" "}
+            Structure.
           </h2>
         </div>
 
@@ -125,19 +144,28 @@ function WholeTeam()
             </div>
             {/* Content */}
             <div className="md:w-2/3 p-10 md:p-16 flex flex-col justify-center">
-              <span className="text-[10px] font-black text-[#d6b25e] uppercase tracking-[0.5em] mb-4">Executive Leadership</span>
-              <h3 className="text-4xl font-bold text-white mb-2">{teamHierarchy.leader.name}</h3>
-              <p className="text-gray-500 font-medium mb-8 uppercase text-xs tracking-widest">{teamHierarchy.leader.role}</p>
+              <span className="text-[10px] font-black text-[#d6b25e] uppercase tracking-[0.5em] mb-4">
+                Executive Leadership
+              </span>
+              <h3 className="text-4xl font-bold text-white mb-2">
+                {teamHierarchy.leader.name}
+              </h3>
+              <p className="text-gray-500 font-medium mb-8 uppercase text-xs tracking-widest">
+                {teamHierarchy.leader.role}
+              </p>
 
               <div className="w-12 h-[1px] bg-[#d6b25e] mb-8"></div>
 
               <p className="text-gray-400 text-lg leading-relaxed max-w-xl">
-                {teamHierarchy.leader.description || "Leading the strategic vision of Evolve Vue with a focus on clinical integrity and operational scalability."}
+                {teamHierarchy.leader.description ||
+                  "Leading the strategic vision of Evolve Vue with a focus on clinical integrity and operational scalability."}
               </p>
 
               <div className="mt-12 flex items-center gap-4 opacity-50">
                 <div className="w-2 h-2 rounded-full bg-[#d6b25e]"></div>
-                <span className="text-[9px] font-black text-white uppercase tracking-[0.3em]">Institutional Head Authorized</span>
+                <span className="text-[9px] font-black text-white uppercase tracking-[0.3em]">
+                  Institutional Head Authorized
+                </span>
               </div>
             </div>
           </div>
@@ -147,7 +175,6 @@ function WholeTeam()
         <div className="space-y-24">
           {teamHierarchy.divisions.map((division, idx) => (
             <div key={idx} className="space-y-10">
-
               {/* Division Header */}
               <div>
                 <h3 className="text-xs font-black text-gray-200 uppercase tracking-[0.6em]">
@@ -159,18 +186,12 @@ function WholeTeam()
               {/* Members Grid */}
               <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
                 {division.members.map((member, mIdx) => (
-                  <CompactCard
-                    key={mIdx}
-                    member={member}
-                    delay={mIdx * 0.02}
-                  />
+                  <CompactCard key={mIdx} member={member} delay={mIdx * 0.02} />
                 ))}
               </div>
-
             </div>
           ))}
         </div>
-
       </div>
     </section>
   );
