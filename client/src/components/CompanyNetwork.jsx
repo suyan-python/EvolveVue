@@ -58,8 +58,6 @@ export default function CompanyNetwork({ currentCompany = "evolve-vue" }) {
             transition={{ duration: 0.7 }}
             className="flex items-center gap-3 mb-6"
           >
-            <div className="w-12 h-[1px] bg-[#d6b25e]" />
-
             <span className="text-[10px] font-bold text-[#d6b25e] uppercase tracking-[0.5em]">
               Our Network
             </span>
@@ -70,7 +68,7 @@ export default function CompanyNetwork({ currentCompany = "evolve-vue" }) {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
-            className="text-4xl md:text-6xl font-bold text-white mb-8 tracking-tighter"
+            className="header text-4xl md:text-6xl font-bold text-white mb-8 tracking-tighter"
           >
             Our Group of{" "}
             <span className="yellowText font-light">Companies</span>
@@ -81,7 +79,7 @@ export default function CompanyNetwork({ currentCompany = "evolve-vue" }) {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8, delay: 0.1 }}
-            className="mt-4 md:mt-8 max-w-2xl text-xs md:text-base text-gray-400 leading-relaxed"
+            className="mt-2 md:mt-4 max-w-2xl text-xs md:text-base text-gray-400 leading-relaxed"
           >
             A diverse ecosystem of businesses built across technology,
             healthcare, specialty coffee, and hospitality — each operating with

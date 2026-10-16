@@ -5,31 +5,30 @@ import { events } from "../data/events";
 
 const EventsPreview = () => {
   return (
-    <section className="relative py-24 bg-black overflow-hidden">
+    <section className="relative py-24 overflow-hidden ">
       {/* Background Glow */}
       <div className="absolute inset-0 pointer-events-none">
         <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[600px] bg-[#d6b25e]/5 rounded-full blur-3xl" />
       </div>
 
-      <div className="relative max-w-7xl mx-auto px-6 md:px-12">
+      <div className="relative max-w-7xl mx-auto px-6 md:px-20">
         {/* Section Header */}
         <motion.div
           initial={{ opacity: 0, y: 25 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.7 }}
-          className="text-center mb-12 md:mb-16"
+          className="mb-12 md:mb-16 mt-4"
         >
-          <span className="inline-flex items-center gap-2 uppercase tracking-[0.35em] text-[10px] md:text-xs font-semibold text-[#d6b25e]">
-            <span className="w-2 h-2 rounded-full bg-[#d6b25e]" />
+          <span className=" gap-2 uppercase tracking-[0.35em] text-[10px] md:text-xs font-semibold text-[#d6b25e]">
             Life At Evolve Vue
           </span>
 
-          <h2 className="header mt-5 text-4xl md:text-6xl font-bold text-white">
+          <h2 className="header mt-5 text-4xl md:text-6xl font-bold text-white tracking-tight">
             Events &<span className="yellowText font-light"> Experiences</span>
           </h2>
 
-          <p className="mt-6 max-w-2xl mx-auto text-xs md:text-base text-zinc-400 leading-relaxed">
+          <p className="mt-6 max-w-2xl  text-xs md:text-base text-zinc-400 leading-relaxed">
             From professional development and collaborative meetings to
             memorable social gatherings, explore the moments that shape our
             culture and strengthen our team.

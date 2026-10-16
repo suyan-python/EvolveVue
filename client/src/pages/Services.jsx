@@ -86,7 +86,6 @@ const Services = () => {
             viewport={{ once: true }}
             className="flex items-center gap-3 mb-6"
           >
-            <div className="w-10 h-[1px] bg-[#d6b25e]"></div>
             <span className="text-[10px] font-bold text-[#d6b25e] uppercase tracking-[0.5em]">
               Our Professional Suite
             </span>
@@ -95,7 +94,7 @@ const Services = () => {
           <motion.h2
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            className="text-4xl md:text-6xl font-bold text-white mb-8 tracking-tighter"
+            className="header text-4xl md:text-6xl font-bold text-white mb-8 tracking-tighter"
           >
             Precision-Driven <br />
             <span className="yellowText font-light">Healthcare Solutions.</span>

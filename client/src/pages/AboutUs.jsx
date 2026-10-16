@@ -16,7 +16,6 @@ function AboutUs() {
             whileInView={{ opacity: 1, x: 0 }}
             className="flex items-center gap-3 mb-6"
           >
-            <div className="w-12 h-[1px] bg-[#d6b25e]"></div>
             <span className="text-[10px] font-bold text-[#d6b25e] uppercase tracking-[0.5em]">
               The Evolve Vue Standard
             </span>
@@ -25,7 +24,7 @@ function AboutUs() {
           <motion.h2
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            className="text-4xl md:text-7xl  tracking-tighter leading-tight font-bold"
+            className="header text-4xl md:text-7xl  tracking-tighter leading-tight font-bold"
           >
             Precise Execution. <br />
             <span className="text-gray-500 font-light yellowText">
@@ -54,16 +53,6 @@ function AboutUs() {
             </p>
           </div>
         </div>
-
-        {/* this is my who we are section in my website.get the design concept and vibe of my website. i want to insert a section above this section where all of my 5 different companies are displayed. and below that the above content will be displayed as we are now taking about Vu devi Services.
-those 5 companies are:
-Vu devi - vudevi.com.np
-Evolve Vue - current
-JHP - jewelhimalayanproducts.com
-JHCB - jewelhimalayanproducts.com/nepal-coffee-beans
-Inaya - jewelhimalayanproducts.com/inaya-cafe
-
-all these buttons should also be clicable. and also remember these all 5 company display section ill will be using across all of my webiste as common section or general section. so keep it professional and resuable. */}
 
         {/* --- VISION & MISSION (Sharp Grid) --- */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-px bg-white/10 border border-white/10 mb-16 md:mb-32 rounded-md overflow-hidden">
@@ -164,8 +153,8 @@ all these buttons should also be clicable. and also remember these all 5 company
           </div>
 
           {/* Header */}
-          <div className="max-w-2xl mb-12 md:mb-16">
-            <h3 className="text-2xl md:text-4xl font-light text-white tracking-tight leading-snug">
+          <div className="max-w-4xl mb-12 md:mb-16 ">
+            <h3 className="header text-2xl md:text-4xl font-medium text-white tracking-tight leading-snug">
               Why Healthcare Leaders Choose{" "}
               <span className="text-[#d6b25e]">Evolve Vue</span>
             </h3>
@@ -183,7 +172,7 @@ all these buttons should also be clicable. and also remember these all 5 company
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-10 relative z-10">
             {/* Card */}
             <div className="group p-6 rounded-xl border border-white/5 bg-white/5 hover:bg-white/10 transition-all duration-300">
-              <span className="text-3xl md:text-4xl font-black text-[#d6b25e] block mb-2 group-hover:scale-105 transition-transform">
+              <span className="text-3xl md:text-4xl font-light text-[#d6b25e] block mb-2 group-hover:scale-105 transition-transform">
                 10+ Years
               </span>
               <p className="text-[10px] uppercase tracking-widest text-gray-500 font-bold">
@@ -196,7 +185,7 @@ all these buttons should also be clicable. and also remember these all 5 company
             </div>
 
             <div className="group p-6 rounded-xl border border-white/5 bg-white/5 hover:bg-white/10 transition-all duration-300">
-              <span className="text-3xl md:text-4xl font-black text-[#d6b25e] block mb-2">
+              <span className="text-3xl md:text-4xl font-light text-[#d6b25e] block mb-2">
                 100% Verified
               </span>
               <p className="text-[10px] uppercase tracking-widest text-gray-500 font-bold">
@@ -209,7 +198,7 @@ all these buttons should also be clicable. and also remember these all 5 company
             </div>
 
             <div className="group p-6 rounded-xl border border-white/5 bg-white/5 hover:bg-white/10 transition-all duration-300">
-              <span className="text-3xl md:text-4xl font-black text-[#d6b25e] block mb-2">
+              <span className="text-3xl md:text-4xl font-light text-[#d6b25e] block mb-2">
                 AI-Driven
               </span>
               <p className="text-[10px] uppercase tracking-widest text-gray-500 font-bold">
@@ -222,7 +211,7 @@ all these buttons should also be clicable. and also remember these all 5 company
             </div>
 
             <div className="group p-6 rounded-xl border border-white/5 bg-white/5 hover:bg-white/10 transition-all duration-300">
-              <span className="text-3xl md:text-4xl font-black text-[#d6b25e] block mb-2">
+              <span className="text-3xl md:text-4xl font-light text-[#d6b25e] block mb-2">
                 24/7 Global
               </span>
               <p className="text-[10px] uppercase tracking-widest text-gray-500 font-bold">

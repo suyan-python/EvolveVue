@@ -116,12 +116,11 @@ function WholeTeam() {
         {/* --- 01. SECTION HEADER --- */}
         <div className="mb-24">
           <div className="flex items-center gap-3 mb-6">
-            <div className="w-12 h-[1px] bg-[#d6b25e]"></div>
             <span className="text-[10px] font-black text-[#d6b25e] uppercase tracking-[0.4em]">
               Organizational Chart
             </span>
           </div>
-          <h2 className="text-4xl md:text-6xl font-bold text-white tracking-tighter">
+          <h2 className="header text-4xl md:text-6xl font-bold text-white tracking-tighter">
             Leadership <span className="yellowText italic font-light">&</span>{" "}
             Structure.
           </h2>

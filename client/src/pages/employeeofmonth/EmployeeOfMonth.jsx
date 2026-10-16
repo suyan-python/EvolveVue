@@ -4,39 +4,20 @@ import EmployeeCard from "./EmployeeCard"; // Import the component above
 // import Photo1 from "../assets/team/saraswati.jpg";
 // import Photo2 from "../assets/team/manish.jpg";
 
-import shaurav from "../../assets/month/shaurav.jpeg";
 import suyog from "../../assets/month/suyog.jpeg";
 import kritika from "../../assets/month/kritika.jpeg";
+import sabina from "../../assets/month/sabina.jpeg";
+
+import lumanti from "../../assets/month/lumanti.jpeg";
+import jemini from "../../assets/month/jemini.jpeg";
 
 const EmployeeSpotlightSection = () => {
-  const spotlights1 = [
-    {
-      name: "Mr. Suyog Rai",
-      designation: "Medical Report Reviewer",
-      department: "Clerical Team",
-      month: "july",
-      year: "2026",
-      focus:
-        "Enhancing document quality by identifying inconsistencies and ensuring compliance with internal review standards.",
-      image: suyog,
-    },
-    {
-      name: "Mr. Shaurav Acharya",
-      designation: "Medical Report Reviewer",
-      department: "Cohort Team",
-      month: "july",
-      year: "2026",
-      focus:
-        "Improving data accuracy and reducing reporting inconsistencies across clinical documentation workflows.",
-      image: shaurav,
-    },
-  ];
   const spotlights2 = [
     {
       name: "Mr. Suyog Rai",
       designation: "Medical Report Reviewer",
-      department: "Clerical Team",
-      month: "june",
+      department: "Clerical Team-AH",
+      month: "august",
       year: "2026",
       focus:
         "Enhancing document quality by identifying inconsistencies and ensuring compliance with internal review standards.",
@@ -45,12 +26,54 @@ const EmployeeSpotlightSection = () => {
     {
       name: "Ms. Kritika Acharya",
       designation: "Medical Report Reviewer",
-      department: "Cohort Team",
-      month: "june",
+      department: "Clerical Team-Cohort",
+      month: "august",
       year: "2026",
       focus:
         "Improving data accuracy and reducing reporting inconsistencies across clinical documentation workflows.",
       image: kritika,
+    },
+    {
+      name: "Ms. Sabina Deoja",
+      designation: "Medical Data Analyst",
+      department: "Clinical Team",
+      month: "august",
+      year: "2026",
+      focus:
+        "Improving data accuracy and reducing reporting inconsistencies across clinical documentation workflows.",
+      image: sabina,
+    },
+  ];
+  const spotlights1 = [
+    {
+      name: "Mr. Suyog Rai",
+      designation: "Medical Report Reviewer",
+      department: "Clerical Team-AH",
+      month: "september",
+      year: "2026",
+      focus:
+        "Enhancing document quality by identifying inconsistencies and ensuring compliance with internal review standards.",
+      image: suyog,
+    },
+    {
+      name: "Ms. Lumanti Shakya",
+      designation: "Medical Report Reviewer",
+      department: "Clerical Team-Cohort",
+      month: "september",
+      year: "2026",
+      focus:
+        "Improving data accuracy and reducing reporting inconsistencies across clinical documentation workflows.",
+      image: lumanti,
+    },
+    {
+      name: "Ms. Jemini Shrestha",
+      designation: "Medical Data Analyst",
+      department: "Clinical Team",
+      month: "september",
+      year: "2026",
+      focus:
+        "Improving data accuracy and reducing reporting inconsistencies across clinical documentation workflows.",
+      image: jemini,
     },
   ];
 
@@ -59,20 +82,15 @@ const EmployeeSpotlightSection = () => {
       <div className="max-w-7xl mx-auto px-6 md:px-12 py-10 md:py-32">
         {/* Header Block */}
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
-          <div className="max-w-xl">
-            <div className="flex items-center gap-3 text-yellow-500 font-black text-[8px] md:text-[10px] uppercase tracking-[0.4em] mb-4">
-              <span className="w-8 h-[1px] bg-yellow-500"></span> Institutional
-              Spotlight
+          <div className="ma">
+            <div className="flex items-center gap-3 text-[#d6b25e] font-black text-[8px] md:text-[10px] uppercase tracking-[0.4em] mb-4">
+              Institutional Spotlight
             </div>
-            <h2 className="header text-3xl md:text-5xl font-bold text-white tracking-tight">
+            <h2 className="header text-3xl md:text-5xl font-semibold text-white tracking-tight">
               Our Employees of the Month -{" "}
-              <span className="text-yellow-500 italic ">July, 2026</span>
+              <span className="text-[#d6b25e]">September, 2026</span>
             </h2>
           </div>
-          <p className="text-gray-500 text-xs md:text-sm md:text-right max-w-xs border-l md:border-l-0 md:border-r border-white/10 pl-6 md:pl-0 md:pr-6">
-            Recognizing the individuals maintaining our clinical data integrity
-            standards.
-          </p>
         </div>
 
         {/* Responsive Grid */}
@@ -82,23 +100,18 @@ const EmployeeSpotlightSection = () => {
           ))}
         </div>
       </div>
-      <div className="max-w-7xl mx-auto px-6 md:px-12 py-10 md:py-32">
+      <div className="max-w-7xl mx-auto px-6 md:px-12 py-10 md:py-14">
         {/* Header Block */}
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
-          <div className="max-w-xl">
-            <div className="flex items-center gap-3 text-yellow-500 font-black text-[8px] md:text-[10px] uppercase tracking-[0.4em] mb-4">
-              <span className="w-8 h-[1px] bg-yellow-500"></span> Institutional
-              Spotlight
+          <div className="">
+            <div className="flex items-center gap-3 text-[#d6b25e] font-black text-[8px] md:text-[10px] uppercase tracking-[0.4em] mb-4">
+              Institutional Spotlight
             </div>
-            <h2 className="header text-3xl md:text-5xl font-bold text-white tracking-tight">
+            <h2 className="header text-3xl md:text-5xl font-semibold text-white tracking-tight">
               Our Employees of the Month -{" "}
-              <span className="text-yellow-500 italic ">June, 2026</span>
+              <span className="text-[#d6b25e] ">August, 2026</span>
             </h2>
           </div>
-          <p className="text-gray-500 text-xs md:text-sm md:text-right max-w-xs border-l md:border-l-0 md:border-r border-white/10 pl-6 md:pl-0 md:pr-6">
-            Recognizing the individuals maintaining our clinical data integrity
-            standards.
-          </p>
         </div>
 
         {/* Responsive Grid */}

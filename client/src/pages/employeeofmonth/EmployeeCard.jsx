@@ -1,71 +1,67 @@
 import React from "react";
-import { Award, ShieldCheck, ChevronRight } from "lucide-react";
 import { motion } from "framer-motion";
+import CelebrationEffect from "./CelebrationEffect";
 
-const EmployeeCard = ({ image, name, designation, department, month, year, focus }) =>
-{
-    return (
-        <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="group relative bg-[#12171f] border border-white/5 rounded-[2rem] p-6 transition-all duration-500 hover:border-yellow-500/30 hover:shadow-[0_20px_50px_rgba(0,0,0,0.4)]"
-        >
-            {/* Corner Badge: The Month/Year */}
-            <div className="absolute z-10 top-4 right-4 px-3 py-1 bg-white/5 border border-white/10 rounded-full">
-                <span className="text-[8px] font-black text-gray-400 uppercase tracking-widest">
-                    {month} {year}
-                </span>
-            </div>
+const EmployeeCard = ({
+  image,
+  name,
+  designation,
+  department,
+  month,
+  year,
+  focus,
+}) => {
+  return (
+    <motion.div
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
+      className="group relative overflow-hidden rounded-2xl border border-white/5 bg-[#12171f] transition-all duration-500 hover:border-yellow-500/30 hover:shadow-[0_20px_50px_rgba(0,0,0,0.3)]"
+    >
+      <CelebrationEffect />
 
-            {/* Photo Container */}
-            <div className="relative w-full aspect-square mb-6 overflow-hidden rounded-2xl border border-white/10">
-                <img
-                    src={image}
-                    alt={name}
-                    className="w-full h-full object-cover group-hover:scale-105 transition-all duration-700"
-                />
-                {/* Department Overlay */}
-                <div className="absolute bottom-0 left-0 w-full p-4 bg-gradient-to-t from-[#0b0e14] to-transparent">
-                    <p className="text-[9px] font-black text-[#9cee69] uppercase tracking-[0.3em]">
-                        {department}
-                    </p>
-                </div>
-            </div>
+      {/* Larger Photo Section */}
+      <div className="relative aspect-[4/4.5] w-full overflow-hidden">
+        <img
+          src={image}
+          alt={name}
+          loading="lazy"
+          className="h-full w-full object-cover object-center transition-transform duration-700 group-hover:scale-[1.03]"
+        />
 
-            {/* Identity Details */}
-            <div className="space-y-4">
-                <div>
-                    <h3 className="text-xl font-bold text-white group-hover:text-yellow-500 transition-colors">
-                        {name}
-                    </h3>
-                    <p className="text-gray-500 text-xs font-medium uppercase tracking-wider mt-1">
-                        {designation}
-                    </p>
-                </div>
+        {/* Department Overlay */}
+        <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-[#12171f] via-[#12171f]/40 to-transparent px-4 pb-4 pt-12">
+          <p className="text-[9px] font-semibold uppercase tracking-[0.2em] text-[#9cee69]">
+            {department}
+          </p>
+        </div>
+      </div>
 
-                {/* Creative Detail: The "Expertise Node" */}
-                <div className="pt-4 border-t border-white/5">
-                    <div className="flex items-center gap-2 mb-2">
-                        <div className="w-1.5 h-1.5 bg-yellow-500 rounded-full"></div>
-                        <span className="text-[9px] font-black text-white uppercase tracking-widest">Core Domain Focus</span>
-                    </div>
-                    <p className="text-gray-400 text-[13px] leading-relaxed italic">
-                        "{focus}"
-                    </p>
-                </div>
+      {/* Compact Text Section */}
+      <div className="space-y-3 p-4 pt-3 sm:p-5 sm:pt-3">
+        <div>
+          <h3 className="text-lg font-semibold leading-snug text-white transition-colors duration-300 group-hover:text-[#d6b25e] sm:text-xl">
+            {name}
+          </h3>
 
-                {/* Footer: Institutional Cue */}
-                <div className="flex items-center justify-between pt-2">
-                    <div className="flex items-center gap-2">
-                        <ShieldCheck size={12} className="text-yellow-500/50" />
-                        <span className="text-[8px] font-black text-gray-600 uppercase tracking-widest">Verified Excellence</span>
-                    </div>
-                    <ChevronRight size={14} className="text-gray-700 group-hover:text-yellow-500 transform group-hover:translate-x-1 transition-all" />
-                </div>
-            </div>
-        </motion.div>
-    );
+          <p className="mt-1 text-[10px] font-medium uppercase tracking-[0.12em] text-gray-500 sm:text-xs">
+            {designation}
+          </p>
+        </div>
+
+        {/* Compact Expertise */}
+        <div className="border-t border-white/10 pt-3">
+          <p className="mb-1.5 text-[9px] font-semibold uppercase tracking-[0.16em] text-gray-400">
+            Core Domain Focus
+          </p>
+
+          <p className="line-clamp-2 text-xs leading-relaxed text-gray-400">
+            {focus}
+          </p>
+        </div>
+      </div>
+    </motion.div>
+  );
 };
 
 export default EmployeeCard;

@@ -10,7 +10,7 @@ import {
 
 function Contact() {
   return (
-    <section className="relative w-full px-6 lg:px-20 py-32 overflow-hidden">
+    <section className="relative  px-6 lg:px-20 py-32 overflow-hidden">
       <div className="max-w-7xl mx-auto relative z-10">
         {/* --- HEADER --- */}
         <div className="mb-12 md:mb-24">
@@ -19,12 +19,11 @@ function Contact() {
             whileInView={{ opacity: 1, x: 0 }}
             className="flex items-center gap-3 mb-6"
           >
-            <div className="w-12 h-[1px] bg-[#d6b25e]"></div>
             <span className="text-[10px] font-bold text-[#d6b25e] uppercase tracking-[0.5em]">
               Head Office
             </span>
           </motion.div>
-          <h2 className="text-4xl md:text-6xl font-bold text-white tracking-tighter">
+          <h2 className="header text-4xl md:text-6xl font-bold text-white tracking-tighter">
             Global <span className="yellowText font-light">Connectivity.</span>
           </h2>
         </div>
