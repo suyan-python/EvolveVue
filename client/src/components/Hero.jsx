@@ -28,8 +28,8 @@ function Hero() {
           transition={{ duration: 0.8, delay: 0.15, ease: "easeOut" }}
           className="header mx-auto max-w-5xl text-[2.75rem] leading-[1.08] tracking-[-0.045em] font-semibold text-white sm:text-6xl md:text-7xl lg:text-8xl"
         >
-          Precision in every
-          <span className="mt-1 block text-white/45">detail.</span>
+          Precision in every{" "}
+          <span className="font-light yellowText">detail</span>.
         </motion.h1>
 
         {/* Description */}

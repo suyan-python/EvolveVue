@@ -55,11 +55,6 @@ function WholeTeam() {
         divisionName: "Clerical Team 1",
         members: [
           {
-            name: "Dr. Dilasha Bhandari [PT]",
-            role: "Pod Lead (Medical Report Reviewer, QA)",
-            image: dilasha,
-          },
-          {
             name: "Mr. Swornim Rajbhandari",
             role: "Pod Lead (Medical Report Reviewer, QA)",
             image: swormin,

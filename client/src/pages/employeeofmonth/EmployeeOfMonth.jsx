@@ -88,7 +88,7 @@ const EmployeeSpotlightSection = () => {
             </div>
             <h2 className="header text-3xl md:text-5xl font-semibold text-white tracking-tight">
               Our Employees of the Month -{" "}
-              <span className="text-[#d6b25e]">September, 2026</span>
+              <span className="font-light yellowText ">September, 2026</span>
             </h2>
           </div>
         </div>
@@ -109,7 +109,7 @@ const EmployeeSpotlightSection = () => {
             </div>
             <h2 className="header text-3xl md:text-5xl font-semibold text-white tracking-tight">
               Our Employees of the Month -{" "}
-              <span className="text-[#d6b25e] ">August, 2026</span>
+              <span className="font-light yellowText ">August, 2026</span>
             </h2>
           </div>
         </div>

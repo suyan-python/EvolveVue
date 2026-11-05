@@ -28,11 +28,6 @@ const teamData = {
     { name: "Ms. Priya Malla", role: "Clinical Lead", image: priya },
   ],
   clerical1: [
-    {
-      name: "Dr. Dilasha Bhandari [PT]",
-      role: "Clerical Lead",
-      image: dilasha,
-    },
     { name: "Mr. Swornim Rajbhandari", role: "Clerical Lead", image: swormin },
     { name: "Mr. Sulav Gautam", role: "Clerical Lead", image: sulav },
   ],
