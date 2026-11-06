@@ -1,4 +1,3 @@
-/** @type {import('tailwindcss').Config} */
 export default {
   content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
@@ -12,6 +11,7 @@ export default {
         themeColor: "#133a41",
         gold: "#e6b800",
         themeGold: "#D1A64B",
+        green:"#9cee69",
       },
       backdropBlur: {
         md: "10px",
@@ -21,5 +21,4 @@ export default {
       },
     },
   },
-  plugins: [],
 };

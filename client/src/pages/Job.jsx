@@ -26,9 +26,6 @@ const Job = () => {
 
             <p className="mt-2 md:mt-6 text-gray-400 max-w-2xl text-xs md:text-lg leading-relaxed">
               We are actively hiring talented individuals across multiple roles.
-              Check back often for newly posted opportunities and become part of
-              a team dedicated to excellence, innovation, and professional
-              growth.
             </p>
           </div>
         </div>
@@ -38,16 +35,16 @@ const Job = () => {
         {/* 1. JOB LISTINGS: Square & Structured */}
         <div className="max-w-7xl mx-auto px-6 py-12">
           <div className="grid grid-cols-1 gap-4">
-            <h1 className="text-2xl md:text-4xl text-center md:text-start font-semibold tracking-widest uppercase">
-              {" "}
-              Job Openings - June-July, 2026{" "}
+            <h1 className="text-2xl md:text-4xl text-center md:text-start font-semibold tracking-widest uppercase text-green">
+              Job Openings-{" "}
+              <span className="font-light yellowText">November, 2026</span>
             </h1>
             {JOB_OPENINGS.length > 0 ? (
               JOB_OPENINGS.map((job) => (
                 <div
                   key={job.id}
-                  className="group relative flex flex-col md:flex-row md:items-center justify-between 
-            p-8 bg-[#0f1218] border border-white/5 
+                  className="group relative flex flex-col md:flex-row md:items-center justify-between bg-green-900/35
+            p-8  border border-gold/45 
             border-l-4 border-l-transparent hover:border-l-[#d6b25e] 
             rounded-xl transition-all duration-300 shadow-xl hover:shadow-2xl"
                 >
