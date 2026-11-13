@@ -88,13 +88,13 @@ function Navbar() {
                     className="
                 px-8 py-2.5
                 rounded-lg
-                yellow
+                
                 text-black
                 text-[10px]
                 font-black
                 uppercase
                 tracking-[0.2em]
-                hover:bg-[#9cee69]
+                bg-green
                 hover:shadow-[0_0_20px_rgba(156,238,105,0.3)]
                 transition-all duration-500
                 active:scale-95

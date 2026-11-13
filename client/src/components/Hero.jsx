@@ -52,7 +52,7 @@ function Hero() {
         >
           <NavLink
             to="/services"
-            className="group inline-flex min-h-12 items-center justify-center gap-3 rounded-full bg-[#d6b25e] px-7 py-3.5 text-xs font-semibold uppercase tracking-[0.14em] text-black transition-all duration-300 hover:bg-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#d6b25e] focus-visible:ring-offset-4 focus-visible:ring-offset-black sm:min-h-14 sm:px-9"
+            className="group inline-flex min-h-12 items-center justify-center gap-3 rounded-full bg-green px-7 py-3.5 text-xs font-semibold uppercase tracking-[0.14em] text-black transition-all duration-300 hover:bg-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#d6b25e] focus-visible:ring-offset-4 focus-visible:ring-offset-black sm:min-h-14 sm:px-9"
           >
             Explore Services
             <span className="text-base transition-transform duration-300 group-hover:translate-x-1">
@@ -62,7 +62,7 @@ function Hero() {
 
           <NavLink
             to="/team"
-            className="group inline-flex min-h-12 items-center justify-center gap-2 rounded-full border border-white/15 px-7 py-3.5 text-xs font-medium uppercase tracking-[0.14em] text-gray-300 transition-all duration-300 hover:border-white/40 hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/60 sm:min-h-14 sm:border-transparent sm:px-4"
+            className="group inline-flex min-h-12 items-center justify-center gap-2 rounded-full border border-white/15 px-7 py-3.5 text-xs font-medium uppercase tracking-[0.14em] text-green transition-all duration-300 hover:border-white/40 hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/60 sm:min-h-14 sm:border-transparent sm:px-4"
           >
             Meet the Team
             <span className="transition-transform duration-300 group-hover:translate-x-1">
