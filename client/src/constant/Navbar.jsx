@@ -74,10 +74,7 @@ function Navbar() {
       >
         <div className="max-w-7xl mx-auto px-6 md:px-12 flex justify-between items-center">
           {/* Logo Area - Enhanced with subtle glow */}
-          <Link
-            to="/"
-            className="relative group transition-transform duration-500 hover:scale-105"
-          >
+          <Link to="/" className="relative group ">
             <img
               src={Logo}
               alt="Evolve Vue"
@@ -241,7 +238,7 @@ function Navbar() {
                         </div>
 
                         {link.isButton ? (
-                          <span className="rounded-sm bg-[#d6b25e] px-4 py-2 text-[9px] font-bold uppercase tracking-[0.15em] text-[#0b0e14] transition-all group-hover:bg-[#e5c778]">
+                          <span className="rounded-sm bg-green px-4 py-2 text-[9px] font-bold uppercase tracking-[0.15em] text-[#0b0e14] transition-all group-hover:bg-[#e5c778]">
                             Explore
                           </span>
                         ) : (
