@@ -2,10 +2,16 @@ import React from "react";
 import { NavLink } from "react-router-dom";
 import { motion } from "framer-motion";
 import Logo from "../assets/logo/evolve.png";
+import SEO from "./SEO";
 
 function Hero() {
   return (
     <section className="relative min-h-screen w-full flex items-center justify-center px-6 py-24 overflow-hidden bg-black">
+      <SEO
+        title="Evolve Vue | Healthcare Documentation & Outsourcing Solutions"
+        description="Evolve Vue provides reliable healthcare documentation, medical record review, and outsourcing solutions."
+        path="/"
+      />
       <div className="relative z-10 w-full max-w-5xl mx-auto flex flex-col items-center text-center">
         {/* Logo */}
         <motion.div
