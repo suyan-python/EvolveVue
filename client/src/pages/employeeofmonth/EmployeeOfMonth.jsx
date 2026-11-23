@@ -8,8 +8,8 @@ import suyog from "../../assets/month/suyog.jpeg";
 import kritika from "../../assets/month/kritika.jpeg";
 import sabina from "../../assets/month/sabina.jpeg";
 
-import lumanti from "../../assets/month/lumanti.jpeg";
 import jemini from "../../assets/month/jemini.jpeg";
+import reeja from "../../assets/month/reeja.jpeg";
 
 const EmployeeSpotlightSection = () => {
   const spotlights2 = [
@@ -44,32 +44,33 @@ const EmployeeSpotlightSection = () => {
       image: sabina,
     },
   ];
+
   const spotlights1 = [
     {
-      name: "Mr. Suyog Rai",
+      name: "Ms Reeja Bajracharya",
       designation: "Medical Report Reviewer",
       department: "Clerical Team-AH",
-      month: "september",
+      month: "august",
       year: "2026",
       focus:
         "Enhancing document quality by identifying inconsistencies and ensuring compliance with internal review standards.",
-      image: suyog,
+      image: reeja,
     },
     {
-      name: "Ms. Lumanti Shakya",
+      name: "Ms. Kritika Acharya",
       designation: "Medical Report Reviewer",
       department: "Clerical Team-Cohort",
-      month: "september",
+      month: "august",
       year: "2026",
       focus:
         "Improving data accuracy and reducing reporting inconsistencies across clinical documentation workflows.",
-      image: lumanti,
+      image: kritika,
     },
     {
-      name: "Ms. Jemini Shrestha",
+      name: "Ms Jemini Shrestha",
       designation: "Medical Data Analyst",
       department: "Clinical Team",
-      month: "september",
+      month: "august",
       year: "2026",
       focus:
         "Improving data accuracy and reducing reporting inconsistencies across clinical documentation workflows.",
@@ -88,7 +89,7 @@ const EmployeeSpotlightSection = () => {
             </div>
             <h2 className="header text-3xl md:text-5xl font-semibold text-white tracking-tight">
               Our Employees of the Month -{" "}
-              <span className="font-light yellowText ">September, 2026</span>
+              <span className="font-light yellowText ">October, 2026</span>
             </h2>
           </div>
         </div>
@@ -109,7 +110,7 @@ const EmployeeSpotlightSection = () => {
             </div>
             <h2 className="header text-3xl md:text-5xl font-semibold text-white tracking-tight">
               Our Employees of the Month -{" "}
-              <span className="font-light yellowText ">August, 2026</span>
+              <span className="font-light yellowText ">September, 2026</span>
             </h2>
           </div>
         </div>
