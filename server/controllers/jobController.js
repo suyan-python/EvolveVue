@@ -57,6 +57,71 @@ export const applyJob = async (req, res) => {
   }
 };
 
+// ✅ Add Candidate (Admin use)
+export const createApplication = async (req, res) => {
+  try {
+    const {
+      name,
+      email,
+      appliedAt,
+      jobTitle,
+      jobTag,
+      jobLocation,
+      sourceWebsite,
+      resumeUrl,
+      coverLetter,
+    } = req.body;
+
+    const requiredFields = {
+      name,
+      email,
+      appliedAt,
+      jobTitle,
+      jobTag,
+      jobLocation,
+      sourceWebsite,
+    };
+    const missingFields = Object.entries(requiredFields)
+      .filter(([, value]) => typeof value !== "string" || !value.trim())
+      .map(([field]) => field);
+
+    if (missingFields.length) {
+      return res.status(400).json({
+        error: "Required fields are missing",
+        fields: missingFields,
+      });
+    }
+
+    const dateApplied = new Date(appliedAt);
+    if (Number.isNaN(dateApplied.getTime())) {
+      return res.status(400).json({ error: "Applied date is invalid" });
+    }
+
+    const exists = await JobApplication.findOne({ email: email.trim() });
+    if (exists) return res.status(400).json({ error: "Email already used" });
+
+    const application = await JobApplication.create({
+      name: name.trim(),
+      email: email.trim(),
+      appliedAt: dateApplied,
+      jobTitle: jobTitle.trim(),
+      jobTag: jobTag.trim(),
+      jobLocation: jobLocation.trim(),
+      sourceWebsite: sourceWebsite.trim(),
+      resumeUrl: typeof resumeUrl === "string" ? resumeUrl.trim() : "",
+      coverLetter: typeof coverLetter === "string" ? coverLetter : "",
+    });
+
+    res.status(201).json({ success: true, application });
+  } catch (err) {
+    if (err.code === 11000) {
+      return res.status(400).json({ error: "Email already used" });
+    }
+    console.error(err);
+    res.status(500).json({ error: "Failed to add candidate" });
+  }
+};
+
 // ✅ Get All Applications (Admin use)
 export const getApplications = async (req, res) => {
   try {
